@@ -24,6 +24,7 @@ public class Model {
         for(User u: ulist){
             user_handler.addToList(u);
         }
+        user_list = user_handler.getUsers();
     }
     
 }
