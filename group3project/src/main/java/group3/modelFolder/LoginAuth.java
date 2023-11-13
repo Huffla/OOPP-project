@@ -20,7 +20,7 @@ public class LoginAuth {
 
     }
 
-    public User attemptLogin(String name, String password) throws InvalidPasswordException, NoUserFoundException{
+    public User attemptLogin(String name, String password) throws  NoSuchFieldException{
         User user;
         this.name = name;
         this.hashedPassword = password.hashCode();
@@ -29,7 +29,7 @@ public class LoginAuth {
          * Kolla med databas
          * If(kontofinns och lösenord stämmer) return User;
          * else if (konto finns men lösenord stämmer inte) throw new InvalidPasswordException();
-         * else throw new NoUserFoundException();
+         * else throw new NoSuchFieldException();
          */
         
         if(userDatabase.containsKey(name)){
@@ -37,10 +37,10 @@ public class LoginAuth {
             if(user.getHashPassword() == hashedPassword){
                 return user;
             } else{
-                throw new InvalidPasswordException();
+                throw new NoSuchFieldException("Wrong password");
             }
         }else{
-            throw new NoUserFoundException();
+            throw new NoSuchFieldException("No account");
         }
         
         

@@ -6,15 +6,15 @@ import org.junit.jupiter.api.Test;
 import group3.modelFolder.*;
 
 public class LoginAuthTest {
-    private static final Class InvalidPasswordException = null;
-    private static final Class NoUserFoundException = null;
+    
+    private static final Class NoSuchFieldException = null;
     LoginAuth loginAuth = new LoginAuth();
     User user = new User("test","test".hashCode());
     // add user to database
     @Test
-    void returnsAccount() throws group3.modelFolder.InvalidPasswordException, group3.modelFolder.NoUserFoundException {
-        assertThrows(InvalidPasswordException, () -> loginAuth.attemptLogin("test", "wrongPassword"));
-        assertThrows(NoUserFoundException, () -> loginAuth.attemptLogin("!!!!noUSER!!!!", "wrongPassword"));
+    void returnsAccount() throws  java.lang.NoSuchFieldException {
+        assertThrows(NoSuchFieldException, () -> loginAuth.attemptLogin("test", "wrongPassword"));
+        assertThrows(NoSuchFieldException, () -> loginAuth.attemptLogin("!!!!noUSER!!!!", "wrongPassword"));
         assertTrue(loginAuth.attemptLogin("test", "test") == user);
     }
 }
