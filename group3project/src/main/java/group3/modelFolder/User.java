@@ -15,4 +15,8 @@ public class User {
     public int getHashPassword(){
         return hashedPassword;
     }
+    public boolean equals(User u2){
+        if(u2.name.equals(this.name)  && this.hashedPassword == u2.hashedPassword) return true;
+        return false;
+    }
 }
