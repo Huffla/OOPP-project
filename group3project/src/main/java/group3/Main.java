@@ -17,8 +17,9 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("questionscene.fxml"));
         Scene scene = new Scene(root);
-        String reusecss = this.getClass().getResource("smurfTitle.css").toExternalForm();
-        scene.getStylesheets().add(reusecss);
+        String titlecss = this.getClass().getResource("smurfTitle.css").toExternalForm();
+        String scenecss = this.getClass().getResource("sceneStyle.css").toExternalForm();
+        scene.getStylesheets().addAll(titlecss,scenecss);
         stage.setTitle("Smurfinator");
         stage.setWidth(1280);
         stage.setHeight(720);

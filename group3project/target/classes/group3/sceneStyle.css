@@ -1,0 +1,8 @@
+.button{
+    -fx-font-size: 20;
+    -fx-font-family:"Boldstrom";
+}
+
+#buttonAnchor{
+    -fx-background-color: antiquewhite;
+}
