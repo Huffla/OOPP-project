@@ -9,61 +9,16 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
-public class UserDatabaseHandler {
-    private ArrayList<User> user_list;
-    File obj;
+public class UserDatabaseHandler extends DatabaseHandler{
     public UserDatabaseHandler(){
-        try {
-            user_list = loadFromFile();
-        } catch (Exception e) {
-            user_list = new ArrayList();
-            try {
-                writeToFile();
-            } catch (IOException e1) {
-                System.out.println("What da hell are you doing");
-                e1.printStackTrace();
-            }
-        }
-        
-        obj = new File("Users.txt");
+        super("Users.txt");
     }
-
-    public void addToList(User user){
-        user_list.add(user);
-        try {
-            writeToFile();
-        } catch (IOException e) {
-            System.out.println("Writing exception");
-            e.printStackTrace();
-        }
-        
-    }
-    private void writeToFile() throws IOException{
-        try {
-            File obj = new File("Users.txt");
-            ObjectOutputStream objout;
-            objout = new ObjectOutputStream(new FileOutputStream(obj));
-            objout.writeObject(user_list);
-            objout.close();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
-        
     
-    
-    private ArrayList<User> loadFromFile() throws IOException, ClassNotFoundException{
-    
-        ObjectInputStream objin = new ObjectInputStream(new FileInputStream(obj));
-        ArrayList<User> users;
-        users = (ArrayList<User>) objin.readObject();
-        objin.close();
-        return users;
-    
-    }
-
     public ArrayList<User> getUsers(){
-        return user_list;
+        ArrayList<User> users = new ArrayList<>();
+        for(Object elem: data_list){
+            users.add((User)elem);
+        }
+        return users;
     }
 }
