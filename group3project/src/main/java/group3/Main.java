@@ -11,9 +11,9 @@ public class Main {
         Model model = new Model();
         System.out.println(model.getUsers());
         ArrayList<User> ulist = new ArrayList<>();
-        ulist.add(new User("Spicy Smurf"));
-        ulist.add(new User("Kalle Anka"));
-        ulist.add(new User("DÄILBSIT"));
+        ulist.add(new User("Spicy Smurf")); 
+        ulist.add(new User("Kalle Anka"));  
+        ulist.add(new User("DÄILBSIT"));    
 
         model.setUsers(ulist);
         System.out.println(model.getUsers());

@@ -9,7 +9,7 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
-abstract class DatabaseHandler {
+public abstract class DatabaseHandler {
     protected ArrayList<Object> data_list;
     File obj;
     String fileName;
@@ -18,7 +18,9 @@ abstract class DatabaseHandler {
         try {
             data_list = loadFromFile();
         } catch (Exception e) {
+            System.out.println("No file found");
             data_list = new ArrayList();
+            // Has to have two cases to know if it has to write to a know file.
             try {
                 writeToFile();
             } catch (IOException e1) {
