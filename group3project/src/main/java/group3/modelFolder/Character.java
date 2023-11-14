@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Character {
 
     private ArrayList<Trait> characterTraits;
-    private String name;
+    private final String name;
     private Image characterImage;
 
     public Character(ArrayList<Trait> characterTraits, String name, Image characterImage) {
