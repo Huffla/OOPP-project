@@ -1,9 +1,10 @@
 package group3.modelFolder;
 
 import java.awt.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Character {
+public class Character implements Serializable{
 
     private ArrayList<Trait> characterTraits;
     private final String name;
