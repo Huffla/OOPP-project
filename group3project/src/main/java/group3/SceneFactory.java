@@ -8,20 +8,20 @@ import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
 
-public class SmurfinatorMain {
+public class SceneFactory {
     private Stage stage;
 
-    public SmurfinatorMain(Stage stage) {
+    public SceneFactory(Stage stage) {
         this.stage = stage;
     }
 
-    public void loadAndShowScene(String fxmlPath, String[] stylesheets) {
+    public <T extends ControllerInitializer> void loadAndShowScene(String fxmlPath, String[] stylesheets,
+            Class<T> controllerClass) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
 
-            // Assuming the controller has an initialize method
-            SmurfinatorMainController controller = loader.getController();
+            T controller = loader.getController();
             controller.initialize();
 
             Scene scene = new Scene(root);

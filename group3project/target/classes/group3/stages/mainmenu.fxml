@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3.MainMenuController">
+   <children>
+      <Text layoutX="382.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAIN MENU" AnchorPane.bottomAnchor="300.1611328125" AnchorPane.leftAnchor="382.0" AnchorPane.rightAnchor="382.037109375" AnchorPane.topAnchor="298.8017578125">
+         <font>
+            <Font size="91.0" />
+         </font>
+      </Text>
+      <Button fx:id="playButton" layoutX="537.0" layoutY="499.0" mnemonicParsing="false" onAction="#playgame" text="PLAY">
+         <font>
+            <Font size="58.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

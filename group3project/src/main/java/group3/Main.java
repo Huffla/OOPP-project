@@ -6,12 +6,13 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
-        SmurfinatorMain sceneManager = new SmurfinatorMain(primaryStage);
+        SceneFactory sceneManager = new SceneFactory(primaryStage);
         String titlecss = getClass().getResource("styles/universalStyle.css").toExternalForm();
         String scenecss = getClass().getResource("styles/sceneStyle.css").toExternalForm();
-        String[] stylesheetArray = {titlecss, scenecss};
+        String[] stylesheetArray = { titlecss, scenecss };
+        String[] testArray = {};
 
-        sceneManager.loadAndShowScene("stages/questionscene.fxml", stylesheetArray);
+        sceneManager.loadAndShowScene("stages/mainmenu.fxml", testArray, MainMenuController.class);
     }
 
     public static void main(String[] args) {
