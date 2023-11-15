@@ -20,34 +20,27 @@ public abstract class DatabaseHandler {
         
         
     }
-
+        // Has to have two cases to know if it has to write to a new file.
     private void attemptLoadFile() {
         try {
             data_list = loadFromFile();
         } catch (Exception e) {
             System.out.println("No file found");
             data_list = new ArrayList();
-            // Has to have two cases to know if it has to write to a know file.
-            try {
-                writeToFile();
-            } catch (IOException e1) {
-                System.out.println("What da hell are you doing");
-                e1.printStackTrace();
-            }
+            
+            writeToFile();
         }
     }
 
-    public void addToList(Object data){
+    protected void addToList(Object data){
         data_list.add(data);
-        try {
+        
             writeToFile();
-        } catch (IOException e) {
-            System.out.println("Writing exception");
-            e.printStackTrace();
-        }
+        
+        
         
     }
-    protected void writeToFile() throws IOException{
+    protected void writeToFile() {
         try {
             File obj = new File(fileName);
             ObjectOutputStream objout;
@@ -71,7 +64,7 @@ public abstract class DatabaseHandler {
         return data;
     
     }
-    public void clearList() throws IOException{
+    public void clearList(){
         data_list.clear();
         writeToFile();
     }

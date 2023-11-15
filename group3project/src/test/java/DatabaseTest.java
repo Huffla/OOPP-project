@@ -5,16 +5,30 @@ import org.junit.jupiter.api.Test;
 import group3.modelFolder.*;
 public class DatabaseTest {
     
-    UserDatabaseHandler dh = new UserDatabaseHandler();
+    UserDatabaseHandler dh = new UserDatabaseHandler("UsersTest.txt");
     
     @Test
-    void test(){
+    void setUp(){
+        dh.clearList();
+    }
+    @Test
+    private void assertEmpty() {
         assertTrue(dh.getUsers().size() == 0);
-        dh.addToList(new User("null",1));
-        User u = dh.getUsers().get(0);
-        assertTrue(u.getName() == "null");
+    }
+    @Test
+    void assertAlreadyExists(){
+        setUp();
+        dh.addUser(new User("null",1));
+        assertTrue(dh.getUsers().size() == 1);
+        dh.addUser(new User("null",1));
         assertTrue(dh.getUsers().size() == 1);
     }
+    @Test
+    void assertUserRemoved(){
+    
+    }
+
+
     
     
 

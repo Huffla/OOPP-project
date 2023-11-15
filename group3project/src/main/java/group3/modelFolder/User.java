@@ -1,9 +1,15 @@
 package group3.modelFolder;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable{
     private String name;
     private int hashedPassword;
 
+    /**
+     * @param name Takes the name of the user
+     * @param hashedPassword Takes a hashedpassword and saves it to a user
+     */
     public User(String name, int hashedPassword){
         this.name = name;
         this.hashedPassword = hashedPassword;

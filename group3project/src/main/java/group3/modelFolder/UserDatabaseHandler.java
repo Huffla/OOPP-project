@@ -10,8 +10,9 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 
 public class UserDatabaseHandler extends DatabaseHandler{
-    public UserDatabaseHandler(){
-        super("Users.txt");
+   
+    public UserDatabaseHandler(String s){
+        super(s);
     }
     
     public ArrayList<User> getUsers(){
@@ -20,6 +21,14 @@ public class UserDatabaseHandler extends DatabaseHandler{
             users.add((User)elem);
         }
         return users;
+    }
+
+    
+    public void addUser(User u) {
+        for(Object data: data_list){
+            if(u.equals((User) data)) return;
+        }
+        super.addToList(u);
     }
 
     public void removeUser(User u) throws IOException{
