@@ -21,4 +21,11 @@ public class UserDatabaseHandler extends DatabaseHandler{
         }
         return users;
     }
+
+    public void removeUser(User u) throws IOException{
+        data_list.remove(u);
+        writeToFile();
+    }
+
+    
 }

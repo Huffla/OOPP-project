@@ -1,5 +1,6 @@
 package group3.modelFolder;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Model {
@@ -25,6 +26,22 @@ public class Model {
             user_handler.addToList(u);
         }
         user_list = user_handler.getUsers();
+    }
+    public void clearUsers(){
+        try {
+            user_handler.clearList();
+        } catch (Exception e) {
+            System.out.println("Could not clear list");
+        }
+        
+    }
+    public void removeUser(User u){
+        try {
+            user_handler.removeUser(u);
+        } catch (IOException e) {
+            System.out.println("IO exception");
+            e.printStackTrace();
+        }
     }
     
 }

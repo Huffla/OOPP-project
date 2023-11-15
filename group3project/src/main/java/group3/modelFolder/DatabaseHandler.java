@@ -15,9 +15,10 @@ public abstract class DatabaseHandler {
     String fileName;
     public DatabaseHandler(String fileName){
         this.fileName = fileName;
+        obj = new File(this.fileName);
         attemptLoadFile();
         
-        obj = new File(this.fileName);
+        
     }
 
     private void attemptLoadFile() {
@@ -46,7 +47,7 @@ public abstract class DatabaseHandler {
         }
         
     }
-    private void writeToFile() throws IOException{
+    protected void writeToFile() throws IOException{
         try {
             File obj = new File(fileName);
             ObjectOutputStream objout;
@@ -70,6 +71,12 @@ public abstract class DatabaseHandler {
         return data;
     
     }
+    public void clearList() throws IOException{
+        data_list.clear();
+        writeToFile();
+    }
+
+    
     
     
 }

@@ -15,6 +15,10 @@ public class CharacterDatabaseHandler extends DatabaseHandler{
         }
         return characters;
     }
+
+    public void removeCharacter(){
+    
+    }
     
     
 }
