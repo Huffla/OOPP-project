@@ -12,6 +12,7 @@ public class Main {
         model = new Model();
         simpleTest();
     }
+    
         // Just to test if objectoutputstream does anything, should be in JUnit tests but wanted a fast test.
     private static void simpleTest(){
         System.out.println(model.getUsers());

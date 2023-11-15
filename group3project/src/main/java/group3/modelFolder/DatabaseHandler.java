@@ -15,6 +15,12 @@ public abstract class DatabaseHandler {
     String fileName;
     public DatabaseHandler(String fileName){
         this.fileName = fileName;
+        attemptLoadFile();
+        
+        obj = new File(this.fileName);
+    }
+
+    private void attemptLoadFile() {
         try {
             data_list = loadFromFile();
         } catch (Exception e) {
@@ -28,8 +34,6 @@ public abstract class DatabaseHandler {
                 e1.printStackTrace();
             }
         }
-        
-        obj = new File(this.fileName);
     }
 
     public void addToList(Object data){
