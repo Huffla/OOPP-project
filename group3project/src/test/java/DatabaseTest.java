@@ -10,9 +10,9 @@ public class DatabaseTest {
     @Test
     void test(){
         assertTrue(dh.getUsers().size() == 0);
-        dh.addToList(new User("null"));
+        dh.addToList(new User("null",1));
         User u = dh.getUsers().get(0);
-        assertTrue(u.name == "null");
+        assertTrue(u.getName() == "null");
         assertTrue(dh.getUsers().size() == 1);
     }
     
