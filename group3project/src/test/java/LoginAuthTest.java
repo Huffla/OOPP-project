@@ -34,7 +34,7 @@ public class LoginAuthTest {
         setUp();
         assertThrows(NoSuchFieldException.class, () -> loginAuth.attemptLogin("Smurf", "fellösenord"));
     }
-
+    
     @Test 
     void noAccountThrows(){
         setUp();
