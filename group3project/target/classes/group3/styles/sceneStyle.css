@@ -1,8 +1,6 @@
 .button{
     -fx-font-size: 20;
     -fx-font-family:"Boldstrom";
+    -fx-text-fill: #09cdda;
 }
 
-#buttonAnchor{
-    -fx-background-color: antiquewhite;
-}

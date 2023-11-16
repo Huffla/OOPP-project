@@ -37,26 +37,32 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: f5f5dc;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3.SmurfinatorMainController">
    <children>
       <AnchorPane fx:id="buttonAnchor" layoutX="626.0" layoutY="311.0" prefHeight="306.0" prefWidth="399.0">
          <children>
+            <Rectangle fx:id="buttonContainer" arcHeight="5.0" arcWidth="5.0" fill="#fff8d4" height="292.0" layoutX="-2.0" layoutY="13.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="379.0" />
             <Button layoutX="95.0" layoutY="32.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="189.0" text="YES" />
             <Button layoutX="95.0" layoutY="123.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="189.0" text="NO" />
             <Button layoutX="95.0" layoutY="217.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="189.0" text="DON'T KNOW" />
          </children>
       </AnchorPane>
-      <ImageView fitHeight="558.0" fitWidth="391.0" layoutX="119.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="70.45928955078125" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="770.0" AnchorPane.topAnchor="135.0">
+      <ImageView fx:id="smurfwizard" fitHeight="558.0" fitWidth="391.0" layoutX="119.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="70.45928955078125" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="770.0" AnchorPane.topAnchor="135.0">
          <image>
-            <Image url="@images/smurf_wizard.png" />
+            <Image url="@../images/smurf_wizard.png" />
          </image>
       </ImageView>
-      <Label fx:id="smurfinatorLabel" layoutX="54.0" layoutY="3.0" prefHeight="98.0" prefWidth="821.0" text="SMURFINATOR" />
-      <AnchorPane layoutX="556.0" layoutY="129.0" prefHeight="200.0" prefWidth="537.0">
+      <Label fx:id="smurfinatorLabel" layoutX="19.0" layoutY="3.0" prefHeight="98.0" prefWidth="821.0" text="SMURFINATOR" />
+      <AnchorPane layoutX="556.0" layoutY="129.0" prefHeight="200.0" prefWidth="546.0">
          <children>
-            <Text layoutX="104.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question" wrappingWidth="242.936767578125" />
+            <Ellipse fill="#fffeed" layoutX="270.0" layoutY="52.0" radiusX="275.0" radiusY="123.0" stroke="BLACK" strokeType="INSIDE" />
+            <Polyline fill="#fffeed" layoutX="14.0" layoutY="91.0" points="54.26666259765625, 44.800018310546875, 54.26666259765625, 44.800018310546875, -85.46664428710938, 66.13333129882812, 0.933349609375, 2.1333465576171875" strokeType="INSIDE" />
+            <Text fx:id="questionTitle" layoutX="153.0" layoutY="-21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question: 1" wrappingWidth="193.87005615234375" />
          </children>
       </AnchorPane>
    </children>

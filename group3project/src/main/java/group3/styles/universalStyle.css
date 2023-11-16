@@ -1,3 +1,7 @@
+.root{
+    -fx-background-color: Beige;
+}
+
 #smurfinatorLabel{
     -fx-font-size: 80;
     -fx-font-family: "Boldstrom";
@@ -7,8 +11,4 @@
     -fx-stroke: black;
     -fx-stroke-width: 100;
 
-}
-
-.root{
-    -fx-background-color: Beige;
 }
