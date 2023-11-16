@@ -22,7 +22,6 @@ public class QuitMenuLoader {
             popupStage.setTitle(title);
             popupStage.setScene(new Scene(root));
 
-            // Show the pop-up and wait for it to be closed
             popupStage.showAndWait();
         } catch (IOException e) {
             e.printStackTrace();
