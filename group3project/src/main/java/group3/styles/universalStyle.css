@@ -6,9 +6,7 @@
     -fx-font-size: 80;
     -fx-font-family: "Boldstrom";
     -fx-text-fill: #09cdda;
-    /*funkar inte än :( */
-    -fx-effect: dropshadow(gaussian, rgba(128, 128, 128, 0.5), 5, 0, 0, 0);
-    -fx-stroke: black;
-    -fx-stroke-width: 100;
+    -fx-effect: dropshadow(gaussian, black, 20, 0.1, 0.1, 0);
+    
 
 }
