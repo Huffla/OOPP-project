@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" style="-fx-background-color: #ffe39b;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3.QuitMenuController">
+   <children>
+      <Button fx:id="yesquitbutton" layoutX="62.0" layoutY="235.0" mnemonicParsing="false" onAction="#closeQuitMenu" prefHeight="78.0" prefWidth="194.0" styleClass="yesquitbutton" stylesheets="@../styles/buttonStyle.css" text="YES">
+         <font>
+            <Font name="Arial" size="35.0" />
+         </font>
+      </Button>
+      <Label layoutX="94.0" layoutY="46.0" prefHeight="156.0" prefWidth="450.0" text="ARE YOU SURE YOU WANT TO QUIT?" textAlignment="CENTER" textFill="#09cdda" wrapText="true">
+         <font>
+            <Font name="Arial Bold" size="41.0" />
+         </font>
+      </Label>
+      <Button fx:id="noquitbutton" layoutX="385.0" layoutY="235.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="194.0" styleClass="noquitbutton" stylesheets="@../styles/buttonStyle.css" text="NO">
+         <font>
+            <Font name="Arial Bold" size="35.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

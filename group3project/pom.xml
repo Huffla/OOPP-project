@@ -11,6 +11,10 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <javafx.version>21</javafx.version>
+        <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
+        <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
     </properties>
 
     <dependencies>
@@ -20,6 +24,40 @@
             <version>5.10.0</version>
             <scope>test</scope>
         </dependency>
+        
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-fxml</artifactId>
+        <version>${javafx.version}</version>
+    </dependency>
     </dependencies>
+
+   <build>
+    <plugins>
+        <plugin>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-maven-plugin</artifactId>
+            <version>${javafx.maven.plugin.version}</version>
+            <executions>
+                <execution>
+                    <id>javafx:run</id>
+                    <phase>validate</phase>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <mainClass>group3.MainEntryPoint</mainClass>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
 
 </project>

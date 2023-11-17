@@ -1,0 +1,12 @@
+.root{
+    -fx-background-color: Beige;
+}
+
+#smurfinatorLabel{
+    -fx-font-size: 80;
+    -fx-font-family: "Boldstrom";
+    -fx-text-fill: #09cdda;
+    -fx-effect: dropshadow(gaussian, black, 20, 0.1, 0.1, 0);
+    
+
+}

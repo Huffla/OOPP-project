@@ -1,0 +1,34 @@
+.answer-button{
+    -fx-background-color: #09cdda;
+    -fx-text-fill: white;
+}
+
+.answer-button:hover{
+    -fx-background-color: #09babe;
+}
+
+.settings-button{
+    -fx-background-color: #09cdda;
+}
+
+.settings-button:hover{
+    -fx-background-color: #09babe;
+}
+
+.yesquitbutton{
+    -fx-background-color: white;
+}
+
+.yesquitbutton:hover{
+    -fx-background-color: rgb(231, 231, 231);
+}
+
+.noquitbutton{
+    -fx-background-color: #09cdda;
+}
+
+.noquitbutton:hover{
+    -fx-background-color: #09babe;
+}
+
+
