@@ -13,6 +13,7 @@ public abstract class DatabaseHandler {
     protected ArrayList<Object> data_list;
     File obj;
     String fileName;
+    
     public DatabaseHandler(String fileName){
         this.fileName = fileName;
         obj = new File(this.fileName);

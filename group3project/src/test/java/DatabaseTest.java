@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class DatabaseTest {
     
     UserDatabaseHandler dh = new UserDatabaseHandler("UsersTest.txt");
-    Model tmodel = new Model();
+    Model tmodel = new Model("UserTest.txt");
     
     @Test
     void setUp(){
@@ -24,11 +24,13 @@ public class DatabaseTest {
         assertTrue(dh.getUsers().size() == 1);
         dh.addUser(new User("null",1));
         assertTrue(dh.getUsers().size() == 1);
+    }
+
     void test(){
         assertEquals(0, dh.getUsers().size());
-        dh.addToList(new User("null"));
+        dh.addUser(new User("null","null".hashCode()));
         User u = dh.getUsers().get(0);
-        assertSame("null", u.name);
+        assertSame("null", u.getName());
         assertEquals(1, dh.getUsers().size());
         tmodel.addCharacter(new Character("Craig"));
         Character c = tmodel.getCharacters().get(0);
