@@ -1,6 +1,6 @@
 package group3.modelFolder;
 
-public class Question {
+public abstract class Question {
 
     private final String questionText;
     private final Trait questionTrait;
