@@ -13,7 +13,10 @@ public class Model {
     CharacterDatabaseHandler character_handler = new CharacterDatabaseHandler();
     QuestionHandler question_handler = new QuestionHandler();
     LoginAuth loginAuth;
-    public Model(String user_file_name){
+
+    private static Model instance;
+
+    private Model(String user_file_name){
         user_handler = new UserDatabaseHandler(user_file_name);
         user_list = user_handler.getUsers();
         traits_list = trait_handler.getTraits();
@@ -22,6 +25,13 @@ public class Model {
         loginAuth = new LoginAuth(user_handler.getUsers());
         
 
+    }
+
+    public static Model getInstance(String user_file_name){
+        if (instance == null){
+            instance = new Model(user_file_name);
+        }
+        return instance;
     }
     // returns the list of users
     public ArrayList<User> getUsers(){

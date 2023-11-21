@@ -9,18 +9,23 @@ public class Character implements Serializable{
     private ArrayList<Trait> characterTraits;
     private final String name;
     private Image characterImage;
+    private int guessedAmount;
 
     public Character(ArrayList<Trait> characterTraits, String name, Image characterImage) {
         this.characterTraits = characterTraits;
         this.name = name;
         this.characterImage = characterImage;
+        this.guessedAmount = 0;
     }
     public Character(ArrayList<Trait> characterTraits, String name) {
         this.characterTraits = characterTraits;
         this.name = name;
+        this.guessedAmount = 0;
+
     }
     public Character(String name) {
         this.name = name;
+        this.guessedAmount = 0;
     }
 
     public ArrayList<Trait> getCharacterTraits() {
@@ -43,5 +48,11 @@ public class Character implements Serializable{
         } catch (Exception e) {
             throw new NullPointerException();
         }
+    }
+    public void increaseGuessedAmount(){
+        guessedAmount++;
+    }
+    public int getGuessedAmount(){
+        return guessedAmount;
     }
 }
