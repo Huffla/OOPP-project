@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 
 public class MainMenu extends Application {
     
-    public static void test(String[] args){
+    public static void launchapp(String[] args){
         launch(args);
     }
     @Override

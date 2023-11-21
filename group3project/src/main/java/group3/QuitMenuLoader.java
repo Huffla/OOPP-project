@@ -21,7 +21,7 @@ public class QuitMenuLoader {
             popupStage.initModality(Modality.APPLICATION_MODAL);
             popupStage.setTitle(title);
             popupStage.setScene(new Scene(root));
-
+            QuitMenuController.setStage(popupStage);
             popupStage.showAndWait();
         } catch (IOException e) {
             e.printStackTrace();
