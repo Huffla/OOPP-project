@@ -7,6 +7,8 @@ public class rangeQuestion extends Question{
     }
 
     public Trait get_ranged_result(Double result){
+        
         return new Trait(this.getQuestionTrait().getName(),result);
+        
     }
 }
