@@ -8,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 public class CharacterTest {
-
-    Character testCharacter = CharacterFactory.createCharacter("Torgny");
+    CharacterFactory cFactory = new CharacterFactory();
+    Character testCharacter = cFactory.createCharacter("Torgny");
 
     @Test
     public void CharacterPropertiesTest(){
