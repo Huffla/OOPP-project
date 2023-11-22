@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Leaderboard implements Observer{
 
     private Category category;
-    private CategoryUser usercat;
-    private CategoryCharacter charactercat;
+    private final CategoryUser usercat;
+    private final CategoryCharacter charactercat;
 
     public Leaderboard(Category input){
         category = input;
@@ -26,16 +26,26 @@ public class Leaderboard implements Observer{
     @Override
     public void update(ArrayList<User> u, ArrayList<Character> c) {
         usercat.list.clear();
-        for(int i = 0; i<u.size();i++){
-            usercat.list.add(u.get(i));
-        }
+        usercat.list.addAll(u);
         charactercat.list.clear();
-        for(int i = 0; i<c.size();i++){
-            charactercat.list.add(c.get(i));
-        }
+        charactercat.list.addAll(c);
         usercat.sort();
         charactercat.sort();
     }
 
+    public ArrayList<User> getUserLeaderboard(){
+        ArrayList<User> tempArr = new ArrayList<>();
+        for(int i = 0; i<usercat.list.size(); i++){
+            tempArr.add((User) usercat.list.get(i));
+        }
+        return tempArr;
+    }
+    public ArrayList<Character> getCharacterLeaderboard(){
+        ArrayList<Character> tempArr = new ArrayList<>();
+        for(int i = 0; i<charactercat.list.size(); i++){
+            tempArr.add((Character) charactercat.list.get(i));
+        }
+        return tempArr;
+    }
 
 }
