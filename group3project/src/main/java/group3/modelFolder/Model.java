@@ -23,15 +23,16 @@ public class Model {
         user_handler = new UserDatabaseHandler(user_file_name);
         question_handler  = new QuestionDatabaseHandler(questions_file_name);
         trait_handler =  new TraitDatabaseHandler(traits_file_name);
+        ti = new TraitIntitializer(traits_file_name);
+        ti.initialize();
+        qi = new QuestionInitializer(questions_file_name);
+        qi.initialize(); // initializes the question database with questions and their corresponding trait, remove if you do not want to create new each time
+        
         user_list = user_handler.getUsers();
         traits_list = trait_handler.getTraits();
         character_list = character_handler.getCharacters();
         question_list = question_handler.getQuestions();
         loginAuth = new LoginAuth(user_handler.getUsers());
-        ti = new TraitIntitializer(traits_file_name);
-        ti.initialize();
-        qi = new QuestionInitializer(questions_file_name);
-        qi.initialize(); // initializes the question database with questions and their corresponding trait, remove if you do not want to create new each time
         
         smurfinator = new Smurfinator(question_list, traits_list, character_list, null);
 

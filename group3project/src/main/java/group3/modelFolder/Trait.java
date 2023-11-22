@@ -1,7 +1,8 @@
 package group3.modelFolder;
 
+import java.io.Serializable;
 
-public class Trait{
+public class Trait implements Serializable{
 
     private String name;
     private Double amountOfTrait;
