@@ -38,8 +38,6 @@ public abstract class DatabaseHandler {
         
             writeToFile();
         
-        
-        
     }
     protected void writeToFile() {
         try {

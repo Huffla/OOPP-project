@@ -13,9 +13,10 @@ public class Model {
     CharacterDatabaseHandler character_handler = new CharacterDatabaseHandler();
     QuestionHandler question_handler = new QuestionHandler();
     LoginAuth loginAuth;
+    public Smurfinator smurfinator;
 
     private static Model instance;
-
+    //TODO fixa att smurfinator bara körs om man e inloggad, sätter user till null så länge
     private Model(String user_file_name){
         user_handler = new UserDatabaseHandler(user_file_name);
         user_list = user_handler.getUsers();
@@ -23,7 +24,7 @@ public class Model {
         character_list = character_handler.getCharacters();
         question_list = question_handler.getQuestions();
         loginAuth = new LoginAuth(user_handler.getUsers());
-        
+        smurfinator = new Smurfinator(question_list, traits_list, character_list, null);
 
     }
 

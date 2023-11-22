@@ -171,6 +171,8 @@ public class Smurfinator {
 
     }
 
-	
+	public Question getCurrentQuestion(){
+        return currentQuestion;
+    }
 
 }

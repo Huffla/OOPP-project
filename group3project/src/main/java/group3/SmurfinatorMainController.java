@@ -1,11 +1,15 @@
 package group3;
 
 import group3.modelFolder.Model;
+import group3.modelFolder.MultipleChoiceQuestion;
+import group3.modelFolder.Question;
+import group3.modelFolder.rangeQuestion;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 
 public class SmurfinatorMainController implements ControllerInitializer {
 
@@ -13,13 +17,25 @@ public class SmurfinatorMainController implements ControllerInitializer {
     private Rectangle buttonContainer;
     @FXML
     private Button settingsButton;
+    @FXML
+    private Button yesButton;
+    @FXML
+    private Button noButton;
+    @FXML 
+    private Button dontknowButton;
+    
+    private Question question;
+
+    @FXML
+    private Text questionTitle;
 
     Model model = Model.getInstance("Users.txt");
     
     @Override
     public void initialize() {
         settingsButtonBuilder();
-
+        question = model.smurfinator.getCurrentQuestion();
+        questionTitle.setText(question.getQuestionText());
         buttonContainer.setArcWidth(40.0);
         buttonContainer.setArcHeight(40.0);
     }
@@ -44,5 +60,20 @@ public class SmurfinatorMainController implements ControllerInitializer {
     @FXML 
     private void gobackQuestion(){
         
+    }
+
+    @FXML
+    private void yesPressed(){
+        model.smurfinator.answerYes();
+        question = model.smurfinator.getCurrentQuestion();
+    }
+
+    private void displayQuestion(){
+        if(question.getClass() == MultipleChoiceQuestion.class){
+            //TODO fixa sen
+        }
+        else if(question.getClass() == rangeQuestion.class){
+            //TODO också fixa sen
+        }
     }
 }
