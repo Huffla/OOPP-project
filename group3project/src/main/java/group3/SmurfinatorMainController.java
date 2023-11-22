@@ -1,6 +1,9 @@
 package group3;
 
 import group3.modelFolder.Model;
+import group3.modelFolder.MultipleChoiceQuestion;
+import group3.modelFolder.Question;
+import group3.modelFolder.rangeQuestion;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -14,7 +17,7 @@ public class SmurfinatorMainController implements ControllerInitializer {
     @FXML
     private Button settingsButton;
 
-    Model model = Model.getInstance("Users.txt");
+    Model model = Model.getInstance("Users.txt","Questions.txt","Traits.txt");
     
     @Override
     public void initialize() {
@@ -45,4 +48,6 @@ public class SmurfinatorMainController implements ControllerInitializer {
     private void gobackQuestion(){
         
     }
+
+    
 }
