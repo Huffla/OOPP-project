@@ -1,6 +1,8 @@
 package group3.modelFolder;
 
-public abstract class Question {
+import java.io.Serializable;
+
+public abstract class Question implements Serializable{
 
     private final String questionText;
     private final Trait questionTrait;

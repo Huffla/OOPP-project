@@ -1,6 +1,6 @@
 package group3.modelFolder;
 
-public class rangeQuestion extends Question{
+public class rangeQuestion extends Question {
     public rangeQuestion(String text, Trait trait){
         super(text, trait);
 
