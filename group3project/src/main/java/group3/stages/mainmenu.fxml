@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3.MainMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3.MainMenuController">
    <children>
-      <Text layoutX="382.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAIN MENU" AnchorPane.bottomAnchor="300.1611328125" AnchorPane.leftAnchor="382.0" AnchorPane.rightAnchor="382.037109375" AnchorPane.topAnchor="298.8017578125">
+      <ImageView fitHeight="680.0" fitWidth="1280.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Smurf-village-v1.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="382.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Smurf Guess Quest" AnchorPane.bottomAnchor="300.1611328125" AnchorPane.leftAnchor="382.0" AnchorPane.rightAnchor="382.037109375" AnchorPane.topAnchor="298.8017578125">
          <font>
             <Font size="91.0" />
          </font>
       </Text>
-      <Button fx:id="playButton" layoutX="537.0" layoutY="499.0" mnemonicParsing="false" onAction="#playgame" text="PLAY">
+      <Button fx:id="playButton" layoutX="537.0" layoutY="499.0" mnemonicParsing="false" onAction="#playgame" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="PLAY">
          <font>
             <Font size="58.0" />
          </font>
       </Button>
+      <Button layoutX="87.0" layoutY="635.0" mnemonicParsing="false" text="Quit" />
+      <Button layoutX="604.0" layoutY="648.0" mnemonicParsing="false" text="Achiments" />
+      <Label layoutX="576.0" layoutY="268.0" stylesheets="@../styles/universalStyle.css" text="Label" />
    </children>
 </AnchorPane>

@@ -1,0 +1,14 @@
+
+
+.scene-background{
+    background-color: #09cdda;
+}
+
+.play-button{
+    background-color: #09cdda;
+    -fx-text-fill: white;
+}
+
+.play-button:hover{
+    background-color: #09babe;
+}
