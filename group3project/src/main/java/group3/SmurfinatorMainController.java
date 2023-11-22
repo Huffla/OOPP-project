@@ -1,5 +1,6 @@
 package group3;
 
+import group3.modelFolder.Model;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -12,7 +13,7 @@ public class SmurfinatorMainController implements ControllerInitializer {
     private Rectangle buttonContainer;
     @FXML
     private Button settingsButton;
-
+    
     @Override
     public void initialize() {
         settingsButtonBuilder();
@@ -35,5 +36,6 @@ public class SmurfinatorMainController implements ControllerInitializer {
     @FXML
     private void quitpopup() {
         QuitMenuLoader.showPopup("stages/quitpopup.fxml", "Settings");
+        
     }
 }

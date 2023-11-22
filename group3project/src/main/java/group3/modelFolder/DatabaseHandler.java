@@ -49,7 +49,7 @@ public abstract class DatabaseHandler {
             objout.writeObject(data_list);
             objout.close();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+            
             e.printStackTrace();
         }
     }

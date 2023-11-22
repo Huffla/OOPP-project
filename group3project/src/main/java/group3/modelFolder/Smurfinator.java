@@ -13,20 +13,43 @@ public class Smurfinator {
     Character guessedCharacter;
     Random rn = new Random();
     Boolean characterCreatingState = false;
+    int questionsSinceLastGuess = 0;
+    CharacterFactory cFactory = new CharacterFactory();
+    final int timeToGuess = 10;
 
     public Smurfinator(ArrayList<Question> q, ArrayList<Trait> t, ArrayList<Character> c, User u){
         this.questions = q;
-        this.askableQuestions = (ArrayList<Question>)q.clone();
+        this.askableQuestions = copyList(q);
         this.traits = t;
         this.characters = c;
         this.user = u;
     }
     
-    private Question getNextQuestion(){
+    private ArrayList<Question> copyList(ArrayList<Question> q) {
+        ArrayList<Question> list = new ArrayList<>();
+        for(Question question: q){
+            Trait t = question.getQuestionTrait();
+            if(question.getClass() == MultipleChoiceQuestion.class){
+                list.add(new MultipleChoiceQuestion(question.getQuestionText(),new Trait(t.getName(), t.get_amount_of_trait())));
+            } else if(question.getClass() == rangeQuestion.class){
+                list.add(new rangeQuestion(question.getQuestionText(),new Trait(t.getName(), t.get_amount_of_trait())));
+            }
+        }
+        return list;
+    }
+    
+    /**
+     * @return Returns a question if there exists one otherwise null
+     */
+    private Question getNextQuestion() throws NullPointerException{
+        if(askableQuestions.size() == 0){
+            throw new NullPointerException();
+        }
         int qInt = rn.nextInt(0, askableQuestions.size());
         Question tempQ = askableQuestions.get(qInt);
         askableQuestions.remove(qInt);
         return tempQ;
+
     }
 
     private Character calculateGuess(){
@@ -43,7 +66,12 @@ public class Smurfinator {
         }
         return guess;
     }
-
+    
+    /**
+     * @param c
+     * @param q
+     * @return "Distance" between the value that the player placed in the trait and the character that is being compareds trait.
+     */
     private Double calculateDifference(Character c, Question q) {
         Double currentValue;
         String traitName = q.getQuestionTrait().getName();
@@ -61,34 +89,53 @@ public class Smurfinator {
         return currentValue;
     }
 
-    public void update(){
+    //TODO Figure out how the controller answers questions. 
+    //TODO FIgure out how the controller answers when the user is given a prompt to create a new character.
+    public Question update(){
         
         Question currentQuestion;
-
+        
         if(characterCreatingState == false){
-            currentQuestion = getNextQuestion();
-            //TODO send new question to view
-            /*
-            if (charactersRemaining.size() == 1) {
-                guessedCharacter = charactersRemaining.get(0);
-                // TODO send character to view
-
-            } else if (charactersRemaining.size() == 0) {
-                characterCreatingState = true;
+            try {
+                currentQuestion = getNextQuestion();
+            } catch (NullPointerException e) {
+                //TODO controller must realize when this happens and update the buttons so they correspond to the correct event.
+                return new Question("Create new character?",new Trait("null", 0.0)) {
+                    
+                };
             }
-             */
+            
+            
+            questionsSinceLastGuess++;
 
-
-
-        }
+            if(questionsSinceLastGuess == timeToGuess){
+                questionsSinceLastGuess = 0;
+                this.guessedCharacter = calculateGuess();
+            }
+            
+    
+        }    
         else{
             // Keep asking to get trait results
-            currentQuestion = getNextQuestion();
+            try {
+                currentQuestion = getNextQuestion();
+            } catch (NullPointerException e) {
+                //TODO controller must realize when this happens and update the buttons so they correspond to the correct event.
+                return new Question("Create new character?",new Trait("null", 0.0)) {
+                    
+                };
+            }
+            
             //TODO send new question to view
 
         }
+        return currentQuestion;
     }
-    
+
+    public void createNewCharacter(String name){
+        characters.add(cFactory.createCharacter(accurateTraits, name)) ;
+    }    
+
     public void setStateCreateCharacter(){
         characterCreatingState = true;
     }
@@ -99,9 +146,10 @@ public class Smurfinator {
 
     
     public void reset(){
-        askableQuestions = (ArrayList<Question>)questions.clone();
         accurateTraits.clear();
         askableQuestions.clear();
+        askableQuestions = copyList(questions);
+        characterCreatingState = false;
 
     }
 

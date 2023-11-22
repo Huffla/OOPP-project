@@ -7,13 +7,13 @@ public class CharacterFactory {
 
     public CharacterFactory(){
     }
-    public static Character createCharacter(ArrayList<Trait> characterTraits, String name, Image characterImage) {
+    public  Character createCharacter(ArrayList<Trait> characterTraits, String name, Image characterImage) {
         return new Character(characterTraits, name, characterImage);
     }
-    public static Character createCharacter(ArrayList<Trait> characterTraits, String name) {
+    public  Character createCharacter(ArrayList<Trait> characterTraits, String name) {
         return new Character(characterTraits, name);
     }
-    public static Character createCharacter(String name) {
+    public  Character createCharacter(String name) {
         return new Character(name);
     }
 }
