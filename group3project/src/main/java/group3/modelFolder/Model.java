@@ -9,28 +9,37 @@ public class Model {
     ArrayList<Character> character_list;
     ArrayList<Question> question_list;
     UserDatabaseHandler user_handler;
-    TraitHandler trait_handler = new TraitHandler();
+    TraitDatabaseHandler trait_handler;
     CharacterDatabaseHandler character_handler = new CharacterDatabaseHandler();
-    QuestionHandler question_handler = new QuestionHandler();
+    QuestionDatabaseHandler question_handler;
     LoginAuth loginAuth;
+    QuestionInitializer qi;
+    TraitIntitializer ti;
     public Smurfinator smurfinator;
 
     private static Model instance;
     //TODO fixa att smurfinator bara körs om man e inloggad, sätter user till null så länge
-    private Model(String user_file_name){
+    private Model(String user_file_name, String questions_file_name, String traits_file_name){
         user_handler = new UserDatabaseHandler(user_file_name);
+        question_handler  = new QuestionDatabaseHandler(questions_file_name);
+        trait_handler =  new TraitDatabaseHandler(traits_file_name);
         user_list = user_handler.getUsers();
         traits_list = trait_handler.getTraits();
         character_list = character_handler.getCharacters();
         question_list = question_handler.getQuestions();
         loginAuth = new LoginAuth(user_handler.getUsers());
+        ti = new TraitIntitializer(traits_file_name);
+        ti.initialize();
+        qi = new QuestionInitializer(questions_file_name);
+        qi.initialize(); // initializes the question database with questions and their corresponding trait, remove if you do not want to create new each time
+        
         smurfinator = new Smurfinator(question_list, traits_list, character_list, null);
 
     }
 
-    public static Model getInstance(String user_file_name){
+    public static Model getInstance(String user_file_name,String questions_file_name, String traits_file_name){
         if (instance == null){
-            instance = new Model(user_file_name);
+            instance = new Model(user_file_name,questions_file_name,traits_file_name);
         }
         return instance;
     }
@@ -84,6 +93,12 @@ public class Model {
             System.out.println("Could not clear list");
         }
         
+    }
+
+    public void addQuestion(Question q){
+        question_handler.addQuestion(q);
+        question_list = question_handler.getQuestions();
+    
     }
     // removes a user object from the list of users
     public void removeUser(User u){

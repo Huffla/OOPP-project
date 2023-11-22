@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class DatabaseTest {
     
     UserDatabaseHandler dh = new UserDatabaseHandler("UsersTest.txt");
-    Model tmodel = Model.getInstance("UserTest.txt");
+    Model tmodel = Model.getInstance("UserTest.txt","Questions.txt","Traits.txt");
     
     @Test
     void setUp(){

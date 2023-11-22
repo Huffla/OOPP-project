@@ -2,10 +2,10 @@ package group3.modelFolder;
 
 import java.util.ArrayList;
 
-public class TraitHandler extends DatabaseHandler{
+public class TraitDatabaseHandler extends DatabaseHandler{
 
-    public TraitHandler() {
-        super("Traits.txt");
+    public TraitDatabaseHandler(String s) {
+        super(s);
 
     }
     public ArrayList<Trait> getTraits(){

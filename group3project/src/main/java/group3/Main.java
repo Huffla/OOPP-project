@@ -11,7 +11,7 @@ public class Main {
     static Model model;
     
     public static void main(String[] args) {
-        model = Model.getInstance("Users.txt");
+        model = Model.getInstance("Users.txt","Questions.txt","Traits.txt");
 
         MainMenu.launchapp(args);
     }

@@ -150,16 +150,24 @@ public class Smurfinator {
 
     public void answerYes(){
          accurateTraits.add(new Trait(currentTrait.getName(), 1.0));
+         update();
     }
 
     public void answerNo(){
          accurateTraits.add(new Trait(currentTrait.getName(), 0.0));
+         update();
     }
     public void answerDontKnow(){
         accurateTraits.add(new Trait(currentTrait.getName(), 0.5));
+        update();
     }
     public void answerRange(double d){
         accurateTraits.add(new Trait(currentTrait.getName(), d));
+        update();
+    }
+
+    public Question getCurrentQuestion(){
+        return currentQuestion;
     }
 
     
