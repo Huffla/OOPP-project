@@ -16,6 +16,8 @@ public class Smurfinator {
     int questionsSinceLastGuess = 0;
     CharacterFactory cFactory = new CharacterFactory();
     final int timeToGuess = 10;
+    Question currentQuestion;
+    Trait currentTrait;
 
     public Smurfinator(ArrayList<Question> q, ArrayList<Trait> t, ArrayList<Character> c, User u){
         this.questions = q;
@@ -47,6 +49,8 @@ public class Smurfinator {
         }
         int qInt = rn.nextInt(0, askableQuestions.size());
         Question tempQ = askableQuestions.get(qInt);
+        currentQuestion = tempQ;
+        currentTrait = tempQ.getQuestionTrait();
         askableQuestions.remove(qInt);
         return tempQ;
 
@@ -142,6 +146,20 @@ public class Smurfinator {
     
     public Character getGuessedCharacter(){
         return guessedCharacter;
+    }
+
+    public void answerYes(){
+         accurateTraits.add(new Trait(currentTrait.getName(), 1.0));
+    }
+
+    public void answerNo(){
+         accurateTraits.add(new Trait(currentTrait.getName(), 0.0));
+    }
+    public void answerDontKnow(){
+        accurateTraits.add(new Trait(currentTrait.getName(), 0.5));
+    }
+    public void answerRange(double d){
+        accurateTraits.add(new Trait(currentTrait.getName(), d));
     }
 
     

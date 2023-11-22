@@ -13,6 +13,8 @@ public class SmurfinatorMainController implements ControllerInitializer {
     private Rectangle buttonContainer;
     @FXML
     private Button settingsButton;
+
+    Model model = Model.getInstance("Users.txt");
     
     @Override
     public void initialize() {
@@ -39,7 +41,8 @@ public class SmurfinatorMainController implements ControllerInitializer {
         
     }
 
-    @FXML void gobackQuestion(){
+    @FXML 
+    private void gobackQuestion(){
         
     }
 }
