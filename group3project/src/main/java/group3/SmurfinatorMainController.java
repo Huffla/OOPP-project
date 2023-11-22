@@ -38,4 +38,8 @@ public class SmurfinatorMainController implements ControllerInitializer {
         QuitMenuLoader.showPopup("stages/quitpopup.fxml", "Settings");
         
     }
+
+    @FXML void gobackQuestion(){
+        
+    }
 }

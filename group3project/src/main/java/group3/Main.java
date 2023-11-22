@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         model = Model.getInstance("Users.txt");
 
-        MainMenu.test(args);
+        MainMenu.launchapp(args);
     }
     
        
