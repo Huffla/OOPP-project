@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,12 +13,12 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: f5f5dc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3.SmurfinatorMainController">
    <children>
       <Button layoutX="626.0" layoutY="607.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="121.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="BACK" />
-      <AnchorPane fx:id="buttonAnchor" layoutX="626.0" layoutY="297.0" prefHeight="306.0" prefWidth="399.0">
+      <AnchorPane fx:id="buttonAnchorPane" layoutX="626.0" layoutY="297.0" prefHeight="306.0" prefWidth="399.0" visible="false">
          <children>
             <Rectangle fx:id="buttonContainer" arcHeight="5.0" arcWidth="5.0" fill="#ffe39b" height="292.0" layoutX="-2.0" layoutY="13.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="379.0" />
-            <Button layoutX="76.0" layoutY="29.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="222.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="YES" />
-            <Button layoutX="76.0" layoutY="120.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="221.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="NO" />
-            <Button layoutX="76.0" layoutY="214.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="222.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="DON'T KNOW" />
+            <Button fx:id="yesButton" layoutX="76.0" layoutY="29.0" mnemonicParsing="false" onAction="#yesPressed" prefHeight="74.0" prefWidth="222.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="YES" />
+            <Button fx:id="noButton" layoutX="76.0" layoutY="120.0" mnemonicParsing="false" onAction="#noPressed" prefHeight="74.0" prefWidth="221.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="NO" />
+            <Button fx:id="dontknowButton" layoutX="76.0" layoutY="214.0" mnemonicParsing="false" onAction="#dontknowPressed" prefHeight="74.0" prefWidth="222.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="DON'T KNOW" />
          </children>
       </AnchorPane>
       <ImageView fx:id="smurfwizard" fitHeight="558.0" fitWidth="391.0" layoutX="119.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="70.45928955078125" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="770.0" AnchorPane.topAnchor="135.0">
@@ -44,5 +45,13 @@
          </children>
       </AnchorPane>
       <Button fx:id="settingsButton" layoutX="48.0" layoutY="598.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#quitpopup" prefHeight="70.0" prefWidth="70.0" styleClass="settings-button" stylesheets="@../styles/buttonStyle.css" />
+      <AnchorPane fx:id="sliderAnchorPane" layoutX="626.0" layoutY="297.0" prefHeight="306.0" prefWidth="399.0">
+         <children>
+            <Rectangle fx:id="buttonContainer1" arcHeight="5.0" arcWidth="5.0" fill="#ffe39b" height="292.0" layoutX="-2.0" layoutY="13.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="379.0" />
+            <Button layoutX="76.0" layoutY="214.0" mnemonicParsing="false" onAction="#dontknowPressed" prefHeight="74.0" prefWidth="222.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="DON'T KNOW" />
+            <Slider fx:id="answerSlider" layoutX="80.0" layoutY="79.0" max="1.0" prefHeight="30.0" prefWidth="222.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+            <Button fx:id="nextButton" layoutX="77.0" layoutY="116.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="222.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="NEXT" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

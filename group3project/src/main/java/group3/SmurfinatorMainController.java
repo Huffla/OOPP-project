@@ -7,10 +7,13 @@ import group3.modelFolder.rangeQuestion;
 import group3.modelFolder.MultipleChoiceQuestion;
 import group3.modelFolder.Question;
 import group3.modelFolder.rangeQuestion;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
@@ -26,7 +29,13 @@ public class SmurfinatorMainController implements ControllerInitializer {
     private Button noButton;
     @FXML 
     private Button dontknowButton;
-    
+    @FXML
+    private Slider answerSlider;
+    @FXML
+    private AnchorPane buttonAnchorPane;
+    @FXML
+    private AnchorPane sliderAnchorPane;
+
     private Question question;
 
     @FXML
@@ -41,6 +50,7 @@ public class SmurfinatorMainController implements ControllerInitializer {
         questionTitle.setText(question.getQuestionText());
         buttonContainer.setArcWidth(40.0);
         buttonContainer.setArcHeight(40.0);
+        displayQuestion();
     }
 
     private void settingsButtonBuilder() {
@@ -66,17 +76,36 @@ public class SmurfinatorMainController implements ControllerInitializer {
     }
 
     @FXML
-    private void yesPressed(){
+    private void yesPressed(ActionEvent event){
         model.smurfinator.answerYes();
-        question = model.smurfinator.getCurrentQuestion();
+        updateQuestion();
+    }
+
+    @FXML
+    private void noPressed(ActionEvent event){
+        model.smurfinator.answerNo();
+        updateQuestion();
+    }
+
+    @FXML
+    private void dontknowPressed(ActionEvent event){
+        model.smurfinator.answerDontKnow();
+        updateQuestion();
     }
 
     private void displayQuestion(){
         if(question.getClass() == MultipleChoiceQuestion.class){
-            //TODO fixa sen
+            sliderAnchorPane.setVisible(false);
+            buttonAnchorPane.setVisible(true);
         }
         else if(question.getClass() == rangeQuestion.class){
-            //TODO också fixa sen
+            buttonAnchorPane.setVisible(false);
+            sliderAnchorPane.setVisible(true);
         }
+    }
+    private void updateQuestion(){
+        question = model.smurfinator.getCurrentQuestion();
+        questionTitle.setText(question.getQuestionText());
+        displayQuestion();
     }
 }

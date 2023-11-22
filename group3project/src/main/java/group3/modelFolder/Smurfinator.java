@@ -8,7 +8,7 @@ public class Smurfinator {
     ArrayList<Trait> traits;
     ArrayList<Character> characters;
     User user;
-    ArrayList<Trait> accurateTraits;
+    ArrayList<Trait> accurateTraits = new ArrayList<>();
     ArrayList<Question> askedQuestions;
     Character guessedCharacter;
     Random rn = new Random();
@@ -25,7 +25,12 @@ public class Smurfinator {
         this.traits = t;
         this.characters = c;
         this.user = u;
-        currentQuestion = getNextQuestion();
+        try {
+            currentQuestion = getNextQuestion();
+        } catch (NullPointerException e) {
+            System.out.println("Bork no get kuestion");
+        }
+        
     }
     
     private ArrayList<Question> copyList(ArrayList<Question> q) {
@@ -138,7 +143,7 @@ public class Smurfinator {
     }
 
     public void createNewCharacter(String name){
-        characters.add(cFactory.createCharacter(accurateTraits, name)) ;
+        characters.add(cFactory.createCharacter((ArrayList<Trait>)accurateTraits.clone(), name)) ;
     }    
 
     public void setStateCreateCharacter(){
