@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import group3.modelFolder.*;
 
 public class LoginAuthTest {
-    Model model = Model.getInstance("UsersTest.txt","Questions.txt");
+    Model model = Model.getInstance("UsersTest.txt","Questions.txt","Traits.txt");
     
     LoginAuth loginAuth = new LoginAuth(model.getUsers());
     

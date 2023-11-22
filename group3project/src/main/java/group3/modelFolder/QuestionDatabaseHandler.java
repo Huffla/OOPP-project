@@ -24,9 +24,7 @@ public class QuestionDatabaseHandler extends DatabaseHandler{
     public void addQuestion(Question q) {
         addToList(q);
     }
-    public void clearQuestions(){
-        super.data_list.clear();
-    }
+    
 
 
 }
