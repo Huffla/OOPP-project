@@ -27,9 +27,11 @@ public abstract class DatabaseHandler {
             data_list = loadFromFile();
         } catch (Exception e) {
             System.out.println("No file found");
+            System.out.println("File created!");
             data_list = new ArrayList();
             
             writeToFile();
+            
         }
     }
 

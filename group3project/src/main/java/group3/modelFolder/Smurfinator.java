@@ -25,6 +25,7 @@ public class Smurfinator {
         this.traits = t;
         this.characters = c;
         this.user = u;
+        currentQuestion = getNextQuestion();
     }
     
     private ArrayList<Question> copyList(ArrayList<Question> q) {
