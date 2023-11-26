@@ -1,5 +1,6 @@
 package group3;
 
+import group3.modelFolder.Character;
 import group3.modelFolder.Model;
 import group3.modelFolder.MultipleChoiceQuestion;
 import group3.modelFolder.Question;
@@ -107,5 +108,9 @@ public class SmurfinatorMainController implements ControllerInitializer {
         question = model.smurfinator.getCurrentQuestion();
         questionTitle.setText(question.getQuestionText());
         displayQuestion();
+    }
+
+    public void guessCharacter(Character c){
+        //TODO display screen with guessed character and get a button
     }
 }

@@ -1,5 +1,8 @@
 package group3.modelFolder;
 import java.util.Random;
+
+import group3.SmurfinatorMainController;
+
 import java.util.ArrayList;
 
 public class Smurfinator {
@@ -16,9 +19,12 @@ public class Smurfinator {
     Boolean characterCreatingState = false;
     int questionsSinceLastGuess = 0;
     CharacterFactory cFactory = new CharacterFactory();
-    final int timeToGuess = 10;
+    final int timeToGuess = 5;
     Question currentQuestion;
     Trait currentTrait;
+    private String createdCharacterName;
+
+
     
 
     public Smurfinator(ArrayList<Question> q, ArrayList<Trait> t, ArrayList<Character> c, User u){
@@ -113,40 +119,43 @@ public class Smurfinator {
 
     //TODO Figure out how the controller answers questions. 
     //TODO FIgure out how the controller answers when the user is given a prompt to create a new character.
-    public Question update(){
+    public void update(){
         
-        Question currentQuestion;
+        
         
         if(characterCreatingState == false){
             try {
-                currentQuestion = getNextQuestion();
+                this.currentQuestion = getNextQuestion();
             } catch (NullPointerException e) {
                 //TODO controller must realize when this happens and update the buttons so they correspond to the correct event.
-                return new Question("Create new character?",new Trait("null", 0.0)) {
-                };
+                
             }
             questionsSinceLastGuess++;
 
-            if(questionsSinceLastGuess == timeToGuess){
-                questionsSinceLastGuess = 0;
+            if(askableQuestions.size() == 0){
+                
                 this.guessedCharacter = calculateGuess();
+                SmurfinatorMainController sm = new SmurfinatorMainController();
+                sm.guessCharacter(guessedCharacter);
             }
         }    
         else{
             // Keep asking to get trait results
+            if(askableQuestions.size() == 0){
+                createNewCharacter(createdCharacterName);
+            }
             try {
-                currentQuestion = getNextQuestion();
+                this.currentQuestion = getNextQuestion();
             } catch (NullPointerException e) {
                 //TODO controller must realize when this happens and update the buttons so they correspond to the correct event.
-                return new Question("Create new character?",new Trait("null", 0.0)) {
-                    
-                };
+                System.out.println("tried to get from an empty list");
+                
             }
             
             //TODO send new question to view
 
         }
-        return currentQuestion;
+        
     }
     // Removes questions that are no longer relevant when considering the previous questions asked.
     private void updateRemainingCharacters(Double d){
@@ -162,7 +171,9 @@ public class Smurfinator {
             }
         }
     }   
-    
+    public void setCharacterName(String s){
+        createdCharacterName = s;
+    }
 
     public void createNewCharacter(String name){
         characters.add(cFactory.createCharacter(askedTraits, name)) ;
@@ -205,6 +216,7 @@ public class Smurfinator {
         askedTraits.clear();
         askableQuestions.clear();
         askableQuestions = copyList(questions);
+        remainingCharacters = (ArrayList<Character>)characters.clone();
         characterCreatingState = false;
 
     }
