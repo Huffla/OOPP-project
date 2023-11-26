@@ -7,8 +7,9 @@ public class Smurfinator {
     ArrayList<Question> askableQuestions;
     ArrayList<Trait> traits;
     ArrayList<Character> characters;
+    ArrayList<Character> remainingCharacters;
     User user;
-    ArrayList<Trait> accurateTraits = new ArrayList<>();
+    ArrayList<Trait> askedTraits;
     ArrayList<Question> askedQuestions;
     Character guessedCharacter;
     Random rn = new Random();
@@ -18,21 +19,29 @@ public class Smurfinator {
     final int timeToGuess = 10;
     Question currentQuestion;
     Trait currentTrait;
+    
 
     public Smurfinator(ArrayList<Question> q, ArrayList<Trait> t, ArrayList<Character> c, User u){
         this.questions = q;
         this.askableQuestions = copyList(q);
+        this.remainingCharacters = (ArrayList<Character>)c.clone();
         this.traits = t;
         this.characters = c;
         this.user = u;
         try {
             currentQuestion = getNextQuestion();
         } catch (NullPointerException e) {
-            System.out.println("Bork no get kuestion");
+            System.out.println("AAA Bork");
         }
         
     }
+
     
+    /**
+     * @param q
+     * @return
+     *  Deep copy of a list of questions.
+     */
     private ArrayList<Question> copyList(ArrayList<Question> q) {
         ArrayList<Question> list = new ArrayList<>();
         for(Question question: q){
@@ -49,6 +58,7 @@ public class Smurfinator {
     /**
      * @return Returns a question if there exists one otherwise null
      */
+    // Howl skrev den här.
     private Question getNextQuestion() throws NullPointerException{
         if(askableQuestions.size() == 0){
             throw new NullPointerException();
@@ -61,12 +71,14 @@ public class Smurfinator {
         return tempQ;
 
     }
+    
 
+   
     private Character calculateGuess(){
         Character guess = new Character("null");
 
         Double previousClosestNumber = 0.0;
-        for(Character c: characters){
+        for(Character c: remainingCharacters){
             Double currentValue = 0.0;
 
             for(Question q:askedQuestions){
@@ -91,7 +103,7 @@ public class Smurfinator {
             if(t.getName() == traitName){ characterStat = t.get_amount_of_trait();
             }
         }
-        for(Trait t: accurateTraits){
+        for(Trait t: askedTraits){
             if(t.getName() == traitName){ playerTraitStat = t.get_amount_of_trait();
             }
         }
@@ -111,19 +123,14 @@ public class Smurfinator {
             } catch (NullPointerException e) {
                 //TODO controller must realize when this happens and update the buttons so they correspond to the correct event.
                 return new Question("Create new character?",new Trait("null", 0.0)) {
-                    
                 };
             }
-            
-            
             questionsSinceLastGuess++;
 
             if(questionsSinceLastGuess == timeToGuess){
                 questionsSinceLastGuess = 0;
                 this.guessedCharacter = calculateGuess();
             }
-            
-    
         }    
         else{
             // Keep asking to get trait results
@@ -141,9 +148,24 @@ public class Smurfinator {
         }
         return currentQuestion;
     }
+    // Removes questions that are no longer relevant when considering the previous questions asked.
+    private void updateRemainingCharacters(Double d){
+        for(Character c : remainingCharacters){
+            ArrayList<Trait> tList = c.getCharacterTraits();
+            for(Trait t: tList){
+                if(t.getName().equals(currentTrait.getName())){
+                    if(!t.get_amount_of_trait().equals(currentTrait.get_amount_of_trait())){
+                        remainingCharacters.remove(c);
+                    }
+
+                }
+            }
+        }
+    }   
+    
 
     public void createNewCharacter(String name){
-        characters.add(cFactory.createCharacter((ArrayList<Trait>)accurateTraits.clone(), name)) ;
+        characters.add(cFactory.createCharacter(askedTraits, name)) ;
     }    
 
     public void setStateCreateCharacter(){
@@ -155,20 +177,22 @@ public class Smurfinator {
     }
 
     public void answerYes(){
-         accurateTraits.add(new Trait(currentTrait.getName(), 1.0));
+         askedTraits.add(new Trait(currentTrait.getName(), 1.0));
+         updateRemainingCharacters(1.0);
          update();
     }
 
     public void answerNo(){
-         accurateTraits.add(new Trait(currentTrait.getName(), 0.0));
+         askedTraits.add(new Trait(currentTrait.getName(), 0.0));
+         updateRemainingCharacters(0.0);
          update();
     }
     public void answerDontKnow(){
-        accurateTraits.add(new Trait(currentTrait.getName(), 0.5));
+        askedTraits.add(new Trait(currentTrait.getName(), 0.5));
         update();
     }
     public void answerRange(double d){
-        accurateTraits.add(new Trait(currentTrait.getName(), d));
+        askedTraits.add(new Trait(currentTrait.getName(), d));
         update();
     }
 
@@ -178,7 +202,7 @@ public class Smurfinator {
 
     
     public void reset(){
-        accurateTraits.clear();
+        askedTraits.clear();
         askableQuestions.clear();
         askableQuestions = copyList(questions);
         characterCreatingState = false;
