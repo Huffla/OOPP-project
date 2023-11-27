@@ -35,6 +35,7 @@ public class Smurfinator {
         this.characters = c;
         this.user = u;
         askedTraits = new ArrayList<>();
+        askedQuestions = new ArrayList<>();
         try {
             currentQuestion = getNextQuestion();
         } catch (NullPointerException e) {

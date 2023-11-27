@@ -73,19 +73,15 @@ public class SmurfinatorTest {
         }
     }
 
-    @Test
-    void testGetCurrentQuestion() {
-        setup();
-    }
-
-    @Test
-    void testGetGuessedCharacter() {
-        setup();
-    }
 
     @Test
     void testReset() {
         setup();
+        smurfinator.reset();
+        assertEquals(smurfinator.askedQuestions.size(), 0);
+        assertEquals(smurfinator.askableQuestions.size(),smurfinator.questions.size() );
+        assertEquals(smurfinator.askedTraits.size(), 0);
+        assertEquals(smurfinator.characterCreatingState, false);
     }
 
 
