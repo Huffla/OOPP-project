@@ -3,11 +3,13 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Polyline?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: f5f5dc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3.SmurfinatorMainController">
@@ -58,6 +60,17 @@
             <Button layoutX="76.0" layoutY="214.0" mnemonicParsing="false" onAction="#dontknowPressed" prefHeight="74.0" prefWidth="222.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="DON'T KNOW" />
             <Slider fx:id="answerSlider" layoutX="80.0" layoutY="79.0" max="1.0" prefHeight="30.0" prefWidth="222.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
             <Button fx:id="nextButton" layoutX="77.0" layoutY="116.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="222.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="NEXT" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="createsmurfcontainer" layoutX="603.0" layoutY="316.0" prefHeight="380.0" prefWidth="506.0" style="-fx-background-color: ffe39b;" visible="false">
+         <children>
+            <Label alignment="CENTER" layoutX="57.0" layoutY="14.0" prefHeight="82.0" prefWidth="391.0" text="Give your Smurf a Name" textAlignment="CENTER" />
+            <TextField fx:id="smurfname" layoutX="117.0" layoutY="117.0" prefHeight="62.0" prefWidth="266.0" promptText="Name">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <Button fx:id="submitButton" layoutX="182.0" layoutY="216.0" mnemonicParsing="false" onAction="#createNewCharacter" prefHeight="62.0" prefWidth="135.0" text="Submit" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="createnewcharactercontainer" layoutX="626.0" layoutY="310.0" prefHeight="380.0" prefWidth="479.0" style="-fx-background-color: ffe39b;" visible="false">

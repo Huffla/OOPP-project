@@ -1,5 +1,9 @@
 package group3;
 
+import java.awt.TextField;
+
+import javax.swing.Action;
+
 import group3.modelFolder.Character;
 import group3.modelFolder.Model;
 import group3.modelFolder.MultipleChoiceQuestion;
@@ -44,6 +48,12 @@ public class SmurfinatorMainController implements ControllerInitializer {
     private AnchorPane createnewcharactercontainer;
     @FXML
     private Button createcharacterButton;
+    @FXML
+    private TextField smurfname;
+    @FXML
+    private Button submitButton;
+    @FXML
+    private AnchorPane createsmurfcontainer;
 
     private Question question;
 
@@ -127,10 +137,19 @@ public class SmurfinatorMainController implements ControllerInitializer {
     }
 
     @FXML
-    private void incorrectCharacter(){
+    private void incorrectCharacter(ActionEvent event){
         guessContainer.setVisible(false);
         createnewcharactercontainer.setVisible(true);
     }
 
-    
+    @FXML
+    private void createNewCharacter(ActionEvent event){
+        String name = smurfname.getText();
+        model.smurfinator.createNewCharacter(name);
+    }
+    @FXML
+    private void startsmurfcreate(){
+         createnewcharactercontainer.setVisible(false);
+         createsmurfcontainer.setVisible(true);
+    }
 }
