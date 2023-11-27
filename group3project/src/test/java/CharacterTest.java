@@ -15,6 +15,6 @@ public class CharacterTest {
     public void CharacterPropertiesTest(){
         assertEquals(testCharacter.getName(), "Torgny"); //Fox pappa heter Torgny
         assertNull(testCharacter.getCharacterTraits());
-        assertNull(testCharacter.getCharacterImage());
+        assertNull(testCharacter.getImagePath());
     }
 }
