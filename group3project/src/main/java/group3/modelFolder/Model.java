@@ -10,7 +10,7 @@ public class Model {
     ArrayList<Question> question_list;
     UserDatabaseHandler user_handler;
     TraitDatabaseHandler trait_handler;
-    CharacterDatabaseHandler character_handler = new CharacterDatabaseHandler();
+    CharacterDatabaseHandler character_handler;
     QuestionDatabaseHandler question_handler;
     LoginAuth loginAuth;
     QuestionInitializer qi;
@@ -19,10 +19,11 @@ public class Model {
 
     private static Model instance;
     //TODO fixa att smurfinator bara körs om man e inloggad, sätter user till null så länge
-    private Model(String user_file_name, String questions_file_name, String traits_file_name){
+    private Model(String user_file_name, String questions_file_name, String traits_file_name,String characters_file_name){
         user_handler = new UserDatabaseHandler(user_file_name);
         question_handler  = new QuestionDatabaseHandler(questions_file_name);
         trait_handler =  new TraitDatabaseHandler(traits_file_name);
+        character_handler = new CharacterDatabaseHandler(characters_file_name);
         ti = new TraitIntitializer(traits_file_name);
         ti.initialize();
         qi = new QuestionInitializer(questions_file_name);
@@ -34,13 +35,13 @@ public class Model {
         question_list = question_handler.getQuestions();
         loginAuth = new LoginAuth(user_handler.getUsers());
         
-        smurfinator = new Smurfinator(question_list, traits_list, character_list, null);
+        smurfinator = new Smurfinator(question_list, traits_list, character_list, null); //TODO current user
 
     }
 
-    public static Model getInstance(String user_file_name,String questions_file_name, String traits_file_name){
+    public static Model getInstance(String user_file_name,String questions_file_name, String traits_file_name,String characters_file_name){
         if (instance == null){
-            instance = new Model(user_file_name,questions_file_name,traits_file_name);
+            instance = new Model(user_file_name,questions_file_name,traits_file_name,characters_file_name);
         }
         return instance;
     }

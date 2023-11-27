@@ -7,7 +7,7 @@ public class CharacterFactory {
 
     public CharacterFactory(){
     }
-    public  Character createCharacter(ArrayList<Trait> characterTraits, String name, Image characterImage) {
+    public  Character createCharacter(ArrayList<Trait> characterTraits, String name, String characterImage) {
         return new Character(characterTraits, name, characterImage);
     }
     public  Character createCharacter(ArrayList<Trait> characterTraits, String name) {

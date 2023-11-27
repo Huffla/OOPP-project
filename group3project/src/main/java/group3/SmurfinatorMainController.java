@@ -60,7 +60,7 @@ public class SmurfinatorMainController implements ControllerInitializer {
     @FXML
     private Text questionTitle;
 
-    Model model = Model.getInstance("Users.txt","Questions.txt","Traits.txt");
+    Model model = Model.getInstance("Users.txt","Questions.txt","Traits.txt","Characters.txt");
     
     @Override
     public void initialize() {

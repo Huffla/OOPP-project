@@ -34,6 +34,7 @@ public class Smurfinator {
         this.traits = t;
         this.characters = c;
         this.user = u;
+        askedTraits = new ArrayList<>();
         try {
             currentQuestion = getNextQuestion();
         } catch (NullPointerException e) {
@@ -107,11 +108,13 @@ public class Smurfinator {
         Double playerTraitStat = 0.0;
         for(Trait t: c.getCharacterTraits()){
             if(t.getName() == traitName){ characterStat = t.get_amount_of_trait();
+                continue;
             }
         }
         for(Trait t: askedTraits){
             if(t.getName() == traitName){ playerTraitStat = t.get_amount_of_trait();
-            }
+                continue;
+            } 
         }
         currentValue = Math.abs(playerTraitStat-characterStat);
         return currentValue;
@@ -140,10 +143,7 @@ public class Smurfinator {
             }
         }    
         else{
-            // Keep asking to get trait results
-            if(askableQuestions.size() == 0){
-                createNewCharacter(createdCharacterName);
-            }
+            
             try {
                 this.currentQuestion = getNextQuestion();
             } catch (NullPointerException e) {
