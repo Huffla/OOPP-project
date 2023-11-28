@@ -6,9 +6,7 @@ public class rangeQuestion extends Question {
 
     }
 
-    public Trait get_ranged_result(Double result){
-        
-        //TODO return correct
-        
+    public double get_ranged_result(Double result){
+        return result;
     }
 }

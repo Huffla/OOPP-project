@@ -32,8 +32,12 @@ public class SmurfinatorMainController implements ControllerInitializer {
     private Button yesButton;
     @FXML
     private Button noButton;
-    @FXML 
+    @FXML
     private Button dontknowButton;
+    @FXML
+    private Button confirmYesGuess;
+    @FXML
+    private Button confirmNoGuess;
     @FXML
     private Slider answerSlider;
     @FXML
@@ -43,11 +47,13 @@ public class SmurfinatorMainController implements ControllerInitializer {
     @FXML
     private ImageView guessImage;
     @FXML
+    private ImageView guessDisplay;
+    @FXML
     private AnchorPane guessContainer;
     @FXML
     private AnchorPane createnewcharactercontainer;
     @FXML
-    private Button createcharacterButton;
+    private Button createCharacterButton;
     @FXML
     private TextField smurfname;
     @FXML
@@ -55,21 +61,20 @@ public class SmurfinatorMainController implements ControllerInitializer {
     @FXML
     private AnchorPane createsmurfcontainer;
 
-    private Question question;
 
     @FXML
     private Text questionTitle;
 
     Model model = Model.getInstance("Users.txt","Questions.txt","Traits.txt","Characters.txt");
-    
+
+    public SmurfinatorMainController() throws Exception {
+    }
+
     @Override
     public void initialize() {
         settingsButtonBuilder();
-        question = model.smurfinator.getCurrentQuestion();
-        questionTitle.setText(question.getQuestionText());
         buttonContainer.setArcWidth(40.0);
         buttonContainer.setArcHeight(40.0);
-        displayQuestion();
     }
 
     private void settingsButtonBuilder() {
@@ -86,48 +91,46 @@ public class SmurfinatorMainController implements ControllerInitializer {
     @FXML
     private void quitpopup() {
         QuitMenuLoader.showPopup("stages/quitpopup.fxml", "Settings");
-        
+
     }
 
-    @FXML 
+    @FXML
     private void gobackQuestion(){
-        
+
     }
 
     @FXML
     private void yesPressed(ActionEvent event){
         model.smurfinator.answerYes();
-        updateQuestion();
     }
 
     @FXML
     private void noPressed(ActionEvent event){
         model.smurfinator.answerNo();
-        updateQuestion();
     }
 
     @FXML
     private void dontknowPressed(ActionEvent event){
         model.smurfinator.answerDontKnow();
-        updateQuestion();
     }
 
-    private void displayQuestion(){
-        if(question.getClass() == MultipleChoiceQuestion.class){
+    private void displayQuestion(Question q){
+        if(q.getClass() == MultipleChoiceQuestion.class){
             sliderAnchorPane.setVisible(false);
             buttonAnchorPane.setVisible(true);
         }
-        else if(question.getClass() == rangeQuestion.class){
+        else if(q.getClass() == rangeQuestion.class){
             buttonAnchorPane.setVisible(false);
             sliderAnchorPane.setVisible(true);
         }
     }
-    private void updateQuestion(){
-        question = model.smurfinator.getCurrentQuestion();
-        questionTitle.setText(question.getQuestionText());
-        displayQuestion();
+    public void updateQuestion(Question q){
+        questionTitle.setText(q.getQuestionText());
+        displayQuestion(q);
     }
-
+    private void nameCharacter(){
+        //TODO display screen with box for entering name of created character
+    }
     public void guessCharacter(Character c){
         buttonAnchorPane.setVisible(false);
         sliderAnchorPane.setVisible(false);
@@ -149,7 +152,7 @@ public class SmurfinatorMainController implements ControllerInitializer {
     }
     @FXML
     private void startsmurfcreate(){
-         createnewcharactercontainer.setVisible(false);
-         createsmurfcontainer.setVisible(true);
+        createnewcharactercontainer.setVisible(false);
+        createsmurfcontainer.setVisible(true);
     }
 }

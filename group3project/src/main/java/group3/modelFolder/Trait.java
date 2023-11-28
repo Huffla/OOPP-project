@@ -6,6 +6,7 @@ public class Trait implements Serializable{
 
     private String name;
     private Double amountOfTrait;
+
     public Trait(String name, Double amount){
         this.name = name;
         amountOfTrait = amount;
@@ -13,7 +14,7 @@ public class Trait implements Serializable{
 
     public void setName(String name) {
         this.name = name;
-        
+
     }
 
     public String getName(){

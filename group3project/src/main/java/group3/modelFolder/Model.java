@@ -20,7 +20,7 @@ public class Model {
     Dictionary<Trait,Question> traitQuestionDict = new Hashtable<>();
     private static Model instance;
     //TODO fixa att smurfinator bara körs om man e inloggad, sätter user till null så länge
-    private Model(String user_file_name, String questions_file_name, String traits_file_name,String characters_file_name){
+    private Model(String user_file_name, String questions_file_name, String traits_file_name,String characters_file_name) throws Exception {
         user_handler = new UserDatabaseHandler(user_file_name);
         question_handler  = new QuestionDatabaseHandler(questions_file_name);
         trait_handler =  new TraitDatabaseHandler(traits_file_name);
@@ -29,18 +29,18 @@ public class Model {
         ti.initialize();
         qi = new QuestionInitializer(questions_file_name);
         qi.initialize(); // initializes the question database with questions and their corresponding trait, remove if you do not want to create new each time
-        
+
         user_list = user_handler.getUsers();
         traits_list = trait_handler.getTraits();
         character_list = character_handler.getCharacters();
-        
+
         loginAuth = new LoginAuth(user_handler.getUsers());
         initializeDict(question_handler.getQuestions());
         smurfinator = new Smurfinator(traitQuestionDict, traits_list, character_list, null); //TODO current user
 
     }
 
-    public static Model getInstance(String user_file_name,String questions_file_name, String traits_file_name,String characters_file_name){
+    public static Model getInstance(String user_file_name,String questions_file_name, String traits_file_name,String characters_file_name) throws Exception {
         if (instance == null){
             instance = new Model(user_file_name,questions_file_name,traits_file_name,characters_file_name);
         }
@@ -55,7 +55,7 @@ public class Model {
         for(int i = 0; i < questions.size(); i++){
             traitQuestionDict.put(traits_list.get(i), questions.get(i));
         }
-        
+
 
     }
     // returns the list of users
@@ -69,7 +69,7 @@ public class Model {
     public ArrayList<Character> getCharacters(){
         return character_list;
     }
-   
+
 
     // add a list of users to the database
     public void setUsers(ArrayList<User> ulist){
@@ -105,14 +105,14 @@ public class Model {
         } catch (Exception e) {
             System.out.println("Could not clear list");
         }
-        
+
     }
 
     public void addTraitWithQuestion(Question q,Trait t){
         question_handler.addQuestion(q);
         trait_handler.addTrait(t);
         traitQuestionDict.put(t, q);
-    
+
     }
     // removes a user object from the list of users
     public void removeUser(User u){
@@ -123,5 +123,5 @@ public class Model {
             e.printStackTrace();
         }
     }
-    
+
 }

@@ -21,6 +21,9 @@ public class User implements Serializable{
     public int getAmountOfContributions() {
         return amountOfContributions;
     }
+    public void increaseContributions(){
+        amountOfContributions++;
+    }
 
 
     public User(String name, int hashedPassword){
