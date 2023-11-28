@@ -16,7 +16,7 @@ public class TraitDatabaseHandler extends DatabaseHandler{
         return traits;
     }
     public void addTrait(Trait t){
-        data_list.add(t);
+        addToList(t);
     }
 
 

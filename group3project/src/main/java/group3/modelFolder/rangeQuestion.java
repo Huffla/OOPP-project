@@ -1,14 +1,14 @@
 package group3.modelFolder;
 
 public class rangeQuestion extends Question {
-    public rangeQuestion(String text, Trait trait){
-        super(text, trait);
+    public rangeQuestion(String text){
+        super(text);
 
     }
 
     public Trait get_ranged_result(Double result){
         
-        return new Trait(this.getQuestionTrait().getName(),result);
+        //TODO return correct
         
     }
 }

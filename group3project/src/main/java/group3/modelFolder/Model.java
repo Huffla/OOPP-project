@@ -2,12 +2,13 @@ package group3.modelFolder;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.Hashtable;
 
 public class Model {
     ArrayList<User> user_list;
     ArrayList<Trait> traits_list;
     ArrayList<Character> character_list;
-    ArrayList<Question> question_list;
     UserDatabaseHandler user_handler;
     TraitDatabaseHandler trait_handler;
     CharacterDatabaseHandler character_handler;
@@ -16,7 +17,7 @@ public class Model {
     QuestionInitializer qi;
     TraitIntitializer ti;
     public Smurfinator smurfinator;
-
+    Dictionary<Trait,Question> traitQuestionDict = new Hashtable<>();
     private static Model instance;
     //TODO fixa att smurfinator bara körs om man e inloggad, sätter user till null så länge
     private Model(String user_file_name, String questions_file_name, String traits_file_name,String characters_file_name){
@@ -32,10 +33,10 @@ public class Model {
         user_list = user_handler.getUsers();
         traits_list = trait_handler.getTraits();
         character_list = character_handler.getCharacters();
-        question_list = question_handler.getQuestions();
-        loginAuth = new LoginAuth(user_handler.getUsers());
         
-        smurfinator = new Smurfinator(question_list, traits_list, character_list, null); //TODO current user
+        loginAuth = new LoginAuth(user_handler.getUsers());
+        initializeDict(question_handler.getQuestions());
+        smurfinator = new Smurfinator(traitQuestionDict, traits_list, character_list, null); //TODO current user
 
     }
 
@@ -44,6 +45,18 @@ public class Model {
             instance = new Model(user_file_name,questions_file_name,traits_file_name,characters_file_name);
         }
         return instance;
+    }
+    // initializesDictionary of Traits as keys and questions as values.
+    private void initializeDict(ArrayList<Question> questions) throws Exception{
+        if(questions.size() != traits_list.size()){
+            System.out.println("Question and trait lists are not of the same length");
+            throw new Exception();
+        }
+        for(int i = 0; i < questions.size(); i++){
+            traitQuestionDict.put(traits_list.get(i), questions.get(i));
+        }
+        
+
     }
     // returns the list of users
     public ArrayList<User> getUsers(){
@@ -56,9 +69,7 @@ public class Model {
     public ArrayList<Character> getCharacters(){
         return character_list;
     }
-    public ArrayList<Question> getQuestions(){
-        return question_list;
-    }
+   
 
     // add a list of users to the database
     public void setUsers(ArrayList<User> ulist){
@@ -97,9 +108,10 @@ public class Model {
         
     }
 
-    public void addQuestion(Question q){
+    public void addTraitWithQuestion(Question q,Trait t){
         question_handler.addQuestion(q);
-        question_list = question_handler.getQuestions();
+        trait_handler.addTrait(t);
+        traitQuestionDict.put(t, q);
     
     }
     // removes a user object from the list of users

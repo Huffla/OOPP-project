@@ -1,22 +1,18 @@
 package group3.modelFolder;
 
-import java.io.Serializable;
-
-public abstract class Question implements Serializable{
+public class Question {
 
     private final String questionText;
-    private final Trait questionTrait;
+    
 
-    public Question(String questionText, Trait questionTrait){
+    public Question(String questionText){
         this.questionText = questionText;
-        this.questionTrait = questionTrait;
+       
     }
 
     public String getQuestionText() {
         return questionText;
     }
-
-    public Trait getQuestionTrait() {
-        return questionTrait;
-    }
 }
+
+   

@@ -8,11 +8,11 @@ public class QuestionDatabaseHandler extends DatabaseHandler{
         super(s);
 
     }
-    public void createMultipleChoiceQuestion(String s, Trait t){
-        addToList(new MultipleChoiceQuestion(s, t));
+    public void createMultipleChoiceQuestion(String s){
+        addToList(new MultipleChoiceQuestion(s));
     }
-    public void createRangeQuestion(String s, Trait t){
-        addToList(new rangeQuestion(s, t));
+    public void createRangeQuestion(String s){
+        addToList(new rangeQuestion(s));
     }
     public ArrayList<Question> getQuestions(){
         ArrayList<Question> questions = new ArrayList<>();
