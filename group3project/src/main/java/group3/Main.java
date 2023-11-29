@@ -9,7 +9,7 @@ public class Main {
     
     public static void main(String[] args) {
         model = Model.getInstance("Users.txt","Questions.txt","Traits.txt","Characters.txt");
-        SmurfinatorMainController smufinatormaincontroller = new SmurfinatorMainController();
+        SmurfinatorMainController smufinatormaincontroller = SmurfinatorMainController.getInstance();
         MainMenuController mainmenucontroller = new MainMenuController();
         model.setMainController(mainmenucontroller);
         model.setSmurfinatorController(smufinatormaincontroller);

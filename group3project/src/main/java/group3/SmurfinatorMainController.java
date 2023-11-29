@@ -59,12 +59,20 @@ public class SmurfinatorMainController implements ControllerInitializer {
 
     @FXML
     private Text questionTitle;
-
+    private static SmurfinatorMainController instance;
   
-    public SmurfinatorMainController(){
+    private SmurfinatorMainController(){
         questionTitle = new Text();
         buttonAnchorPane = new AnchorPane();
         sliderAnchorPane = new AnchorPane();
+    }
+
+    public static SmurfinatorMainController getInstance(){
+        if(instance == null){
+        instance = new SmurfinatorMainController();
+        } 
+        return instance;
+
     }
     Model model = Model.getInstance("Users.txt","Questions.txt","Traits.txt","Characters.txt");
 
