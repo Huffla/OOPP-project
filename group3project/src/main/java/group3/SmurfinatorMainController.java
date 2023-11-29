@@ -7,6 +7,8 @@ import group3.modelFolder.Model;
 import group3.modelFolder.MultipleChoiceQuestion;
 import group3.modelFolder.Question;
 import group3.modelFolder.Smurfinator;
+import group3.modelFolder.SmurfinatorInterface;
+import group3.modelFolder.SmurfinatorObserver;
 import group3.modelFolder.rangeQuestion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,7 +20,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
-public class SmurfinatorMainController implements ControllerInitializer {
+public class SmurfinatorMainController implements ControllerInitializer, SmurfinatorObserver{
 
     @FXML
     private Rectangle buttonContainer;
@@ -62,18 +64,24 @@ public class SmurfinatorMainController implements ControllerInitializer {
     public Text questionTitle;
     
     
-    Model model;
+    SmurfinatorInterface smurfinator;
 
-    private SmurfinatorMainController(Model model){
-        this.model = model;
+    private SmurfinatorMainController(SmurfinatorInterface s){
+        smurfinator = s;
+        smurfinator.addObserver(this);
+        
     }
-    public static SmurfinatorMainController getInstance(Model  model) {
+    public static SmurfinatorMainController getInstance(SmurfinatorInterface s) {
         if (instance == null){
-            instance = new SmurfinatorMainController(model);
-            System.out.println("Bajs");
+            instance = new SmurfinatorMainController(s);
+            
         }
         return instance;
     }
+    public void makeInitialCall(){
+        smurfinator.makeInitialCall();
+    }
+    
     @Override
     public void initialize() {
         settingsButtonBuilder();
@@ -106,18 +114,28 @@ public class SmurfinatorMainController implements ControllerInitializer {
 
     @FXML
     private void yesPressed(ActionEvent event){
-        model.smurfinator.answerYes();
+        smurfinator.answerYes();
     }
 
     @FXML
     private void noPressed(ActionEvent event){
-        model.smurfinator.answerNo();
+        smurfinator.answerNo();
     }
 
     @FXML
     private void dontknowPressed(ActionEvent event){
-        model.smurfinator.answerDontKnow();
+        smurfinator.answerDontKnow();
     }
+    private void nameCharacter(){
+        //TODO display screen with box for entering name of created character
+    }
+     @FXML
+    private void createNewCharacter(ActionEvent event){
+        String name = smurfname.getText();
+        smurfinator.createNewCharacter(name);
+    }
+
+
 
     private void displayQuestion(Question q){
         if(q.getClass() == MultipleChoiceQuestion.class){
@@ -130,35 +148,29 @@ public class SmurfinatorMainController implements ControllerInitializer {
         }
     }
     public void updateQuestion(Question q){
-        System.out.println("Ok kinda workey");
+        System.out.println("Question updated!!!");
         questionTitle.setText(q.getQuestionText());
         displayQuestion(q);
     }
-    private void nameCharacter(){
-        //TODO display screen with box for entering name of created character
-    }
-    public void guessCharacter(Character c){
-        buttonAnchorPane.setVisible(false);
-        sliderAnchorPane.setVisible(false);
-        Image image = new Image(c.getImagePath());
-        guessImage.setImage(image);
-        questionTitle.setText("You are thinking of:" + c.getName());
-    }
-
+    
     @FXML
     private void incorrectCharacter(ActionEvent event){
         guessContainer.setVisible(false);
         createnewcharactercontainer.setVisible(true);
     }
 
-    @FXML
-    private void createNewCharacter(ActionEvent event){
-        String name = smurfname.getText();
-        model.smurfinator.createNewCharacter(name);
-    }
+   
     @FXML
     private void startsmurfcreate(){
         createnewcharactercontainer.setVisible(false);
         createsmurfcontainer.setVisible(true);
+    }
+    @Override
+    public void makeGuess(Character c) {
+        buttonAnchorPane.setVisible(false);
+        sliderAnchorPane.setVisible(false);
+        Image image = new Image(c.getImagePath());
+        guessImage.setImage(image);
+        questionTitle.setText("You are thinking of:" + c.getName());
     }
 }

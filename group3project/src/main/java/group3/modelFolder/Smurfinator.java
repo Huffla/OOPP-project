@@ -9,12 +9,12 @@ import group3.SmurfinatorMainController;
 
 
 
-public class Smurfinator {
+public class Smurfinator implements SmurfinatorInterface{
     ArrayList<Trait> traitsLeft;
     ArrayList<Character> characters;
     ArrayList<Character> remainingCharacters;
     User user;
-    ArrayList<Trait> askedTraits;
+    ArrayList<Trait> askedTraits = new ArrayList<>();
     Character guessedCharacter;
     Random rn = new Random();
     Boolean characterCreatingState = false;
@@ -25,30 +25,52 @@ public class Smurfinator {
     Trait currentTrait;
     private String createdCharacterName;
     Dictionary<Trait,Question> traitQuestionDict;
-    SmurfinatorMainController smurfinatorMainController;
+    private ArrayList<SmurfinatorObserver> smurfObservers = new ArrayList<>();
     
 
 
-    public Smurfinator(Dictionary<Trait,Question> traitQuestionDict, ArrayList<Character> c, User u, SmurfinatorMainController smc) {
+    public Smurfinator(Dictionary<Trait,Question> traitQuestionDict, ArrayList<Character> c, User u) {
         this.remainingCharacters = (ArrayList<Character>)c.clone();
         this.characters = c;
         this.user = u;
         this.traitQuestionDict = traitQuestionDict;
         this.traitsLeft = getTraitsFromDictionary();
-        this.smurfinatorMainController = smc;
         
         try {
             getNextQuestion();
-            smurfinatorMainController.updateQuestion(currentQuestion);
         } catch (NullPointerException e) {
             System.out.println("AAA Bork");
         }
-       
+        
+        
+        
         
         
         
     }
-   
+
+    /**
+     * Must call to get the initial question for the game to start
+     */
+    public void makeInitialCall(){
+        getNextQuestion();
+        sendNextQuestionToObservers();
+    }
+    public void addObserver(SmurfinatorObserver so){
+        smurfObservers.add(so);
+    }
+    private void sendGuessToObservers(){
+        for(SmurfinatorObserver so: smurfObservers){
+            so.makeGuess(guessedCharacter);
+        }
+    }
+    private void sendNextQuestionToObservers(){
+        for(SmurfinatorObserver so: smurfObservers){
+            so.updateQuestion(currentQuestion);
+        }
+    }
+
+
     /**
      * @param q
      * @return
@@ -144,12 +166,12 @@ public class Smurfinator {
 
             }
             questionsSinceLastGuess++;
-            smurfinatorMainController.updateQuestion(currentQuestion);
+            sendNextQuestionToObservers();
             if(traitsLeft.size() == 0||questionsSinceLastGuess == timeToGuess){
 
                 this.guessedCharacter = calculateGuess();
                 
-              smurfinatorMainController.guessCharacter(guessedCharacter);
+              sendGuessToObservers();
             }
         }
         else{

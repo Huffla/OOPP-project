@@ -19,7 +19,7 @@ public class Model {
     LoginAuth loginAuth;
     QuestionInitializer qi;
     TraitIntitializer ti;
-    public Smurfinator smurfinator;
+    private Smurfinator smurfinator;
     Dictionary<Trait,Question> traitQuestionDict = new Hashtable<>();
     private static Model instance;
     private User loggedInUser;
@@ -45,7 +45,7 @@ public class Model {
         loginAuth = new LoginAuth(user_handler.getUsers());
         initializeDict(question_handler.getQuestions());
         //TODO current user
-        smurfinator = new Smurfinator(traitQuestionDict, character_list, null,SmurfinatorMainController.getInstance());
+        smurfinator = new Smurfinator(traitQuestionDict, character_list, null);
         
 
     }
@@ -56,6 +56,9 @@ public class Model {
             instance = new Model(user_file_name,questions_file_name,traits_file_name,characters_file_name);
         }
         return instance;
+    }
+    public void setMainMenuController(MainMenuController m){
+        mainmenucontroller = m;
     }
     // initializesDictionary of Traits as keys and questions as values.
     private void initializeDict(ArrayList<Question> questions) {
@@ -68,6 +71,9 @@ public class Model {
         }
 
 
+    }
+    public Smurfinator getSmurfinator(){
+        return smurfinator;
     }
     // returns the list of users
     public ArrayList<User> getUsers(){

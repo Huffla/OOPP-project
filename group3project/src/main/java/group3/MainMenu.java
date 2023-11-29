@@ -2,6 +2,7 @@ package group3;
 
 import java.io.IOException;
 
+import group3.modelFolder.Model;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,7 +13,9 @@ import javafx.stage.Stage;
 
 public class MainMenu extends Application {
     
+    
     public static void launchapp(String[] args){
+        
         launch(args);
     }
     @Override
@@ -21,9 +24,11 @@ public class MainMenu extends Application {
         String[] testArray = {};
           try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("stages/mainmenu.fxml"));
+            
+            MainMenuController controller = MainMenuController.getInstance();
+            loader.setController(controller);
             Parent root = loader.load();
 
-            MainMenuController controller = loader.getController();
             controller.initialize();
 
             Scene scene = new Scene(root);

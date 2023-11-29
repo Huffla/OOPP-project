@@ -15,9 +15,25 @@ public class MainMenuController implements ControllerInitializer {
 
     @FXML
     Button playButton;
-   public MainMenuController(){
-
+    SmurfinatorMainController controller;
+    private static MainMenuController instance;
+   private MainMenuController(SmurfinatorMainController c){
+    controller = c;
    }
+   public static MainMenuController getInstance(SmurfinatorMainController c){
+        if(instance == null){
+            
+            instance = new MainMenuController(c);
+            return instance;
+        }
+        return instance;
+    }
+    public static MainMenuController getInstance(){
+        if(instance == null){
+            throw new NullPointerException();
+        }
+        return instance;
+    }
     @Override
     public void initialize() {
 
@@ -32,11 +48,12 @@ public class MainMenuController implements ControllerInitializer {
   
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("stages/questionscene.fxml"));
-            SmurfinatorMainController controller = SmurfinatorMainController.getInstance();
             loader.setController(controller);
             Parent root = loader.load();
-            System.out.println(loader.getController().toString());    
-            
+            System.out.println(loader.getController().toString());  
+            // MAKES INITIAL CALL THAT HAS TO BE MADE FOR SMURFINATOR TO WORK  
+            //TODO 
+            controller.makeInitialCall();
             
             
             controller.initialize();
