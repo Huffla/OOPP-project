@@ -169,6 +169,7 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     public void makeGuess(Character c) {
         buttonAnchorPane.setVisible(false);
         sliderAnchorPane.setVisible(false);
+        
         Image image = new Image(c.getImagePath());
         guessImage.setImage(image);
         questionTitle.setText("You are thinking of:" + c.getName());
