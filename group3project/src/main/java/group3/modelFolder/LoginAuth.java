@@ -3,7 +3,6 @@ package group3.modelFolder;
 
 
 import java.util.ArrayList;
-import java.util.Hashtable;
 
 
 public class LoginAuth {

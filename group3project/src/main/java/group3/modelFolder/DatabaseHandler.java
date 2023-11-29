@@ -6,7 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 
 public abstract class DatabaseHandler {
@@ -27,9 +26,11 @@ public abstract class DatabaseHandler {
             data_list = loadFromFile();
         } catch (Exception e) {
             System.out.println("No file found");
+            System.out.println("File created!");
             data_list = new ArrayList();
             
             writeToFile();
+            
         }
     }
 
@@ -37,8 +38,6 @@ public abstract class DatabaseHandler {
         data_list.add(data);
         
             writeToFile();
-        
-        
         
     }
     protected void writeToFile() {
@@ -49,7 +48,7 @@ public abstract class DatabaseHandler {
             objout.writeObject(data_list);
             objout.close();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+            
             e.printStackTrace();
         }
     }

@@ -27,6 +27,9 @@ public class MainMenuController implements ControllerInitializer {
 
 
 
+    public MainMenuController(){
+        
+    }
     @Override
     public void initialize() {
 

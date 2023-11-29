@@ -15,20 +15,15 @@
     -fx-background-color: #09babe;
 }
 
-.yesquitbutton{
-    -fx-background-color: white;
-}
 
-.yesquitbutton:hover{
-    -fx-background-color: rgb(231, 231, 231);
-}
-
-.noquitbutton{
+.menu-buttons{
     -fx-background-color: #09cdda;
+    -fx-font-family: "Boldstrom";
+    -fx-font-size: 35;
 }
 
-.noquitbutton:hover{
-    -fx-background-color: #09babe;
+.menu-buttons:hover{
+    -fx-background-color:#09babe;
+    -fx-font-family: "Boldstrom";
+    -fx-font-size: 35;
 }
-
-

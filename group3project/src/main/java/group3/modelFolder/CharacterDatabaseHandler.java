@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class CharacterDatabaseHandler extends DatabaseHandler{
 
-    public CharacterDatabaseHandler() {
-        super("Characters.txt");
+    public CharacterDatabaseHandler(String name) {
+        super(name);
         
     }
     public ArrayList<Character> getCharacters(){
@@ -16,8 +16,8 @@ public class CharacterDatabaseHandler extends DatabaseHandler{
         return characters;
     }
 
-    public void removeCharacter(){
-    
+    public void removeCharacter(Character c){
+        
     }
     
     
