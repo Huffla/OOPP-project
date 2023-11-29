@@ -2,31 +2,65 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3.MainMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="scene-background" stylesheets="@../styles/mainmenuStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3.MainMenuController">
    <children>
-      <ImageView fitHeight="680.0" fitWidth="1280.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="680.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/Smurf-village-v1.png" />
          </image>
       </ImageView>
-      <Text layoutX="382.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Smurf Guess Quest" AnchorPane.bottomAnchor="300.1611328125" AnchorPane.leftAnchor="382.0" AnchorPane.rightAnchor="382.037109375" AnchorPane.topAnchor="298.8017578125">
+      <Button fx:id="playButton" layoutX="507.0" layoutY="464.0" mnemonicParsing="false" onAction="#playgame" styleClass="play-button" stylesheets="@../styles/mainmenuStyle.css" text="PLAY">
          <font>
-            <Font size="91.0" />
+            <Font name="Georgia Pro Cond Black" size="55.0" />
          </font>
-      </Text>
-      <Button fx:id="playButton" layoutX="537.0" layoutY="499.0" mnemonicParsing="false" onAction="#playgame" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="PLAY">
-         <font>
-            <Font size="58.0" />
-         </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Button>
-      <Button layoutX="87.0" layoutY="635.0" mnemonicParsing="false" text="Quit" />
-      <Button layoutX="604.0" layoutY="648.0" mnemonicParsing="false" text="Achiments" />
-      <Label layoutX="576.0" layoutY="268.0" stylesheets="@../styles/universalStyle.css" text="Label" />
+      <Button layoutX="28.0" layoutY="617.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="83.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="EXIT">
+         <font>
+            <Font name="Franklin Gothic Heavy Italic" size="22.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect></Button>
+      <Button fx:id="collectionButton" layoutX="28.0" layoutY="531.0" mnemonicParsing="false" onAction="#collection" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="COLLECTION">
+         <font>
+            <Font name="Georgia Pro Cond Black Italic" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect></Button>
+      <Label alignment="CENTER" layoutX="221.0" layoutY="142.0" prefHeight="182.0" prefWidth="802.0" styleClass="title" stylesheets="@../styles/mainmenuStyle.css" text="Smurf Discovery">
+         <font>
+            <Font name="Algerian" size="90.0" />
+         </font>
+      </Label>
+      <Button fx:id="leaderboardButton" layoutX="28.0" layoutY="472.0" mnemonicParsing="false" onAction="#leaderboard" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="LEADERBOARD">
+         <font>
+            <Font name="Georgia Pro Cond Black Italic" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect></Button>
+      <Label alignment="CENTER" layoutX="237.0" layoutY="243.0" prefHeight="105.0" prefWidth="770.0" styleClass="subtitle" stylesheets="@../styles/mainmenuStyle.css" text="The Epic Quest to Find the Missing Smurfs">
+         <font>
+            <Font name="Algerian" size="35.0" />
+         </font>
+      </Label>
+      <Button fx:id="loginButton" layoutX="584.0" layoutY="583.0" mnemonicParsing="false" onAction="#loginpopup" prefHeight="37.0" prefWidth="75.0" styleClass="play-button" stylesheets="@../styles/mainmenuStyle.css" text="LOGIN">
+         <font>
+            <Font name="Georgia Pro Cond Black" size="15.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
    </children>
 </AnchorPane>

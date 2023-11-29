@@ -1,0 +1,52 @@
+.title{
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, black, 20, 0.1, 0.1, 0);
+}
+
+/*
+    -fx-text-fill: #09cdda;
+
+*/
+
+
+.background{
+    -fx-background-image: url(grass-v1.jpg);
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+
+.back-button{
+    -fx-text-fill: white;
+    -fx-background-color: #09cdda;
+    -fx-background-radius: 40;
+    -fx-border-color: #077981;
+    -fx-border-radius: 40;
+    -fx-border-width: 2;
+    
+}
+
+.back-pane{
+    -fx-background-color:transparent;
+ }
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+
+.other-button{
+    -fx-text-fill: white;
+    -fx-background-color: #09cdda;
+    -fx-background-radius: 5;
+    -fx-border-color: white;
+    -fx-border-radius: 5;
+    -fx-border-width: 2;
+    
+}
+
+
+.other-button:hover{
+    -fx-background-color: #09babe;
+}

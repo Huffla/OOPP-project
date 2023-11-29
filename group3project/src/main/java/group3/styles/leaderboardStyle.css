@@ -1,0 +1,42 @@
+.leaderboard-title{
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, black, 20, 0.1, 0.1, 0);
+}
+
+/*
+    -fx-text-fill: #09cdda;
+
+*/
+
+
+.leaderboard-background{
+    -fx-background-color: #108b94;
+    -fx-background-radius: 5;
+    -fx-border-color: white;
+    -fx-border-radius: 5;
+    -fx-border-width: 3;
+}
+
+
+.back-pane{
+    -fx-background-color:transparent;
+ }
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+
+.other-button{
+    -fx-text-fill: white;
+    -fx-background-color: #09cdda;
+    -fx-background-radius: 5;
+    -fx-border-color: white;
+    -fx-border-radius: 5;
+    -fx-border-width: 2;
+    
+}
+
+.other-button:hover{
+    -fx-background-color: #09babe;
+}
