@@ -1,9 +1,6 @@
 package group3;
 
-import java.util.ArrayList;
-
 import group3.modelFolder.Model;
-import group3.modelFolder.User;
 
 
 public class Main {

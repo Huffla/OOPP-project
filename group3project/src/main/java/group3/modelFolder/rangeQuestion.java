@@ -2,7 +2,7 @@ package group3.modelFolder;
 
 import java.io.Serializable;
 
-public class rangeQuestion extends Question implements Serializable{
+public class rangeQuestion extends Question{
     public rangeQuestion(String text){
         super(text);
 

@@ -22,10 +22,12 @@ public class Model {
     public Smurfinator smurfinator;
     Dictionary<Trait,Question> traitQuestionDict = new Hashtable<>();
     private static Model instance;
+    private User loggedInUser;
+    
     SmurfinatorMainController smurfmaincontroller;
     MainMenuController mainmenucontroller;
 
-    //TODO fixa att smurfinator bara körs om man e inloggad, sätter user till null så länge
+    //TODO fixa att smurfinator bara körs om man e inloggad, sätter user till null så länge, Ex genom att ta bort mycker från konstruktorn och göra så att smurfinator skapas när man klickar på smurfinator, vilket men enbart kan efter att man är inloggad. Första scenen bör vara logga in sidan.
     private Model(String user_file_name, String questions_file_name, String traits_file_name,String characters_file_name)  {
         user_handler = new UserDatabaseHandler(user_file_name);
         question_handler  = new QuestionDatabaseHandler(questions_file_name);

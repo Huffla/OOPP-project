@@ -2,13 +2,8 @@ package group3;
 
 import javafx.scene.control.TextField;
 
-import javax.swing.Action;
-
 import group3.modelFolder.Character;
 import group3.modelFolder.Model;
-import group3.modelFolder.MultipleChoiceQuestion;
-import group3.modelFolder.Question;
-import group3.modelFolder.rangeQuestion;
 import group3.modelFolder.MultipleChoiceQuestion;
 import group3.modelFolder.Question;
 import group3.modelFolder.rangeQuestion;
@@ -67,7 +62,9 @@ public class SmurfinatorMainController implements ControllerInitializer {
 
   
     public SmurfinatorMainController(){
-
+        questionTitle = new Text();
+        buttonAnchorPane = new AnchorPane();
+        sliderAnchorPane = new AnchorPane();
     }
     Model model = Model.getInstance("Users.txt","Questions.txt","Traits.txt","Characters.txt");
 

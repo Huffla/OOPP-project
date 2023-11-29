@@ -2,13 +2,9 @@ package group3.modelFolder;
 
 import java.util.Random;
 import java.util.Dictionary;
-import java.util.Hashtable;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
-import group3.Main;
-import group3.MainMenuController;
 import group3.SmurfinatorMainController;
 
 
@@ -40,12 +36,14 @@ public class Smurfinator {
         this.traitQuestionDict = traitQuestionDict;
         this.traitsLeft = getTraitsFromDictionary();
         this.smurfinatorMainController = smurfmaincontroller;
-        smurfmaincontroller.updateQuestion(getCurrentQuestion());
         try {
             getNextQuestion();
         } catch (NullPointerException e) {
             System.out.println("AAA Bork");
         }
+        smurfmaincontroller.updateQuestion(currentQuestion);
+        
+        
         
     }
 
@@ -67,7 +65,7 @@ public class Smurfinator {
     }
     return list;
     }*/
-    // ladda in den med trais vet ej hur man gör 
+    // Gets Traits from the trait question dictionary and returns a list of them.
     private ArrayList<Trait> getTraitsFromDictionary() {
         ArrayList<Trait> traits = new ArrayList<>();
         traits = Collections.list(traitQuestionDict.keys());
@@ -225,9 +223,7 @@ public class Smurfinator {
         update();
     }
 
-    public Question getCurrentQuestion(){
-        return currentQuestion;
-    }
+    
 
 
     public void reset(){
