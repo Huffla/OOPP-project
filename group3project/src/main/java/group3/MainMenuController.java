@@ -10,9 +10,7 @@ public class MainMenuController implements ControllerInitializer {
 
     @FXML
     Button playButton;
-    public MainMenuController(){
-        
-    }
+   
     @Override
     public void initialize() {
 

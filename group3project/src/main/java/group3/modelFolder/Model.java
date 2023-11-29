@@ -45,22 +45,12 @@ public class Model {
         loginAuth = new LoginAuth(user_handler.getUsers());
         initializeDict(question_handler.getQuestions());
         //TODO current user
+        smurfinator = new Smurfinator(traitQuestionDict, character_list, null,smurfmaincontroller);
         
 
     }
 
-    public void createSmurfinator(){
-         smurfinator = new Smurfinator(traitQuestionDict, character_list, null,smurfmaincontroller);
-    }
-
-    public void setSmurfinatorController(SmurfinatorMainController controller) {
-        this.smurfmaincontroller = controller;
-    }
-
-
-     public void setMainController(MainMenuController controller) {
-        this.mainmenucontroller = controller;
-    }
+  
     public static Model getInstance(String user_file_name,String questions_file_name, String traits_file_name,String characters_file_name) {
         if (instance == null){
             instance = new Model(user_file_name,questions_file_name,traits_file_name,characters_file_name);

@@ -6,6 +6,7 @@ import group3.modelFolder.Character;
 import group3.modelFolder.Model;
 import group3.modelFolder.MultipleChoiceQuestion;
 import group3.modelFolder.Question;
+import group3.modelFolder.Smurfinator;
 import group3.modelFolder.rangeQuestion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -59,21 +60,8 @@ public class SmurfinatorMainController implements ControllerInitializer {
 
     @FXML
     private Text questionTitle;
-    private static SmurfinatorMainController instance;
-  
-    private SmurfinatorMainController(){
-        questionTitle = new Text();
-        buttonAnchorPane = new AnchorPane();
-        sliderAnchorPane = new AnchorPane();
-    }
-
-    public static SmurfinatorMainController getInstance(){
-        if(instance == null){
-        instance = new SmurfinatorMainController();
-        } 
-        return instance;
-
-    }
+    
+    
     Model model = Model.getInstance("Users.txt","Questions.txt","Traits.txt","Characters.txt");
 
     @Override
@@ -131,7 +119,7 @@ public class SmurfinatorMainController implements ControllerInitializer {
             sliderAnchorPane.setVisible(true);
         }
     }
-    public void updateQuestion(Question q){
+    public static void updateQuestion(Question q){
         questionTitle.setText(q.getQuestionText());
         displayQuestion(q);
     }

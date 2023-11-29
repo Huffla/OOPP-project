@@ -36,17 +36,20 @@ public class Smurfinator {
         this.traitQuestionDict = traitQuestionDict;
         this.traitsLeft = getTraitsFromDictionary();
         this.smurfinatorMainController = smurfmaincontroller;
+        test();
         try {
             getNextQuestion();
         } catch (NullPointerException e) {
             System.out.println("AAA Bork");
         }
-        smurfmaincontroller.updateQuestion(currentQuestion);
+       
         
         
         
     }
-
+    private void test(){
+         smurfinatorMainController.updateQuestion(currentQuestion);
+    }
 
     /**
      * @param q
