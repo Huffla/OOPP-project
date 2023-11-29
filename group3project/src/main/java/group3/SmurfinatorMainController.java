@@ -44,8 +44,8 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     private AnchorPane buttonAnchorPane;
     @FXML
     private AnchorPane sliderAnchorPane;
-    @FXML
-    private ImageView guessImage;
+   // @FXML
+    //private ImageView guessImage;
     @FXML
     private ImageView guessDisplay;
     @FXML
@@ -150,9 +150,6 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
         smurfinator.answerDontKnow();
     }
 
-    private void nameCharacter() {
-        // TODO display screen with box for entering name of created character
-    }
 
     @FXML
     private void createNewCharacter(ActionEvent event) {
@@ -192,9 +189,12 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     public void makeGuess(Character c) {
         buttonAnchorPane.setVisible(false);
         sliderAnchorPane.setVisible(false);
-
-        Image image = new Image(c.getImagePath());
-        guessImage.setImage(image);
-        questionTitle.setText("You are thinking of:" + c.getName());
+        /* 
+        guessContainer.setVisible(true);
+        //Image image = new Image(c.getImagePath());
+        //guessImage.setImage(image);
+        System.out.println("Guessed a character!");
+        */
+        questionTitle.setText("You are thinking of: " + c.getName());
     }
 }

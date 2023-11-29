@@ -8,4 +8,5 @@ public interface SmurfinatorInterface {
     public void createNewCharacter(String s);
     public void addObserver(SmurfinatorObserver so);
     public void makeInitialCall();
+    
 }

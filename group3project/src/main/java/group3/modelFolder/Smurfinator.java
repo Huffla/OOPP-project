@@ -18,15 +18,15 @@ public class Smurfinator implements SmurfinatorInterface{
     Character guessedCharacter;
     Random rn = new Random();
     Boolean characterCreatingState = false;
-    int questionsSinceLastGuess = 0;
+    
     CharacterFactory cFactory = new CharacterFactory();
-    final int timeToGuess = 5;
+    
     Question currentQuestion;
     Trait currentTrait;
     private String createdCharacterName;
     Dictionary<Trait,Question> traitQuestionDict;
     private ArrayList<SmurfinatorObserver> smurfObservers = new ArrayList<>();
-    
+    int totalAmountOfQuestionsLeft;
 
 
     public Smurfinator(Dictionary<Trait,Question> traitQuestionDict, ArrayList<Character> c, User u) {
@@ -35,26 +35,20 @@ public class Smurfinator implements SmurfinatorInterface{
         this.user = u;
         this.traitQuestionDict = traitQuestionDict;
         this.traitsLeft = getTraitsFromDictionary();
-        
-        try {
-            getNextQuestion();
-        } catch (NullPointerException e) {
-            System.out.println("AAA Bork");
-        }
-        
-        
-        
-        
-        
+        totalAmountOfQuestionsLeft = traitsLeft.size();
         
     }
-
+        
     /**
      * Must call to get the initial question for the game to start
      */
     public void makeInitialCall(){
+        /*
         getNextQuestion();
+        totalAmountOfQuestionsLeft--;
         sendNextQuestionToObservers();
+         */
+        update();
     }
     public void addObserver(SmurfinatorObserver so){
         smurfObservers.add(so);
@@ -103,7 +97,8 @@ public class Smurfinator implements SmurfinatorInterface{
     //TODO Refactor into two methods
     private void getNextQuestion(){
         if(traitsLeft.size() == 0){
-            setStateCreateCharacter();
+            return;
+            
         }
         int traitIndex = rn.nextInt(0, traitsLeft.size());
         Trait tempTrait = traitsLeft.get(traitIndex);
@@ -111,6 +106,7 @@ public class Smurfinator implements SmurfinatorInterface{
         currentTrait = tempTrait;
         traitsLeft.remove(tempTrait);
     }
+    
 
 
 
@@ -152,33 +148,35 @@ public class Smurfinator implements SmurfinatorInterface{
         return currentValue;
     }
 
-    //TODO Figure out how the controller answers questions.
+    
     //TODO FIgure out how the controller answers when the user is given a prompt to create a new character.
     public void update(){
 
 
 
         if(!characterCreatingState){
-            try {
-                getNextQuestion();
-            } catch (NullPointerException e) {
-                //TODO controller must realize when this happens and update the buttons so they correspond to the correct event.
-
-            }
-            questionsSinceLastGuess++;
-            sendNextQuestionToObservers();
-            if(traitsLeft.size() == 0||questionsSinceLastGuess == timeToGuess){
+            if(totalAmountOfQuestionsLeft == 0 || remainingCharacters.size() == 1){
 
                 this.guessedCharacter = calculateGuess();
                 
-              sendGuessToObservers();
+                sendGuessToObservers();
+                setStateCreateCharacter();
+                return;
             }
+            try {
+                getNextQuestion();
+            } catch (NullPointerException e) { }
+            totalAmountOfQuestionsLeft--;
+            sendNextQuestionToObservers();
+            
+            
         }
-        else{
+        if(characterCreatingState){
             // Keep asking to get trait results
-            if(traitsLeft.size() == 0){
+            if(totalAmountOfQuestionsLeft == 0){
                 //TODO view must react to this and present an option to name the new character
-                createNewCharacter(createdCharacterName);
+                return;
+                
             }
             try {
                 getNextQuestion();
@@ -254,6 +252,7 @@ public class Smurfinator implements SmurfinatorInterface{
         traitsLeft.clear();
         remainingCharacters = (ArrayList<Character>)characters.clone();
         characterCreatingState = false;
+        totalAmountOfQuestionsLeft = remainingCharacters.size();
     }
 
 
