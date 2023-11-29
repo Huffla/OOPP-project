@@ -14,7 +14,7 @@ public class MainMenu extends Application {
     public void start(Stage primaryStage) {
         SceneFactory sceneManager = new SceneFactory(primaryStage);
         String[] testArray = {};
-
+        
         sceneManager.loadAndShowScene("stages/mainmenu.fxml", testArray, MainMenuController.class);
     }
 

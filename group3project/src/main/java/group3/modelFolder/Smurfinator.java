@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
+import group3.Main;
+import group3.MainMenuController;
 import group3.SmurfinatorMainController;
 
 
@@ -27,21 +29,24 @@ public class Smurfinator {
     Trait currentTrait;
     private String createdCharacterName;
     Dictionary<Trait,Question> traitQuestionDict;
+    SmurfinatorMainController smurfinatorMainController;
+    
 
 
-    public Smurfinator(Dictionary<Trait,Question> traitQuestionDict, ArrayList<Character> c, User u) {
+    public Smurfinator(Dictionary<Trait,Question> traitQuestionDict, ArrayList<Character> c, User u, SmurfinatorMainController smurfmaincontroller) {
         this.remainingCharacters = (ArrayList<Character>)c.clone();
         this.characters = c;
         this.user = u;
         this.traitQuestionDict = traitQuestionDict;
         this.traitsLeft = getTraitsFromDictionary();
-        //SmurfinatorMainController.updateQuestion(getCurrentQuestion());
+        this.smurfinatorMainController = smurfmaincontroller;
+        smurfmaincontroller.updateQuestion(getCurrentQuestion());
         try {
             getNextQuestion();
         } catch (NullPointerException e) {
             System.out.println("AAA Bork");
         }
-
+        
     }
 
 
@@ -69,7 +74,7 @@ public class Smurfinator {
         return traits;
     }
 
-
+  
     /**
      * @ Returns a question if there exists one otherwise null
      */
@@ -140,12 +145,12 @@ public class Smurfinator {
 
             }
             questionsSinceLastGuess++;
-            SmurfinatorMainController.updateQuestion(currentQuestion);
+            smurfinatorMainController.updateQuestion(currentQuestion);
             if(traitsLeft.size() == 0||questionsSinceLastGuess == timeToGuess){
 
                 this.guessedCharacter = calculateGuess();
                 
-                SmurfinatorMainController.guessCharacter(guessedCharacter);
+              smurfinatorMainController.guessCharacter(guessedCharacter);
             }
         }
         else{

@@ -1,6 +1,6 @@
 package group3;
 
-import java.awt.TextField;
+import javafx.scene.control.TextField;
 
 import javax.swing.Action;
 
@@ -65,15 +65,18 @@ public class SmurfinatorMainController implements ControllerInitializer {
     @FXML
     private Text questionTitle;
 
-    Model model = Model.getInstance("Users.txt","Questions.txt","Traits.txt","Characters.txt");
+  
+    public SmurfinatorMainController(){
 
-    
+    }
+    Model model = Model.getInstance("Users.txt","Questions.txt","Traits.txt","Characters.txt");
 
     @Override
     public void initialize() {
         settingsButtonBuilder();
         buttonContainer.setArcWidth(40.0);
         buttonContainer.setArcHeight(40.0);
+        
     }
 
     private void settingsButtonBuilder() {

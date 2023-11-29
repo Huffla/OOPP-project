@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
+import group3.MainMenuController;
+import group3.SmurfinatorMainController;
+
 public class Model {
     ArrayList<User> user_list;
     ArrayList<Trait> traits_list;
@@ -19,6 +22,9 @@ public class Model {
     public Smurfinator smurfinator;
     Dictionary<Trait,Question> traitQuestionDict = new Hashtable<>();
     private static Model instance;
+    SmurfinatorMainController smurfmaincontroller;
+    MainMenuController mainmenucontroller;
+
     //TODO fixa att smurfinator bara körs om man e inloggad, sätter user till null så länge
     private Model(String user_file_name, String questions_file_name, String traits_file_name,String characters_file_name)  {
         user_handler = new UserDatabaseHandler(user_file_name);
@@ -36,11 +42,23 @@ public class Model {
 
         loginAuth = new LoginAuth(user_handler.getUsers());
         initializeDict(question_handler.getQuestions());
-        smurfinator = new Smurfinator(traitQuestionDict, character_list, null); //TODO current user
+        //TODO current user
         
 
     }
 
+    public void createSmurfinator(){
+         smurfinator = new Smurfinator(traitQuestionDict, character_list, null,smurfmaincontroller);
+    }
+
+    public void setSmurfinatorController(SmurfinatorMainController controller) {
+        this.smurfmaincontroller = controller;
+    }
+
+
+     public void setMainController(MainMenuController controller) {
+        this.mainmenucontroller = controller;
+    }
     public static Model getInstance(String user_file_name,String questions_file_name, String traits_file_name,String characters_file_name) {
         if (instance == null){
             instance = new Model(user_file_name,questions_file_name,traits_file_name,characters_file_name);

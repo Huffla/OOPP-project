@@ -33,7 +33,7 @@
          <children>
             <ImageView fx:id="guessImage" fitHeight="256.0" fitWidth="286.0" layoutX="97.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
             <Button fx:id="correctguess" layoutX="39.0" layoutY="271.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="141.0" stylesheets="@../styles/buttonStyle.css" text="YES" />
-            <Button fx:id="incorrectguess" layoutX="291.0" layoutY="271.0" mnemonicParsing="false" onAction="#incorrectGuess" prefHeight="62.0" prefWidth="141.0" text="NO" />
+            <Button fx:id="incorrectguess" layoutX="291.0" layoutY="271.0" mnemonicParsing="false" onAction="#incorrectCharacter" prefHeight="62.0" prefWidth="141.0" text="NO" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="556.0" layoutY="129.0" prefHeight="200.0" prefWidth="546.0">
