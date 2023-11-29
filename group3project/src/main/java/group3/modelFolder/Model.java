@@ -20,7 +20,7 @@ public class Model {
     Dictionary<Trait,Question> traitQuestionDict = new Hashtable<>();
     private static Model instance;
     //TODO fixa att smurfinator bara körs om man e inloggad, sätter user till null så länge
-    private Model(String user_file_name, String questions_file_name, String traits_file_name,String characters_file_name) throws Exception {
+    private Model(String user_file_name, String questions_file_name, String traits_file_name,String characters_file_name)  {
         user_handler = new UserDatabaseHandler(user_file_name);
         question_handler  = new QuestionDatabaseHandler(questions_file_name);
         trait_handler =  new TraitDatabaseHandler(traits_file_name);
@@ -36,21 +36,22 @@ public class Model {
 
         loginAuth = new LoginAuth(user_handler.getUsers());
         initializeDict(question_handler.getQuestions());
-        smurfinator = new Smurfinator(traitQuestionDict, traits_list, character_list, null); //TODO current user
+        smurfinator = new Smurfinator(traitQuestionDict, character_list, null); //TODO current user
+        
 
     }
 
-    public static Model getInstance(String user_file_name,String questions_file_name, String traits_file_name,String characters_file_name) throws Exception {
+    public static Model getInstance(String user_file_name,String questions_file_name, String traits_file_name,String characters_file_name) {
         if (instance == null){
             instance = new Model(user_file_name,questions_file_name,traits_file_name,characters_file_name);
         }
         return instance;
     }
     // initializesDictionary of Traits as keys and questions as values.
-    private void initializeDict(ArrayList<Question> questions) throws Exception{
+    private void initializeDict(ArrayList<Question> questions) {
         if(questions.size() != traits_list.size()){
             System.out.println("Question and trait lists are not of the same length");
-            throw new Exception();
+            System.exit(0);
         }
         for(int i = 0; i < questions.size(); i++){
             traitQuestionDict.put(traits_list.get(i), questions.get(i));

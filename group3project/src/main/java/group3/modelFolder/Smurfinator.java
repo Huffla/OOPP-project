@@ -4,6 +4,8 @@ import java.util.Random;
 import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 import group3.SmurfinatorMainController;
 
@@ -24,17 +26,16 @@ public class Smurfinator {
     Question currentQuestion;
     Trait currentTrait;
     private String createdCharacterName;
-    SmurfinatorMainController sm = new SmurfinatorMainController();
     Dictionary<Trait,Question> traitQuestionDict;
 
 
-    public Smurfinator(Dictionary<Trait,Question> traitQuestionDict, ArrayList<Trait> t, ArrayList<Character> c, User u) throws Exception {
+    public Smurfinator(Dictionary<Trait,Question> traitQuestionDict, ArrayList<Character> c, User u) {
         this.remainingCharacters = (ArrayList<Character>)c.clone();
-        this.traitsLeft = t;
         this.characters = c;
         this.user = u;
         this.traitQuestionDict = traitQuestionDict;
-        sm.updateQuestion(getCurrentQuestion());
+        this.traitsLeft = getTraitsFromDictionary();
+        //SmurfinatorMainController.updateQuestion(getCurrentQuestion());
         try {
             getNextQuestion();
         } catch (NullPointerException e) {
@@ -61,11 +62,19 @@ public class Smurfinator {
     }
     return list;
     }*/
+    // ladda in den med trais vet ej hur man gör 
+    private ArrayList<Trait> getTraitsFromDictionary() {
+        ArrayList<Trait> traits = new ArrayList<>();
+        traits = Collections.list(traitQuestionDict.keys());
+        return traits;
+    }
+
 
     /**
      * @ Returns a question if there exists one otherwise null
      */
     // Howl(👑) skrev den här.
+    //TODO Refactor into two methods
     private void getNextQuestion(){
         if(traitsLeft.size() == 0){
             setStateCreateCharacter();
@@ -86,7 +95,7 @@ public class Smurfinator {
         for(Character c: remainingCharacters){
             Double currentValue = 0.0;
 
-            for(Trait t:traitsLeft){
+            for(Trait t:askedTraits){
                 currentValue = calculateDifference(c, t);
             }
             if(currentValue < previousClosestNumber) guess = c;
@@ -95,6 +104,7 @@ public class Smurfinator {
     }
 
     /**
+     * Works when there only are traits that are answered yes/ranged/dontknow since no traits automatically will have the value 0.0
      * @param c
      * @param t
      * @return "Distance" between the value that the player placed in the trait and the character that is being compareds trait.
@@ -130,11 +140,12 @@ public class Smurfinator {
 
             }
             questionsSinceLastGuess++;
-            sm.updateQuestion(currentQuestion);
+            SmurfinatorMainController.updateQuestion(currentQuestion);
             if(traitsLeft.size() == 0||questionsSinceLastGuess == timeToGuess){
 
                 this.guessedCharacter = calculateGuess();
-                sm.guessCharacter(guessedCharacter);
+                
+                SmurfinatorMainController.guessCharacter(guessedCharacter);
             }
         }
         else{
@@ -159,18 +170,18 @@ public class Smurfinator {
 
     // Removes characters that are no longer relevant when considering the previous questions asked.
     private void updateRemainingCharacters(Double d){
-        if(d > 0) {
-            for (Character c : remainingCharacters) {
-                ArrayList<Trait> tList = c.getCharacterTraits();
-                for (Trait t : tList) {
-                    if (t.getName().equals(currentTrait.getName())) {
-                        if (!t.get_amount_of_trait().equals(currentTrait.get_amount_of_trait())) {
-                            remainingCharacters.remove(c);
-                        }
+        // removed if (d > 0)
+        for (Character c : remainingCharacters) {
+            ArrayList<Trait> tList = c.getCharacterTraits();
+            for (Trait t : tList) {
+                if (t.getName().equals(currentTrait.getName())) {
+                    if (!t.get_amount_of_trait().equals(currentTrait.get_amount_of_trait())) {
+                        remainingCharacters.remove(c);
                     }
                 }
             }
         }
+    
     }
 
     public void setCharacterName(String s){
@@ -197,7 +208,6 @@ public class Smurfinator {
     }
 
     public void answerNo(){
-        askedTraits.add(new Trait(currentTrait.getName(), 0.0));
         updateRemainingCharacters(0.0);
         update();
     }

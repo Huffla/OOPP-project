@@ -67,8 +67,7 @@ public class SmurfinatorMainController implements ControllerInitializer {
 
     Model model = Model.getInstance("Users.txt","Questions.txt","Traits.txt","Characters.txt");
 
-    public SmurfinatorMainController() throws Exception {
-    }
+    
 
     @Override
     public void initialize() {

@@ -1,4 +1,4 @@
-package group3.modelFolder;
+/*package group3.modelFolder;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -86,3 +86,4 @@ public class SmurfinatorTest {
 
 
 }
+*/

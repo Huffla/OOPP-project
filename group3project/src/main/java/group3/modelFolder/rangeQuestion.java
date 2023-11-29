@@ -1,6 +1,8 @@
 package group3.modelFolder;
 
-public class rangeQuestion extends Question {
+import java.io.Serializable;
+
+public class rangeQuestion extends Question implements Serializable{
     public rangeQuestion(String text){
         super(text);
 
