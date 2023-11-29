@@ -24,7 +24,7 @@ public class Model {
     private static Model instance;
     private User loggedInUser;
     
-    SmurfinatorMainController smurfmaincontroller;
+    
     MainMenuController mainmenucontroller;
 
     //TODO fixa att smurfinator bara körs om man e inloggad, sätter user till null så länge, Ex genom att ta bort mycker från konstruktorn och göra så att smurfinator skapas när man klickar på smurfinator, vilket men enbart kan efter att man är inloggad. Första scenen bör vara logga in sidan.
@@ -45,7 +45,7 @@ public class Model {
         loginAuth = new LoginAuth(user_handler.getUsers());
         initializeDict(question_handler.getQuestions());
         //TODO current user
-        smurfinator = new Smurfinator(traitQuestionDict, character_list, null,smurfmaincontroller);
+        smurfinator = new Smurfinator(traitQuestionDict, character_list, null,SmurfinatorMainController.getInstance());
         
 
     }

@@ -57,13 +57,23 @@ public class SmurfinatorMainController implements ControllerInitializer {
     @FXML
     private AnchorPane createsmurfcontainer;
 
-
+    private static SmurfinatorMainController instance;
     @FXML
-    private Text questionTitle;
+    public Text questionTitle;
     
     
-    Model model = Model.getInstance("Users.txt","Questions.txt","Traits.txt","Characters.txt");
+    Model model;
 
+    private SmurfinatorMainController(Model model){
+        this.model = model;
+    }
+    public static SmurfinatorMainController getInstance(Model  model) {
+        if (instance == null){
+            instance = new SmurfinatorMainController(model);
+            System.out.println("Bajs");
+        }
+        return instance;
+    }
     @Override
     public void initialize() {
         settingsButtonBuilder();
@@ -119,7 +129,8 @@ public class SmurfinatorMainController implements ControllerInitializer {
             sliderAnchorPane.setVisible(true);
         }
     }
-    public static void updateQuestion(Question q){
+    public void updateQuestion(Question q){
+        System.out.println("Ok kinda workey");
         questionTitle.setText(q.getQuestionText());
         displayQuestion(q);
     }

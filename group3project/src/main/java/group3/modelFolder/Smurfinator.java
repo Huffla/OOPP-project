@@ -29,16 +29,17 @@ public class Smurfinator {
     
 
 
-    public Smurfinator(Dictionary<Trait,Question> traitQuestionDict, ArrayList<Character> c, User u, SmurfinatorMainController smurfmaincontroller) {
+    public Smurfinator(Dictionary<Trait,Question> traitQuestionDict, ArrayList<Character> c, User u, SmurfinatorMainController smc) {
         this.remainingCharacters = (ArrayList<Character>)c.clone();
         this.characters = c;
         this.user = u;
         this.traitQuestionDict = traitQuestionDict;
         this.traitsLeft = getTraitsFromDictionary();
-        this.smurfinatorMainController = smurfmaincontroller;
-        test();
+        this.smurfinatorMainController = smc;
+        
         try {
             getNextQuestion();
+            smurfinatorMainController.updateQuestion(currentQuestion);
         } catch (NullPointerException e) {
             System.out.println("AAA Bork");
         }
@@ -47,10 +48,7 @@ public class Smurfinator {
         
         
     }
-    private void test(){
-         smurfinatorMainController.updateQuestion(currentQuestion);
-    }
-
+   
     /**
      * @param q
      * @return

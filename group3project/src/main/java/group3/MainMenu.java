@@ -1,6 +1,11 @@
 package group3;
 
+import java.io.IOException;
+
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
@@ -12,11 +17,32 @@ public class MainMenu extends Application {
     }
     @Override
     public void start(Stage primaryStage) {
-        SceneFactory sceneManager = new SceneFactory(primaryStage);
-        String[] testArray = {};
         
-        sceneManager.loadAndShowScene("stages/mainmenu.fxml", testArray, MainMenuController.class);
+        String[] testArray = {};
+          try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("stages/mainmenu.fxml"));
+            Parent root = loader.load();
+
+            MainMenuController controller = loader.getController();
+            controller.initialize();
+
+            Scene scene = new Scene(root);
+            scene.getStylesheets().addAll(testArray);
+
+            configureStage(primaryStage, scene);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    
     }
 
-    
+    private void configureStage(Stage stage, Scene scene) {
+        stage.setTitle("Smurfinator");
+        stage.setWidth(1280);
+        stage.setHeight(720);
+        stage.setResizable(false);
+    }
+
 }
