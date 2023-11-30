@@ -82,7 +82,7 @@
                <font>
                   <Font size="8.0" />
                </font></Button>
-            <Button layoutX="144.0" layoutY="217.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="192.0" stylesheets="@../styles/buttonStyle.css" text="Back To Main Menu">
+            <Button layoutX="144.0" layoutY="217.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="70.0" prefWidth="192.0" stylesheets="@../styles/buttonStyle.css" text="Back To Main Menu">
                <font>
                   <Font size="8.0" />
                </font></Button>

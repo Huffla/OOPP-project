@@ -9,4 +9,5 @@ public interface SmurfinatorInterface {
     public void addObserver(SmurfinatorObserver so);
     public void makeInitialCall();
     public void setCharacterCreationState();
+    public void reset();
 }

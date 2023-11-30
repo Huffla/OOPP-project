@@ -222,4 +222,9 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
         createsmurfcontainer.setVisible(true);
         questionTitle.setText("Last step!");
     }
+    @FXML
+    public void returnToMainMenu(){
+        smurfinator.reset();
+        //TODO return to main menu
+    }
 }
