@@ -20,6 +20,9 @@ public class CharacterDatabaseHandler extends DatabaseHandler{
             super.addToList(c);
         }
     }
+    public void addCharacter(Character c){
+        super.addToList(c);
+    }
 
     public void removeCharacter(Character c){
         

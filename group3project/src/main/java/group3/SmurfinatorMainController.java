@@ -197,4 +197,13 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
         */
         questionTitle.setText("You are thinking of: " + c.getName());
     }
+
+    //TODO make it so that the player can decice if they want to create a  new character. If they do they have to answer the rest of the questions
+    @Override
+    public void switchToCreateCharacter() {
+        buttonAnchorPane.setVisible(false);
+        sliderAnchorPane.setVisible(false);
+        createsmurfcontainer.setVisible(true);
+        questionTitle.setText("Character not found! Would you like to create a new character?");
+    }
 }

@@ -28,6 +28,9 @@ public class Smurfinator implements SmurfinatorInterface{
     private ArrayList<SmurfinatorObserver> smurfObservers = new ArrayList<>();
     int totalAmountOfQuestionsLeft;
 
+    CharacterDatabaseHandler cdh = new CharacterDatabaseHandler("Characters.txt");
+    
+
 
     public Smurfinator(Dictionary<Trait,Question> traitQuestionDict, ArrayList<Character> c, User u) {
         this.remainingCharacters = (ArrayList<Character>)c.clone();
@@ -43,11 +46,6 @@ public class Smurfinator implements SmurfinatorInterface{
      * Must call to get the initial question for the game to start
      */
     public void makeInitialCall(){
-        /*
-        getNextQuestion();
-        totalAmountOfQuestionsLeft--;
-        sendNextQuestionToObservers();
-         */
         update();
     }
     public void addObserver(SmurfinatorObserver so){
@@ -61,6 +59,11 @@ public class Smurfinator implements SmurfinatorInterface{
     private void sendNextQuestionToObservers(){
         for(SmurfinatorObserver so: smurfObservers){
             so.updateQuestion(currentQuestion);
+        }
+    }
+    private void notifyObserversCreationState(){
+    for(SmurfinatorObserver so: smurfObservers){
+            so.switchToCreateCharacter();
         }
     }
 
@@ -113,12 +116,12 @@ public class Smurfinator implements SmurfinatorInterface{
     private Character calculateGuess(){
         Character guess = new Character("null");
 
-        Double previousClosestNumber = 0.0;
+        Double previousClosestNumber = Double.MAX_VALUE;
         for(Character c: remainingCharacters){
             Double currentValue = 0.0;
 
             for(Trait t:askedTraits){
-                currentValue = calculateDifference(c, t);
+                currentValue+= calculateDifference(c, t);
             }
             if(currentValue < previousClosestNumber) guess = c;
         }
@@ -140,10 +143,7 @@ public class Smurfinator implements SmurfinatorInterface{
             if(tr.getName() == traitName){ characterStat = tr.get_amount_of_trait();
             }
         }
-        for(Trait tr: askedTraits){
-            if(tr.getName() == traitName){ playerTraitStat = tr.get_amount_of_trait();
-            }
-        }
+        playerTraitStat = t.get_amount_of_trait();
         currentValue = Math.abs(playerTraitStat-characterStat);
         return currentValue;
     }
@@ -160,6 +160,10 @@ public class Smurfinator implements SmurfinatorInterface{
                 this.guessedCharacter = calculateGuess();
                 
                 sendGuessToObservers();
+                return;
+            }
+            if(remainingCharacters.size() == 0 || totalAmountOfQuestionsLeft == 0){
+
                 setStateCreateCharacter();
                 return;
             }
@@ -173,8 +177,9 @@ public class Smurfinator implements SmurfinatorInterface{
         }
         if(characterCreatingState){
             // Keep asking to get trait results
-            if(totalAmountOfQuestionsLeft == 0){
-                //TODO view must react to this and present an option to name the new character
+            // If no questions left do nothing and wait for the user to create a new character
+            if(totalAmountOfQuestionsLeft == 0){    
+                
                 return;
                 
             }
@@ -194,16 +199,26 @@ public class Smurfinator implements SmurfinatorInterface{
 
     // Removes characters that are no longer relevant when considering the previous questions asked.
     private void updateRemainingCharacters(Double d){
-        // removed if (d > 0)
-        for (Character c : remainingCharacters) {
+        boolean traitFound = false;
+        if(d<0 || d>1) throw new IllegalArgumentException();
+        for (int i = remainingCharacters.size() - 1; i>=0; i--) {
+            Character c = remainingCharacters.get(i);
             ArrayList<Trait> tList = c.getCharacterTraits();
             for (Trait t : tList) {
                 if (t.getName().equals(currentTrait.getName())) {
-                    if (!t.get_amount_of_trait().equals(currentTrait.get_amount_of_trait())) {
+                    traitFound = true;
+                    if (! (Math.abs(t.get_amount_of_trait()-d) < 0.2)  ) {
                         remainingCharacters.remove(c);
                     }
                 }
             }
+            if(!traitFound){
+                if (! (Math.abs(0-d) < 0.1)  ) {
+                        remainingCharacters.remove(c);
+                }
+                traitFound = false;
+            }
+                    
         }
     
     }
@@ -213,12 +228,15 @@ public class Smurfinator implements SmurfinatorInterface{
     }
 
     public void createNewCharacter(String name){
-        characters.add(cFactory.createCharacter(askedTraits, name));
+        Character newCharacter =cFactory.createCharacter(askedTraits, name);
+        characters.add(newCharacter);
+        cdh.addCharacter(newCharacter);
         user.increaseContributions();
     }
 
     public void setStateCreateCharacter(){
         characterCreatingState = true;
+        notifyObserversCreationState();
     }
 
     public Character getGuessedCharacter(){

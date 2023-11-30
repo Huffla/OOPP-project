@@ -16,7 +16,6 @@ public class CharacterInitializer {
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("BOY", 1.0);
             put("OLD", 1.0);
-            put("KIND", 1.0);
             put("CALM", 1.0);
             put("GLASSES", 1.0);
             put("FACIAL HAIR", 1.0);
