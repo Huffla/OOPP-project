@@ -69,7 +69,6 @@ public class Smurfinator implements SmurfinatorInterface{
 
 
     /**
-     * @param q
      * @return
      *  Deep copy of a list of questions.
 
@@ -103,7 +102,7 @@ public class Smurfinator implements SmurfinatorInterface{
             return;
             
         }
-        int traitIndex = rn.nextInt(0, traitsLeft.size());
+        int traitIndex = rn.nextInt(traitsLeft.size());
         Trait tempTrait = traitsLeft.get(traitIndex);
         currentQuestion = traitQuestionDict.get(tempTrait);
         currentTrait = tempTrait;

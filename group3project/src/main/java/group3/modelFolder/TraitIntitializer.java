@@ -4,8 +4,8 @@ public class TraitIntitializer {
     TraitDatabaseHandler db;
     public TraitIntitializer(String s){
         db = new TraitDatabaseHandler(s);
-        
-        
+
+
     }
 
     public void initialize(){
@@ -33,6 +33,24 @@ public class TraitIntitializer {
         db.addTrait(new Trait("BLOND", 0.0));
         db.addTrait(new Trait("FRECKLES", 0.0));
         db.addTrait(new Trait("EVIL", 0.0));
+        db.addTrait(new Trait("LONG HAIR", 0.0));
+        db.addTrait(new Trait("TATTOO", 0.0));
+        db.addTrait(new Trait("JACKET", 0.0));
+        db.addTrait(new Trait("UGLY", 0.0));
+        db.addTrait(new Trait("BLACK HAIR", 0.0));
+        db.addTrait(new Trait("MONSTER", 0.0));
+        db.addTrait(new Trait("HUMAN", 0.0));
+        db.addTrait(new Trait("PLAYFUL", 0.0));
+        db.addTrait(new Trait("INVENTOR", 0.0));
+        db.addTrait(new Trait("ARTISTIC", 0.0));
+        db.addTrait(new Trait("FOODIE", 0.0));
+        db.addTrait(new Trait("LEADER", 0.0));
+        db.addTrait(new Trait("ALCHEMIST", 0.0));
+        db.addTrait(new Trait("MECHANICAL", 0.0));
+        db.addTrait(new Trait("MURDERER", 0.0));
+        db.addTrait(new Trait("HANDY", 0.0));
+        db.addTrait(new Trait("BRAVE", 0.0));
+
 
 
 
