@@ -10,11 +10,23 @@ public class QuestionInitializer {
 
     public void initialize(){
         db.clearList();
-        db.createRangeQuestion("Hur stark är din karaktär?");
-        db.createMultipleChoiceQuestion("Är karaktären snygg?");
-        db.createMultipleChoiceQuestion("Är din karaktär af manligta grunder?");
-        db.createRangeQuestion("Hur bra är karaktären på att köra?");
-        db.createRangeQuestion("Hur många korvar käkar din karaktär per dag?");
+        
+        db.createMultipleChoiceQuestion("Is your character a girl?");
+        db.createMultipleChoiceQuestion("Is your character male?");
+        db.createMultipleChoiceQuestion("Is your character strong?");
+        db.createMultipleChoiceQuestion("Is your character old?");
+        db.createMultipleChoiceQuestion("Is your character smart?");
+        db.createMultipleChoiceQuestion("Is your character very young?");
+        db.createMultipleChoiceQuestion("Is your character nice to others?");
+        db.createMultipleChoiceQuestion("Is your character good looking?");
+        db.createMultipleChoiceQuestion("Does your character have anger issues?");
+        db.createMultipleChoiceQuestion("Does your character make a lot of mistakes?");
+        db.createMultipleChoiceQuestion("Is your character considered calm?");
+        db.createMultipleChoiceQuestion("Is your character an animal?");
+        db.createMultipleChoiceQuestion("Does your character wear glasses?");
+        db.createMultipleChoiceQuestion("Does your character have facial hair");
+        db.createMultipleChoiceQuestion("Does your character wear a hat?");
+        db.createRangeQuestion("How likely is your character to drive drunk when drinking fermented hallonsaft?");
         
     }
 }
