@@ -5,8 +5,8 @@ public interface SmurfinatorInterface {
     public void answerNo();
     public void answerDontKnow();
     public void answerRange(double d);
-    public void createNewCharacter(String s);
+    public void createNewCharacter(String name,String path);
     public void addObserver(SmurfinatorObserver so);
     public void makeInitialCall();
-    
+    public void setCharacterCreationState();
 }

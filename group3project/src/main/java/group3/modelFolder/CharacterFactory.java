@@ -23,6 +23,9 @@ public class CharacterFactory {
     public  Character createCharacter(Dictionary<String,Double> characterTraitsNames, String name) {
         return new Character(createTraitsFromStrings(characterTraitsNames), name);
     }
+    public Character createCharacter(ArrayList<Trait> traits, String name,String path){
+        return new Character(traits, name, path);
+    }
     public Character createCharacter(ArrayList<Trait> traits, String name){
         return new Character(traits, name);
     }

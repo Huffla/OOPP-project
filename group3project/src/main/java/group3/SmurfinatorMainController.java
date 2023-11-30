@@ -70,6 +70,8 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     private static SmurfinatorMainController instance;
     @FXML
     public Text questionTitle;
+    @FXML
+    public TextField pathToImageTextBox;
 
     SmurfinatorInterface smurfinator;
 
@@ -154,7 +156,8 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     @FXML
     private void createNewCharacter(ActionEvent event) {
         String name = smurfname.getText();
-        smurfinator.createNewCharacter(name);
+        String path = pathToImageTextBox.getText();
+        smurfinator.createNewCharacter(name,path);
     }
 
     private void displayQuestion(Question q) {
@@ -177,33 +180,46 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     private void incorrectCharacter(ActionEvent event) {
         guessContainer.setVisible(false);
         createnewcharactercontainer.setVisible(true);
+        smurfinator.setCharacterCreationState();
     }
 
     @FXML
     private void startsmurfcreate() {
+        guessContainer.setVisible(false);
         createnewcharactercontainer.setVisible(false);
-        createsmurfcontainer.setVisible(true);
+        createsmurfcontainer.setVisible(false);
+        makeInitialCall();
     }
 
     @Override
     public void makeGuess(Character c) {
         buttonAnchorPane.setVisible(false);
         sliderAnchorPane.setVisible(false);
-        /* 
+        
         guessContainer.setVisible(true);
         //Image image = new Image(c.getImagePath());
         //guessImage.setImage(image);
         System.out.println("Guessed a character!");
-        */
-        questionTitle.setText("You are thinking of: " + c.getName());
+        
+        questionTitle.setText("Are you thinking of: " + c.getName()+"?");
     }
 
     //TODO make it so that the player can decice if they want to create a  new character. If they do they have to answer the rest of the questions
     @Override
+    public void switchToCreateCharacterOption() {
+        buttonAnchorPane.setVisible(false);
+        sliderAnchorPane.setVisible(false);
+        guessContainer.setVisible(false);
+        createnewcharactercontainer.setVisible(true);
+        questionTitle.setText("Character not found! Would you like to create a new character? (You have to answer all questions)");
+    }
+
+    @Override
     public void switchToCreateCharacter() {
         buttonAnchorPane.setVisible(false);
         sliderAnchorPane.setVisible(false);
+        guessContainer.setVisible(false);
         createsmurfcontainer.setVisible(true);
-        questionTitle.setText("Character not found! Would you like to create a new character?");
+        questionTitle.setText("Last step!");
     }
 }

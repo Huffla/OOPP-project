@@ -61,6 +61,11 @@ public class Smurfinator implements SmurfinatorInterface{
             so.updateQuestion(currentQuestion);
         }
     }
+    private void notifyObserversCreationStateOption(){
+        for(SmurfinatorObserver so: smurfObservers){
+            so.switchToCreateCharacterOption();
+        }
+    }
     private void notifyObserversCreationState(){
     for(SmurfinatorObserver so: smurfObservers){
             so.switchToCreateCharacter();
@@ -163,7 +168,8 @@ public class Smurfinator implements SmurfinatorInterface{
             }
             if(remainingCharacters.size() == 0 || totalAmountOfQuestionsLeft == 0){
 
-                setStateCreateCharacter();
+                setCharacterCreationState();
+                notifyObserversCreationStateOption();
                 return;
             }
             try {
@@ -178,12 +184,14 @@ public class Smurfinator implements SmurfinatorInterface{
             // Keep asking to get trait results
             // If no questions left do nothing and wait for the user to create a new character
             if(totalAmountOfQuestionsLeft == 0){    
-                
+                notifyObserversCreationState();
                 return;
                 
             }
             try {
                 getNextQuestion();
+                totalAmountOfQuestionsLeft--;
+                sendNextQuestionToObservers();
             } catch (NullPointerException e) {
                 //TODO controller must realize when this happens and update the buttons so they correspond to the correct event.
                 System.out.println("tried to get from an empty list");
@@ -226,17 +234,16 @@ public class Smurfinator implements SmurfinatorInterface{
         createdCharacterName = s;
     }
 
-    public void createNewCharacter(String name){
-        Character newCharacter =cFactory.createCharacter(askedTraits, name);
+    public void createNewCharacter(String name,String path){
+        Character newCharacter =cFactory.createCharacter(askedTraits, name,path);
         characters.add(newCharacter);
         cdh.addCharacter(newCharacter);
         user.increaseContributions();
     }
-
-    public void setStateCreateCharacter(){
+    public void setCharacterCreationState(){
         characterCreatingState = true;
-        notifyObserversCreationState();
     }
+   
 
     public Character getGuessedCharacter(){
         return guessedCharacter;

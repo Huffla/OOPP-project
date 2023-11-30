@@ -10,6 +10,7 @@ public class CharacterInitializer {
     public CharacterInitializer(){
 
     }
+    
     public ArrayList<Character> intialize(){
         cdh.clearList();
         ArrayList<Character> characters = new ArrayList<>();
