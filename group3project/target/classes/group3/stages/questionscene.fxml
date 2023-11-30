@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: f5f5dc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: f5f5dc;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="smurfwizard" fitHeight="558.0" fitWidth="391.0" layoutX="119.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="70.45928955078125" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="770.0" AnchorPane.topAnchor="135.0">
          <image>
@@ -29,8 +29,9 @@
             <Button fx:id="dontknowButton" layoutX="76.0" layoutY="214.0" mnemonicParsing="false" onAction="#dontknowPressed" prefHeight="74.0" prefWidth="222.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="DON'T KNOW" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="guessContainer" layoutX="626.0" layoutY="310.0" prefHeight="380.0" prefWidth="479.0" visible="false">
+      <AnchorPane fx:id="guessContainer" layoutX="626.0" layoutY="310.0" prefHeight="380.0" prefWidth="479.0" style="-fx-background-color: ffe39b;" visible="false">
          <children>
+            <ImageView fx:id="guessImage" fitHeight="256.0" fitWidth="286.0" layoutX="97.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
             <Button fx:id="correctguess" layoutX="39.0" layoutY="271.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="141.0" stylesheets="@../styles/buttonStyle.css" text="YES" />
             <Button fx:id="incorrectguess" layoutX="291.0" layoutY="271.0" mnemonicParsing="false" onAction="#incorrectCharacter" prefHeight="62.0" prefWidth="141.0" text="NO" />
          </children>
@@ -62,7 +63,7 @@
             <Text fx:id="sliderDisplayValue" layoutX="159.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="slider-display-value" wrappingWidth="56.80002441406248" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="createsmurfcontainer" layoutX="603.0" layoutY="316.0" prefHeight="380.0" prefWidth="506.0" visible="false">
+      <AnchorPane fx:id="createsmurfcontainer" layoutX="603.0" layoutY="316.0" prefHeight="380.0" prefWidth="506.0" style="-fx-background-color: ffe39b;" visible="false">
          <children>
             <Label alignment="CENTER" layoutX="57.0" layoutY="14.0" prefHeight="82.0" prefWidth="391.0" text="Give your Smurf a Name" textAlignment="CENTER" />
             <TextField fx:id="smurfname" layoutX="117.0" layoutY="117.0" prefHeight="62.0" prefWidth="266.0" promptText="Name">
@@ -73,7 +74,7 @@
             <Button fx:id="submitButton" layoutX="182.0" layoutY="216.0" mnemonicParsing="false" onAction="#createNewCharacter" prefHeight="62.0" prefWidth="135.0" text="Submit" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="createnewcharactercontainer" layoutX="626.0" layoutY="310.0" prefHeight="380.0" prefWidth="479.0" visible="false">
+      <AnchorPane fx:id="createnewcharactercontainer" layoutX="626.0" layoutY="310.0" prefHeight="380.0" prefWidth="479.0" style="-fx-background-color: ffe39b;" visible="false">
          <children>
             <Button fx:id="createcharacterButton" layoutX="144.0" layoutY="57.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="192.0" stylesheets="@../styles/buttonStyle.css" text="Create New Character" />
             <Button layoutX="144.0" layoutY="217.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="192.0" stylesheets="@../styles/buttonStyle.css" text="Back To Main Menu" />

@@ -24,7 +24,7 @@ public class CharacterInitializer {
             put("DRUNK DRIVER", 0.7);
         }}, "old smurf (Alcoholic)"));
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
-             put("BOY", 1.0);
+            put("BOY", 1.0);
             put("OLD", 1.0);
             put("KIND", 1.0);
             put("CALM", 1.0);
@@ -33,6 +33,7 @@ public class CharacterInitializer {
             put("HAT", 1.0);
             put("DRUNK DRIVER", 0.7);
         }}, "old smurf"));
+
 
         
         

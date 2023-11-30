@@ -26,5 +26,17 @@ public class TraitIntitializer {
         db.addTrait(new Trait("FACIAL HAIR", 0.0));
         db.addTrait(new Trait("HAT", 0.0));
         db.addTrait(new Trait("DRUNK DRIVER", 0.0));
+        db.addTrait(new Trait("SELF CENTERED", 0.0));
+        db.addTrait(new Trait("FUNNY", 0.0));
+        db.addTrait(new Trait("MAGIC", 0.0));
+        db.addTrait(new Trait("CREATIVE", 0.0));
+        db.addTrait(new Trait("BLOND", 0.0));
+        db.addTrait(new Trait("FRECKLES", 0.0));
+        db.addTrait(new Trait("EVIL", 0.0));
+
+
+
+
+
     }
 }
