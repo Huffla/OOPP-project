@@ -50,6 +50,15 @@ public class TraitIntitializer {
         db.addTrait(new Trait("MURDERER", 0.0));
         db.addTrait(new Trait("HANDY", 0.0));
         db.addTrait(new Trait("BRAVE", 0.0));
+        db.addTrait(new Trait("MUSICIAN", 0.0));
+        db.addTrait(new Trait("VIOLENT", 0.0));
+        db.addTrait(new Trait("DUMB", 0.0));
+        db.addTrait(new Trait("SKIRT", 0.0));
+        db.addTrait(new Trait("WEAPON", 0.0));
+        db.addTrait(new Trait("RELIGIOUS", 0.0));
+        db.addTrait(new Trait("DRESS", 0.0));
+
+
 
 
 

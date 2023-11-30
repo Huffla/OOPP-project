@@ -49,8 +49,17 @@ public class QuestionInitializer {
         db.createMultipleChoiceQuestion("Is your character indulging in the arts of alchemy?");
         db.createMultipleChoiceQuestion("Is your character a mechanical construct?");
         db.createMultipleChoiceQuestion("Has your character comitted murder?");
-        db.createMultipleChoiceQuestion("Would your smurf be considered handy?");
+        db.createMultipleChoiceQuestion("Would your character be considered handy?");
         db.createMultipleChoiceQuestion("Is your character brave?");
+        db.createMultipleChoiceQuestion("Is your character musical?");
+        db.createMultipleChoiceQuestion("Does your character prefer the use of violence?");
+        db.createMultipleChoiceQuestion("Is your character not very smart?");
+        db.createMultipleChoiceQuestion("Do your character wear a skirt?");
+        db.createMultipleChoiceQuestion("Do your character usually carry a weapon?");
+        db.createMultipleChoiceQuestion("Is your character religious?");
+        db.createMultipleChoiceQuestion("Do your character wear a dress?");
+
+
 
 
 
