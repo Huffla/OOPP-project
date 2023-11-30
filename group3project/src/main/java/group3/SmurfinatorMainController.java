@@ -44,8 +44,8 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     private AnchorPane buttonAnchorPane;
     @FXML
     private AnchorPane sliderAnchorPane;
-   // @FXML
-    //private ImageView guessImage;
+    @FXML
+    private ImageView guessImage;
     @FXML
     private ImageView guessDisplay;
     @FXML
@@ -197,8 +197,8 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
         sliderAnchorPane.setVisible(false);
         
         guessContainer.setVisible(true);
-        //Image image = new Image(c.getImagePath());
-        //guessImage.setImage(image);
+        Image image = new Image(c.getImagePath());
+        guessImage.setImage(image);
         System.out.println("Guessed a character!");
         
         questionTitle.setText("Are you thinking of: " + c.getName()+"?");

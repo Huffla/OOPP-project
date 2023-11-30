@@ -10,12 +10,13 @@ public class CharacterInitializer {
     public CharacterInitializer(){
 
     }
-    
+
     public ArrayList<Character> intialize(){
         cdh.clearList();
         ArrayList<Character> characters = new ArrayList<>();
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("BOY", 1.0);
+            put("LEADER", 1.0);
             put("OLD", 1.0);
             put("KIND", 1.0);
             put("CALM", 1.0);
@@ -24,9 +25,11 @@ public class CharacterInitializer {
             put("HAT", 1.0);
             put("DRUNK DRIVER", 0.7);
             put("MAGIC", 1.0);
-        }}, "Old Smurf (Alcoholic)"));
+            put("VIOLENT", 1.0);
+        }}, "Papa Smurf (Alcoholic)", "/gammelsmorf.png"));
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("BOY", 1.0);
+            put("LEADER", 1.0);
             put("OLD", 1.0);
             put("KIND", 1.0);
             put("CALM", 1.0);
@@ -34,7 +37,8 @@ public class CharacterInitializer {
             put("FACIAL HAIR", 1.0);
             put("HAT", 1.0);
             put("DRUNK DRIVER", 0.1);
-        }}, "Old Smurf"));
+            put("MAGIC", 1.0);
+        }}, "Papa Smurf", "/sussypapasmurf.png"));
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("BOY", 1.0);
             put("INVENTOR", 1.0);
@@ -44,17 +48,17 @@ public class CharacterInitializer {
             put("SMART", 1.0);
             put("HAT", 1.0);
             put("CREATIVE", 1.0);
-        }}, "Alchemist Smurf"));
+        }}, "Alchemist Smurf", "/alchemistsmurf.png"));
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("GIRL", 1.0);
             put("KIND", 1.0);
-            put("BABY", 1.0);
+            put("YOUNG", 1.0);
             put("FRECKLES", 1.0);
             put("LONG HAIR", 1.0);
             put("PLAYFUL", 1.0);
             put("HAT", 1.0);
             put("FUNNY", 1.0);
-        }}, "Sussette Smurf"));
+        }}, "Sussette Smurf", "/Sassette_Smurfling.png"));
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("MALE", 1.0);
             put("MECHANICAL", 1.0);
@@ -65,7 +69,7 @@ public class CharacterInitializer {
             put("HAT", 1.0);
             put("FUNNY", 1.0);
             put("VIOLENT", 1.0);
-        }}, "Clockwork Smurf"));
+        }}, "Clockwork Smurf", "/Clowckworksmurf.png"));
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("BOY", 1.0);
             put("INVENTOR", 1.0);
@@ -76,7 +80,7 @@ public class CharacterInitializer {
             put("HAT", 1.0);
             put("CREATIVE", 1.0);
             put("WEAPON", 1.0);
-        }}, "Handy Smurf"));
+        }}, "Handy Smurf", "/Handy_Smurf.png"));
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("BOY", 1.0);
             put("HUMAN", 1.0);
@@ -86,7 +90,7 @@ public class CharacterInitializer {
             put("SMART", 1.0);
             put("BLACK HAIR", 1.0);
             put("LEADER", 1.0);
-        }}, "Sir Johan"));
+        }}, "Sir Johan", "/sirjohan.png"));
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("BOY", 1.0);
             put("MUSICIAN", 1.0);
@@ -96,7 +100,7 @@ public class CharacterInitializer {
             put("CALM", 1.0);
             put("CREATIVE", 1.0);
             put("ARTISTIC", 1.0);
-        }}, "Lute Smurf"));
+        }}, "Lute Smurf", "/lutesmorf"));
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("BOY", 1.0);
             put("FACIAL HAIR", 1.0);
@@ -106,7 +110,7 @@ public class CharacterInitializer {
             put("CALM", 1.0);
             put("VIOLENT", 1.0);
             put("SKIRT", 1.0);
-        }}, "Gutsy Smurf"));
+        }}, "Gutsy Smurf", "/Untitled.png"));
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("GIRL", 1.0);
             put("BLACK HAIR", 1.0);
@@ -116,7 +120,7 @@ public class CharacterInitializer {
             put("CALM", 1.0);
             put("VIOLENT", 1.0);
             put("SMART", 1.0);
-        }}, "Vexy"));
+        }}, "Vexy", "/vexy.png"));
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("GIRL", 1.0);
             put("KIND", 1.0);
@@ -126,7 +130,7 @@ public class CharacterInitializer {
             put("DRUNK DRIVER", 0.8);
             put("VIOLENT", 1.0);
             put("SMART", 1.0);
-        }}, "Smurfette"));
+        }}, "Smurfette", "/Smurfette.png"));
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("GIRL", 1.0);
             put("OLD", 1.0);
@@ -136,7 +140,7 @@ public class CharacterInitializer {
             put("WEAPON", 1.0);
             put("CALM", 1.0);
             put("SMART", 1.0);
-        }}, "Smurfwillow"));
+        }}, "Smurfwillow", "/SmurfWillow.png"));
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("BOY", 1.0);
             put("OLD", 1.0);
@@ -148,7 +152,7 @@ public class CharacterInitializer {
             put("RELIGIOUS", 1.0);
             put("FACIAL HAIR", 1.0);
             put("DRUNK DRIVER", 0.1);
-        }}, "Pastor Joseff"));
+        }}, "Pastor Joseff", "/Abloec_As_Pastor_Joseff.webp"));
 
 
 
