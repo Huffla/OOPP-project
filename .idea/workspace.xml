@@ -4,22 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="182ebb41-7fa8-4c58-8420-ddc6e06ab06f" name="Changes" comment="bilder mmm">
-      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/Abloec_As_Pastor_Joseff.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/traitlist.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Characters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Characters.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Questions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Questions.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Traits.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/CharacterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/CharacterFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/CharacterInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/CharacterInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/QuestionInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/QuestionInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Smurfinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Smurfinator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Trait.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Trait.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/TraitIntitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/TraitIntitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Trait.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Trait.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/TraitIntitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/TraitIntitializer.class" afterDir="false" />
+    <list default="true" id="182ebb41-7fa8-4c58-8420-ddc6e06ab06f" name="Changes" comment="shit crazy, gissar om detn ska gissa wudaheeeal den tar bort opposite trats">
+      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/Clowckworksmurf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/Handy_Smurf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/Papa_Smurf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/Sassette_Smurfling.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/SmurfWillow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/Smurfette.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/Untitled.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/alchemistsmurf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/gammelsmorf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/lutesmorf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/sirjohan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/smurf_wizard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/sussypapasmurf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/vexy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/CharacterFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/CharacterFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/QuestionInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/QuestionInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Smurfinator.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Smurfinator.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701370653109</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="shit crazy, gissar om detn ska gissa wudaheeeal den tar bort opposite trats">
+      <created>1701442972610</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701442972610</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,7 +135,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fler karaktärer" />
     <MESSAGE value="bilder mmm" />
-    <option name="LAST_COMMIT_MESSAGE" value="bilder mmm" />
+    <MESSAGE value="shit crazy, gissar om detn ska gissa wudaheeeal den tar bort opposite trats" />
+    <option name="LAST_COMMIT_MESSAGE" value="shit crazy, gissar om detn ska gissa wudaheeeal den tar bort opposite trats" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
