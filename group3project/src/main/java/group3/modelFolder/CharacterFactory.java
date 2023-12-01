@@ -1,19 +1,43 @@
 package group3.modelFolder;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Dictionary;
-import java.util.HashMap;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
 
 public class CharacterFactory {
 
     public CharacterFactory(){
     }
     private ArrayList<Trait> createTraitsFromStrings(Dictionary<String,Double> s){
+
         ArrayList<Trait> traits = new ArrayList<>();
+        File file = new File("traitlist.txt");
+        Scanner scan;
+        String line;
+        String mainTrait = null;
+        ArrayList<String> oppositeTraits = new ArrayList<>();
+
         for(String name : Collections.list(s.keys())){
-            traits.add(new Trait(name, s.get(name)));
+            try {
+                scan = new Scanner(file);
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+            while (scan.hasNextLine()) {
+                line = scan.nextLine();
+                if(line.equals("STOP")){
+                    if(mainTrait != null && mainTrait.equals(name)) traits.add(new Trait(name, s.get(name), oppositeTraits));
+                    mainTrait = null;
+                    oppositeTraits = new ArrayList<>();
+                }
+                if(mainTrait == null){
+                    mainTrait = line;
+                }
+                else{
+                    oppositeTraits.add(line);
+                }
+            }
+            traits.add(new Trait(name, s.get(name), oppositeTraits));
         }
         return traits;
     }

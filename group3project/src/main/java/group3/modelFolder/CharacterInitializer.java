@@ -20,6 +20,7 @@ public class CharacterInitializer {
             put("OLD", 1.0);
             put("KIND", 1.0);
             put("CALM", 1.0);
+            put("SMURF", 1.0);
             put("GLASSES", 1.0);
             put("FACIAL HAIR", 1.0);
             put("HAT", 1.0);
@@ -32,6 +33,7 @@ public class CharacterInitializer {
             put("LEADER", 1.0);
             put("OLD", 1.0);
             put("KIND", 1.0);
+            put("SMURF", 1.0);
             put("CALM", 1.0);
             put("GLASSES", 1.0);
             put("FACIAL HAIR", 1.0);
@@ -44,6 +46,7 @@ public class CharacterInitializer {
             put("INVENTOR", 1.0);
             put("ALCHEMIST", 1.0);
             put("CALM", 1.0);
+            put("SMURF", 1.0);
             put("GLASSES", 1.0);
             put("SMART", 1.0);
             put("HAT", 1.0);
@@ -53,6 +56,7 @@ public class CharacterInitializer {
             put("GIRL", 1.0);
             put("KIND", 1.0);
             put("YOUNG", 1.0);
+            put("SMURF", 1.0);
             put("FRECKLES", 1.0);
             put("LONG HAIR", 1.0);
             put("PLAYFUL", 1.0);
@@ -63,6 +67,7 @@ public class CharacterInitializer {
             put("MALE", 1.0);
             put("MECHANICAL", 1.0);
             put("MURDERER", 1.0);
+            put("SMURF", 1.0);
             put("EVIL", 1.0);
             put("SMART", 1.0);
             put("PLAYFUL", 1.0);
@@ -76,6 +81,7 @@ public class CharacterInitializer {
             put("HANDY", 1.0);
             put("CALM", 1.0);
             put("STRONG", 1.0);
+            put("SMURF", 1.0);
             put("SMART", 1.0);
             put("HAT", 1.0);
             put("CREATIVE", 1.0);
@@ -96,6 +102,7 @@ public class CharacterInitializer {
             put("MUSICIAN", 1.0);
             put("PLAYFUL", 1.0);
             put("HAT", 1.0);
+            put("SMURF", 1.0);
             put("KIND", 1.0);
             put("CALM", 1.0);
             put("CREATIVE", 1.0);
@@ -106,6 +113,7 @@ public class CharacterInitializer {
             put("FACIAL HAIR", 1.0);
             put("BRAVE", 1.0);
             put("HAT", 1.0);
+            put("SMURF", 1.0);
             put("KIND", 1.0);
             put("CALM", 1.0);
             put("VIOLENT", 1.0);
@@ -114,6 +122,7 @@ public class CharacterInitializer {
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("GIRL", 1.0);
             put("BLACK HAIR", 1.0);
+            put("SMURF", 1.0);
             put("EVIL", 1.0);
             put("HAT", 1.0);
             put("SKIRT", 1.0);
@@ -123,18 +132,20 @@ public class CharacterInitializer {
         }}, "Vexy", "/vexy.png"));
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("GIRL", 1.0);
+            put("SMURF", 1.0);
             put("KIND", 1.0);
             put("CALM", 1.0);
             put("HAT", 1.0);
             put("SKIRT", 1.0);
-            put("DRUNK DRIVER", 0.8);
-            put("VIOLENT", 1.0);
+            put("PRETTY", 1.0);
+            put("BLOND HAIR", 1.0);
             put("SMART", 1.0);
         }}, "Smurfette", "/Smurfette.png"));
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("GIRL", 1.0);
             put("OLD", 1.0);
             put("HAT", 1.0);
+            put("SMURF", 1.0);
             put("LEADER", 1.0);
             put("DRESS", 1.0);
             put("WEAPON", 1.0);
@@ -147,12 +158,13 @@ public class CharacterInitializer {
             put("HAT", 1.0);
             put("LEADER", 1.0);
             put("KIND", 1.0);
+            put("SMURF", 1.0);
             put("DRESS", 1.0);
             put("CALM", 1.0);
             put("RELIGIOUS", 1.0);
             put("FACIAL HAIR", 1.0);
             put("DRUNK DRIVER", 0.1);
-        }}, "Pastor Joseff", "/Abloec_As_Pastor_Joseff.webp"));
+        }}, "Pastor Joseff", "/Abloec_As_Pastor_Joseff.png"));
 
 
 

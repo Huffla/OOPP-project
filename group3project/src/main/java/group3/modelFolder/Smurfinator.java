@@ -159,6 +159,7 @@ public class Smurfinator implements SmurfinatorInterface{
 
 
         if(!characterCreatingState){
+
             if(totalAmountOfQuestionsLeft == 0 || remainingCharacters.size() == 1){
 
                 this.guessedCharacter = calculateGuess();
@@ -211,6 +212,7 @@ public class Smurfinator implements SmurfinatorInterface{
         for (int i = remainingCharacters.size() - 1; i>=0; i--) {
             Character c = remainingCharacters.get(i);
             ArrayList<Trait> tList = c.getCharacterTraits();
+
             for (Trait t : tList) {
                 if (t.getName().equals(currentTrait.getName())) {
                     traitFound = true;
@@ -223,8 +225,9 @@ public class Smurfinator implements SmurfinatorInterface{
                 if (! (Math.abs(0-d) < 0.1)  ) {
                         remainingCharacters.remove(c);
                 }
-                traitFound = false;
+
             }
+            traitFound = false;
                     
         }
     
@@ -249,8 +252,14 @@ public class Smurfinator implements SmurfinatorInterface{
         return guessedCharacter;
     }
 
+    public void removeOppositeTraits(Trait t){
+        traitsLeft.removeIf(oppositeTrait -> t.getOpppositeTraits().contains(oppositeTrait.getName()));
+    }
+
     public void answerYes(){
-        askedTraits.add(new Trait(currentTrait.getName(), 1.0));
+        Trait tempTrait = currentTrait.copy(1.0);
+        askedTraits.add(tempTrait);
+        removeOppositeTraits(tempTrait);
         updateRemainingCharacters(1.0);
         update();
     }
@@ -260,11 +269,13 @@ public class Smurfinator implements SmurfinatorInterface{
         update();
     }
     public void answerDontKnow(){
-        askedTraits.add(new Trait(currentTrait.getName(), 0.5));
+        Trait tempTrait = currentTrait.copy(0.5);
+        askedTraits.add(tempTrait);
         update();
     }
     public void answerRange(double d){
-        askedTraits.add(new Trait(currentTrait.getName(), d));
+        Trait tempTrait = currentTrait.copy(d);
+        askedTraits.add(tempTrait);
         update();
     }
 

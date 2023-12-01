@@ -58,6 +58,8 @@ public class QuestionInitializer {
         db.createMultipleChoiceQuestion("Do your character usually carry a weapon?");
         db.createMultipleChoiceQuestion("Is your character religious?");
         db.createMultipleChoiceQuestion("Do your character wear a dress?");
+        db.createMultipleChoiceQuestion("Is your character a smurf?");
+
 
 
 
