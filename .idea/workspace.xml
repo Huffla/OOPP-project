@@ -5,23 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="182ebb41-7fa8-4c58-8420-ddc6e06ab06f" name="Changes" comment="shit crazy, gissar om detn ska gissa wudaheeeal den tar bort opposite trats">
-      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/Clowckworksmurf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/Handy_Smurf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/Papa_Smurf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/Sassette_Smurfling.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/SmurfWillow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/Smurfette.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/Untitled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/alchemistsmurf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/gammelsmorf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/lutesmorf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/sirjohan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/smurf_wizard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/sussypapasmurf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/group3project/src/main/smurfs/vexy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Characters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Characters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/group3project.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/CharacterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/CharacterFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/CharacterFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/CharacterFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/QuestionInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/QuestionInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Smurfinator.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Smurfinator.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701442972610</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="shit crazy, gissar om detn ska gissa wudaheeeal den tar bort opposite trats">
+      <created>1701455612368</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701455612368</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -143,8 +138,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Smurfinator.java</url>
-          <line>259</line>
-          <option name="timeStamp" value="5" />
+          <line>166</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Smurfinator.java</url>
+          <line>243</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
