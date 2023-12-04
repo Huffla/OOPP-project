@@ -80,4 +80,17 @@ public class MainMenuController implements ControllerInitializer {
     private void closeGame(){
         javafx.application.Platform.exit();
     }
+    @FXML
+    private void collection(){
+
+    }
+    @FXML
+    private void leaderboard(){
+
+    }
+    @FXML
+    private void loginpopup(){
+        
+    }
 }
+
