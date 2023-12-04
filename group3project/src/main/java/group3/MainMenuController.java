@@ -76,5 +76,8 @@ public class MainMenuController implements ControllerInitializer {
         stage.setHeight(720);
         stage.setResizable(false);
     }
-
+    @FXML
+    private void closeGame(){
+        javafx.application.Platform.exit();
+    }
 }
