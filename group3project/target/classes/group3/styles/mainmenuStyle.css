@@ -38,6 +38,11 @@
 
 .play-button:hover{
     -fx-background-color: #09babe;
+    -fx-cursor: hand;
+}
+
+.play-button:pressed{
+    -fx-background-color: #09be66;
 }
 
 .other-button{
@@ -52,4 +57,9 @@
 
 .other-button:hover{
     -fx-background-color: #09babe;
+    -fx-cursor: hand;
+}
+
+.other-button:pressed{
+    -fx-background-color: #09be66;
 }

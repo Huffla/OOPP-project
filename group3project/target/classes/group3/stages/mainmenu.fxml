@@ -23,7 +23,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button layoutX="28.0" layoutY="617.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="83.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="EXIT">
+      <Button fx:id="exitButton" layoutX="28.0" layoutY="617.0" mnemonicParsing="false" onAction="#closeGame" prefHeight="43.0" prefWidth="83.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="EXIT">
          <font>
             <Font name="Franklin Gothic Heavy Italic" size="22.0" />
          </font>

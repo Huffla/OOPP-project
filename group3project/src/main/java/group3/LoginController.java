@@ -1,3 +1,4 @@
+/* 
 package group3;
 
 import javafx.event.ActionEvent;
@@ -10,16 +11,15 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LeaderboardController implements ControllerInitializer {
+public class LoginController implements ControllerInitializer {
+
 
     @FXML
-    private Button collectionButton;
+    private Button leaveButton;
 
     @FXML
-    private Button mainmenuButton;
+    private Button enterButton;
 
-    @FXML
-    Button exitButton;
 
     private Stage stage; // Reference to the stage
 
@@ -29,18 +29,11 @@ public class LeaderboardController implements ControllerInitializer {
     }
 
     @Override
-    public void initialize() {
-
-    }
-
-    @FXML
-    private void collection(ActionEvent event) {
-        String titlecss = getClass().getResource("styles/universalStyle.css").toExternalForm();
-        String scenecss = getClass().getResource("styles/collectionStyle.css").toExternalForm();
-        String[] stylesheetArray = { titlecss, scenecss };
-        Stage stage = (Stage) ((Node) event.getTarget()).getScene().getWindow();
-        SceneFactory sceneManager = new SceneFactory(stage);
-        sceneManager.loadAndShowScene("stages/compendiumscene.fxml", stylesheetArray, CompendiumController.class);
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+    leaveButton.setOnAction(event -> {
+        Stage stage = (Stage) leaveButton.getScene().getWindow();
+        stage.close();
+    });
     }
 
     @FXML
@@ -53,11 +46,14 @@ public class LeaderboardController implements ControllerInitializer {
         sceneManager.loadAndShowScene("stages/mainmenu.fxml", stylesheetArray, MainMenuController.class);
     }
 
-
     @FXML
-    private void closeGame(){
-        javafx.application.Platform.exit();
+    private void closeQuitMenu() {
+
+        if (stage != null && stage.isShowing()) {
+            stage.close();
+        }
     }
 
-
 }
+
+*/

@@ -82,7 +82,7 @@ public class Smurfinator {
         if(traitsLeft.size() == 0){
             setStateCreateCharacter();
         }
-        int traitIndex = rn.nextInt(0, traitsLeft.size());
+        int traitIndex = rn.nextInt(traitsLeft.size());
         Trait tempTrait = traitsLeft.get(traitIndex);
         currentQuestion = traitQuestionDict.get(tempTrait);
         currentTrait = tempTrait;

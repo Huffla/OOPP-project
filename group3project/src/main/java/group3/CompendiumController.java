@@ -20,6 +20,9 @@ public class CompendiumController implements ControllerInitializer {
     @FXML
     private Button mainmenuButton;
 
+    @FXML
+    Button exitButton;
+
    
 
     private Stage stage; // Reference to the stage
@@ -53,6 +56,12 @@ public class CompendiumController implements ControllerInitializer {
         Stage stage = (Stage) ((Node) event.getTarget()).getScene().getWindow();
         SceneFactory sceneManager = new SceneFactory(stage);
         sceneManager.loadAndShowScene("stages/mainmenu.fxml", stylesheetArray, MainMenuController.class);
+    }
+
+
+    @FXML
+    private void closeGame(){
+        javafx.application.Platform.exit();
     }
 
 

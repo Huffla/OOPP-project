@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -53,6 +54,9 @@
                <image>
                   <Image url="@../images/Smurfs/Papa_Smurf.png" />
                </image>
+               <effect>
+                  <Shadow blurType="ONE_PASS_BOX" height="0.0" radius="0.0" width="0.0" />
+               </effect>
             </ImageView>
             <Label alignment="CENTER" layoutX="37.0" layoutY="160.0" prefHeight="52.0" prefWidth="109.0" text="Papa Smurf">
                <font>
@@ -83,11 +87,17 @@
                <image>
                   <Image url="@../images/Smurfs/Sassette_Smurfling.png" />
                </image>
+               <effect>
+                  <Shadow blurType="ONE_PASS_BOX" height="0.0" radius="0.0" width="0.0" />
+               </effect>
             </ImageView>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="398.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/Smurfs/VanitySmurfPerfume.png" />
                </image>
+               <effect>
+                  <Shadow height="0.0" radius="0.0" width="0.0" />
+               </effect>
             </ImageView>
             <ImageView fitHeight="142.0" fitWidth="139.0" layoutX="554.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -152,7 +162,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button layoutX="28.0" layoutY="617.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="83.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="EXIT">
+      <Button fx:id="exitButton" layoutX="28.0" layoutY="617.0" mnemonicParsing="false" onAction="#closeGame" prefHeight="43.0" prefWidth="83.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="EXIT">
          <font>
             <Font name="Franklin Gothic Heavy Italic" size="22.0" />
          </font>

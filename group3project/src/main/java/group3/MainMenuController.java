@@ -30,6 +30,8 @@ public class MainMenuController implements ControllerInitializer {
     public MainMenuController(){
         
     }
+
+
     @Override
     public void initialize() {
 
@@ -70,6 +72,11 @@ public class MainMenuController implements ControllerInitializer {
     @FXML
     private void loginpopup() {
         QuitMenuLoader.showPopup("stages/loginpopup.fxml", "Login");
+    }
+
+    @FXML
+    private void closeGame(){
+        javafx.application.Platform.exit();
     }
 
 }
