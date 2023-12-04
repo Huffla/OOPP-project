@@ -184,7 +184,7 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     }
 
     @FXML
-    private void startsmurfcreate() {
+    private void askCharacterCreationQuestions() {
         guessContainer.setVisible(false);
         createnewcharactercontainer.setVisible(false);
         createsmurfcontainer.setVisible(false);
