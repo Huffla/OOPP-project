@@ -54,38 +54,30 @@
          </children>
       </AnchorPane>
       <Button fx:id="settingsButton" layoutX="48.0" layoutY="598.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#quitpopup" prefHeight="70.0" prefWidth="70.0" styleClass="settings-button" stylesheets="@../styles/buttonStyle.css" />
-      <AnchorPane fx:id="createsmurfcontainer" prefHeight="380.0" prefWidth="506.0" style="-fx-background-color: ffe39b;" visible="false">
-         <children>
-            <Label alignment="CENTER" layoutX="57.0" layoutY="14.0" prefHeight="30.0" prefWidth="391.0" text="Give your Character a Name" textAlignment="CENTER" />
-            <TextField fx:id="smurfname" layoutX="166.0" layoutY="44.0" prefHeight="41.0" prefWidth="174.0" promptText="Name">
-               <font>
-                  <Font size="21.0" />
-               </font>
-            </TextField>
-            <Button fx:id="submitButton" layoutX="182.0" layoutY="216.0" mnemonicParsing="false" onAction="#createNewCharacter" prefHeight="62.0" prefWidth="135.0" text="Submit" />
-            <Label layoutX="172.0" layoutY="102.0" prefHeight="17.0" prefWidth="141.0" text="Path to image:" />
-            <TextField fx:id="pathToImageTextBox" layoutX="166.0" layoutY="119.0" prefHeight="25.0" prefWidth="174.0" promptText="/image" />
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="sliderAnchorPane" layoutX="626.0" layoutY="297.0" prefHeight="306.0" prefWidth="399.0">
          <children>
             <Rectangle fx:id="buttonContainer1" arcHeight="5.0" arcWidth="5.0" fill="#ffe39b" height="292.0" layoutX="-2.0" layoutY="13.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="379.0" />
             <Button fx:id="dontknowbuttonrange" layoutX="76.0" layoutY="214.0" mnemonicParsing="false" onAction="#dontknowPressed" prefHeight="74.0" prefWidth="222.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="DON'T KNOW" />
             <Slider fx:id="answerSlider" layoutX="80.0" layoutY="79.0" max="1.0" prefHeight="30.0" prefWidth="222.0" snapToTicks="true" />
             <Button fx:id="nextButton" layoutX="77.0" layoutY="116.0" mnemonicParsing="false" onAction="#answerRange" prefHeight="74.0" prefWidth="222.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="NEXT" />
-            <Text fx:id="sliderDisplayValue" layoutX="159.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="slider-display-value" wrappingWidth="56.80002441406248" />
+            <Text fx:id="sliderDisplayValue" layoutX="159.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="slider-display-value" wrappingWidth="56.80002441406248" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="createsmurfcontainer" layoutX="603.0" layoutY="316.0" prefHeight="380.0" prefWidth="506.0" style="-fx-background-color: ffe39b;" visible="false">
+         <children>
+            <Label alignment="CENTER" layoutX="57.0" layoutY="14.0" prefHeight="82.0" prefWidth="391.0" text="Give your Smurf a Name" textAlignment="CENTER" />
+            <TextField fx:id="smurfname" layoutX="117.0" layoutY="117.0" prefHeight="62.0" prefWidth="266.0" promptText="Name">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <Button fx:id="submitButton" layoutX="182.0" layoutY="216.0" mnemonicParsing="false" onAction="#createNewCharacter" prefHeight="62.0" prefWidth="135.0" text="Submit" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="createnewcharactercontainer" layoutX="626.0" layoutY="310.0" prefHeight="380.0" prefWidth="479.0" style="-fx-background-color: ffe39b;" visible="false">
          <children>
-            <Button fx:id="createcharacterButton" layoutX="144.0" layoutY="57.0" mnemonicParsing="false" onAction="#startsmurfcreate" prefHeight="70.0" prefWidth="192.0" stylesheets="@../styles/buttonStyle.css" text="Create New Character">
-               <font>
-                  <Font size="8.0" />
-               </font></Button>
-            <Button layoutX="144.0" layoutY="217.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="70.0" prefWidth="192.0" stylesheets="@../styles/buttonStyle.css" text="Back To Main Menu">
-               <font>
-                  <Font size="8.0" />
-               </font></Button>
+            <Button fx:id="createcharacterButton" layoutX="144.0" layoutY="57.0" mnemonicParsing="false" onAction="#makeInitialCall" prefHeight="70.0" prefWidth="192.0" stylesheets="@../styles/buttonStyle.css" text="Create New Character" />
+            <Button layoutX="144.0" layoutY="217.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="192.0" stylesheets="@../styles/buttonStyle.css" text="Back To Main Menu" />
          </children>
       </AnchorPane>
    </children>

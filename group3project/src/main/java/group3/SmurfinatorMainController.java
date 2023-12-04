@@ -161,6 +161,7 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     }
 
     private void displayQuestion(Question q) {
+        createnewcharactercontainer.setVisible(false);
         if (q.getClass() == MultipleChoiceQuestion.class) {
             sliderAnchorPane.setVisible(false);
             buttonAnchorPane.setVisible(true);
