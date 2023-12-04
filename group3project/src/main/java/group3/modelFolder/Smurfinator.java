@@ -93,7 +93,7 @@ public class Smurfinator implements SmurfinatorInterface{
 
     /**
      * Updates the currentQuestion and the corresponding currentTrait
-     * by choosing a new relevant question excluding ones already asked.
+     * by choosing a new relevant question excluding ones already asked
      */
     private void chooseNewQuestion(){
         if(traitsLeft.size() == 0){
