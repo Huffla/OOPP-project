@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="182ebb41-7fa8-4c58-8420-ddc6e06ab06f" name="Changes" comment="kommentarer i smurfinator och getNextQuestion uppdelad" />
+    <list default="true" id="182ebb41-7fa8-4c58-8420-ddc6e06ab06f" name="Changes" comment="cool commit kommentarer och getNextQuestion uppdelad fler kommentarer">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/SmurfinatorMainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Model.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Smurfinator.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Smurfinator.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +22,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -114,7 +120,28 @@
       <option name="project" value="LOCAL" />
       <updated>1701696738511</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="kommentarer i smurfinator och getNextQuestion uppdelad">
+      <created>1701696844117</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701696844117</updated>
+    </task>
+    <task id="LOCAL-00007" summary="cool commit kommentarer och getNextQuestion uppdelad">
+      <created>1701696918941</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701696918941</updated>
+    </task>
+    <task id="LOCAL-00008" summary="cool commit kommentarer och getNextQuestion uppdelad fler kommentarer">
+      <created>1701701680519</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701701680519</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,9 +160,20 @@
     <MESSAGE value="bilder mmm" />
     <MESSAGE value="shit crazy, gissar om detn ska gissa wudaheeeal den tar bort opposite trats" />
     <MESSAGE value="kommentarer i smurfinator och getNextQuestion uppdelad" />
-    <option name="LAST_COMMIT_MESSAGE" value="kommentarer i smurfinator och getNextQuestion uppdelad" />
+    <MESSAGE value="cool commit kommentarer och getNextQuestion uppdelad" />
+    <MESSAGE value="cool commit kommentarer och getNextQuestion uppdelad fler kommentarer" />
+    <option name="LAST_COMMIT_MESSAGE" value="cool commit kommentarer och getNextQuestion uppdelad fler kommentarer" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/group3project/src/main/java/group3/SmurfinatorMainController.java</url>
+          <line>198</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="group3.modelFolder.Trait" memberName="opppositeTraits" />
