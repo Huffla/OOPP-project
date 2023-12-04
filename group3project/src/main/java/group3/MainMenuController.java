@@ -34,6 +34,8 @@ public class MainMenuController implements ControllerInitializer {
         }
         return instance;
     }
+
+
     @Override
     public void initialize() {
 
@@ -74,5 +76,21 @@ public class MainMenuController implements ControllerInitializer {
         stage.setHeight(720);
         stage.setResizable(false);
     }
+    @FXML
+    private void closeGame(){
+        javafx.application.Platform.exit();
+    }
+    @FXML
+    private void collection(){
 
+    }
+    @FXML
+    private void leaderboard(){
+
+    }
+    @FXML
+    private void loginpopup(){
+        
+    }
 }
+

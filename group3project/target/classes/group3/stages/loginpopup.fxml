@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3.QuitMenuController">
+   <children>
+      <Region prefHeight="360.0" prefWidth="640.0" styleClass="login-background" stylesheets="@../styles/loginStyle.css" />
+      <Label alignment="CENTER" layoutX="245.0" layoutY="39.0" prefHeight="66.0" prefWidth="178.0" styleClass="sign-title" stylesheets="@../styles/loginStyle.css" text="LOGIN">
+         <font>
+            <Font name="Impact" size="39.0" />
+         </font>
+      </Label>
+      <Button layoutX="432.0" layoutY="286.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="101.0" styleClass="other-button" stylesheets="@../styles/loginStyle.css" text="ENTER">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="Georgia Pro Cond Black Italic" size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="127.0" layoutY="286.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="101.0" styleClass="other-button" stylesheets="@../styles/loginStyle.css" text="LEAVE">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="Georgia Pro Cond Black Italic" size="20.0" />
+         </font>
+      </Button>
+      <TextField layoutX="171.0" layoutY="146.0" prefHeight="26.0" prefWidth="326.0" />
+      <TextField layoutX="171.0" layoutY="216.0" prefHeight="26.0" prefWidth="326.0" />
+      <Label layoutX="171.0" layoutY="122.0" styleClass="sign-title" stylesheets="@../styles/loginStyle.css" text="USERNAME:">
+         <font>
+            <Font name="Georgia Pro Cond Black" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="171.0" layoutY="193.0" styleClass="sign-title" stylesheets="@../styles/loginStyle.css" text="PASSWORD:">
+         <font>
+            <Font name="Georgia Pro Black" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

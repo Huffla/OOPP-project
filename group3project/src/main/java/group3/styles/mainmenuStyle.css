@@ -1,0 +1,65 @@
+
+.scene-background{
+    -fx-background-color: #0A2826;
+}
+
+/*
+    background-color: #030F0D;
+    background-color: #0A2826;
+
+*/
+
+.title{
+    -fx-text-fill: #09cdda;
+    -fx-effect: dropshadow(gaussian, black, 20, 0.1, 0.1, 0);
+}
+
+.subtitle{
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, black, 20, 0.1, 0.1, 0);
+}
+
+/*
+    -fx-text-fill: #3968AB;
+    -fx-text-fill: #6A95C5;
+    -fx-border-color: #077981;
+
+*/
+
+.play-button{
+    -fx-text-fill: white;
+    -fx-background-color: #09cdda;
+    -fx-background-radius: 40;
+    -fx-border-color: white;
+    -fx-border-radius: 40;
+    -fx-border-width: 2;
+    
+}
+
+.play-button:hover{
+    -fx-background-color: #09babe;
+    -fx-cursor: hand;
+}
+
+.play-button:pressed{
+    -fx-background-color: #09be66;
+}
+
+.other-button{
+    -fx-text-fill: white;
+    -fx-background-color: #09cdda;
+    -fx-background-radius: 5;
+    -fx-border-color: white;
+    -fx-border-radius: 5;
+    -fx-border-width: 2;
+
+}
+
+.other-button:hover{
+    -fx-background-color: #09babe;
+    -fx-cursor: hand;
+}
+
+.other-button:pressed{
+    -fx-background-color: #09be66;
+}
