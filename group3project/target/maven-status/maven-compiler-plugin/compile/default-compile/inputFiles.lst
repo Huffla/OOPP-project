@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\QuitMenuController.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\DatabaseHandler.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\NoUserFoundException.java
@@ -30,3 +31,35 @@ C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\gro
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\Smurf.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\InvalidPasswordException.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\User.java
+=======
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\rangeQuestion.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\MultipleChoiceQuestion.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\QuitMenuController.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\User.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\Application.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\Main.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\CharacterFactory.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\Character.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\SmurfinatorMainController.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\CharacterDatabaseHandler.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\SmurfinatorInterface.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\Question.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\SceneFactory.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\SmurfinatorObserver.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\TraitIntitializer.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\MainMenuController.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\Trait.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\NoUserFoundException.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\LoginAuth.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\TraitDatabaseHandler.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\DatabaseHandler.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\QuestionInitializer.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\UserDatabaseHandler.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\MainMenu.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\QuestionDatabaseHandler.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\Smurfinator.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\InvalidPasswordException.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\modelFolder\Model.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\QuitMenuLoader.java
+C:\Users\FastOne\Documents\GitHub\OOPP-project\group3project\src\main\java\group3\ControllerInitializer.java
+>>>>>>> main

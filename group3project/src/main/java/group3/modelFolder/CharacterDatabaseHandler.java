@@ -15,6 +15,14 @@ public class CharacterDatabaseHandler extends DatabaseHandler{
         }
         return characters;
     }
+    public void addCharacters(ArrayList<Character> cList){
+        for(Character c: cList){
+            super.addToList(c);
+        }
+    }
+    public void addCharacter(Character c){
+        super.addToList(c);
+    }
 
     public void removeCharacter(Character c){
         

@@ -19,12 +19,13 @@ public class Model {
     LoginAuth loginAuth;
     QuestionInitializer qi;
     TraitIntitializer ti;
-    public Smurfinator smurfinator;
+    CharacterInitializer ci;
+    private Smurfinator smurfinator;
     Dictionary<Trait,Question> traitQuestionDict = new Hashtable<>();
     private static Model instance;
     private User loggedInUser;
     
-    SmurfinatorMainController smurfmaincontroller;
+    
     MainMenuController mainmenucontroller;
 
     //TODO fixa att smurfinator bara körs om man e inloggad, sätter user till null så länge, Ex genom att ta bort mycker från konstruktorn och göra så att smurfinator skapas när man klickar på smurfinator, vilket men enbart kan efter att man är inloggad. Första scenen bör vara logga in sidan.
@@ -37,7 +38,8 @@ public class Model {
         ti.initialize();
         qi = new QuestionInitializer(questions_file_name);
         qi.initialize(); // initializes the question database with questions and their corresponding trait, remove if you do not want to create new each time
-
+        ci = new CharacterInitializer();
+        ci.intialize();
         user_list = user_handler.getUsers();
         traits_list = trait_handler.getTraits();
         character_list = character_handler.getCharacters();
@@ -45,27 +47,20 @@ public class Model {
         loginAuth = new LoginAuth(user_handler.getUsers());
         initializeDict(question_handler.getQuestions());
         //TODO current user
+        smurfinator = new Smurfinator(traitQuestionDict, character_list, null);
         
 
     }
 
-    public void createSmurfinator(){
-         smurfinator = new Smurfinator(traitQuestionDict, character_list, null,smurfmaincontroller);
-    }
-
-    public void setSmurfinatorController(SmurfinatorMainController controller) {
-        this.smurfmaincontroller = controller;
-    }
-
-
-     public void setMainController(MainMenuController controller) {
-        this.mainmenucontroller = controller;
-    }
+  
     public static Model getInstance(String user_file_name,String questions_file_name, String traits_file_name,String characters_file_name) {
         if (instance == null){
             instance = new Model(user_file_name,questions_file_name,traits_file_name,characters_file_name);
         }
         return instance;
+    }
+    public void setMainMenuController(MainMenuController m){
+        mainmenucontroller = m;
     }
     // initializesDictionary of Traits as keys and questions as values.
     private void initializeDict(ArrayList<Question> questions) {
@@ -78,6 +73,9 @@ public class Model {
         }
 
 
+    }
+    public Smurfinator getSmurfinator(){
+        return smurfinator;
     }
     // returns the list of users
     public ArrayList<User> getUsers(){

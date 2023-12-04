@@ -19,6 +19,7 @@ public abstract class DatabaseHandler {
         attemptLoadFile();
         
         
+        
     }
         // Has to have two cases to know if it has to write to a new file.
     private void attemptLoadFile() {

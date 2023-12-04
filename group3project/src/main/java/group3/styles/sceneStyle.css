@@ -18,4 +18,9 @@
     -fx-font-weight: 900;
 }
 
-
+#slider-display-value{
+    -fx-font-size: 30;
+    -fx-font-family:"Arial Black";
+    -fx-text-fill: #da9809;
+    -fx-font-weight: 900;
+}

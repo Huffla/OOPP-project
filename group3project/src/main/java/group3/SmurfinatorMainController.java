@@ -2,10 +2,15 @@ package group3;
 
 import javafx.scene.control.TextField;
 
+import javax.swing.Action;
+
 import group3.modelFolder.Character;
 import group3.modelFolder.Model;
 import group3.modelFolder.MultipleChoiceQuestion;
 import group3.modelFolder.Question;
+import group3.modelFolder.Smurfinator;
+import group3.modelFolder.SmurfinatorInterface;
+import group3.modelFolder.SmurfinatorObserver;
 import group3.modelFolder.rangeQuestion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,7 +22,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
-public class SmurfinatorMainController implements ControllerInitializer {
+public class SmurfinatorMainController implements ControllerInitializer, SmurfinatorObserver {
 
     @FXML
     private Rectangle buttonContainer;
@@ -55,33 +60,54 @@ public class SmurfinatorMainController implements ControllerInitializer {
     private Button submitButton;
     @FXML
     private AnchorPane createsmurfcontainer;
-
-
     @FXML
-    private Text questionTitle;
+    private Text sliderDisplayValue;
+    @FXML
+    private double sliderValue;
+    @FXML
+    private Button dontknowbuttonrange;
+
     private static SmurfinatorMainController instance;
-  
-    private SmurfinatorMainController(){
-        questionTitle = new Text();
-        buttonAnchorPane = new AnchorPane();
-        sliderAnchorPane = new AnchorPane();
+    @FXML
+    public Text questionTitle;
+    @FXML
+    public TextField pathToImageTextBox;
+
+    SmurfinatorInterface smurfinator;
+
+    private SmurfinatorMainController(SmurfinatorInterface s) {
+        smurfinator = s;
+        smurfinator.addObserver(this);
+
     }
 
-    public static SmurfinatorMainController getInstance(){
-        if(instance == null){
-        instance = new SmurfinatorMainController();
-        } 
+    public static SmurfinatorMainController getInstance(SmurfinatorInterface s) {
+        if (instance == null) {
+            instance = new SmurfinatorMainController(s);
+
+        }
         return instance;
-
     }
-    Model model = Model.getInstance("Users.txt","Questions.txt","Traits.txt","Characters.txt");
+
+    public void makeInitialCall() {
+        smurfinator.makeInitialCall();
+    }
 
     @Override
     public void initialize() {
         settingsButtonBuilder();
         buttonContainer.setArcWidth(40.0);
         buttonContainer.setArcHeight(40.0);
-        
+        addSliderListener();
+        answerSlider.setMajorTickUnit(0.1);
+    }
+
+    private void addSliderListener() {
+        answerSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            int scaledValue = (int) (newValue.doubleValue() * 10);
+            sliderDisplayValue.setText(String.valueOf(scaledValue));
+            sliderValue = newValue.doubleValue();
+        });
     }
 
     private void settingsButtonBuilder() {
@@ -102,64 +128,103 @@ public class SmurfinatorMainController implements ControllerInitializer {
     }
 
     @FXML
-    private void gobackQuestion(){
+    private void gobackQuestion() {
 
     }
 
     @FXML
-    private void yesPressed(ActionEvent event){
-        model.smurfinator.answerYes();
+    private void answerRange(ActionEvent event) {
+        smurfinator.answerRange(sliderValue);
     }
 
     @FXML
-    private void noPressed(ActionEvent event){
-        model.smurfinator.answerNo();
+    private void yesPressed(ActionEvent event) {
+        smurfinator.answerYes();
     }
 
     @FXML
-    private void dontknowPressed(ActionEvent event){
-        model.smurfinator.answerDontKnow();
+    private void noPressed(ActionEvent event) {
+        smurfinator.answerNo();
     }
 
-    private void displayQuestion(Question q){
-        if(q.getClass() == MultipleChoiceQuestion.class){
+    @FXML
+    private void dontknowPressed(ActionEvent event) {
+        smurfinator.answerDontKnow();
+    }
+
+
+    @FXML
+    private void createNewCharacter(ActionEvent event) {
+        String name = smurfname.getText();
+        String path = pathToImageTextBox.getText();
+        smurfinator.createNewCharacter(name,path);
+    }
+
+    private void displayQuestion(Question q) {
+        if (q.getClass() == MultipleChoiceQuestion.class) {
             sliderAnchorPane.setVisible(false);
             buttonAnchorPane.setVisible(true);
-        }
-        else if(q.getClass() == rangeQuestion.class){
+        } else if (q.getClass() == rangeQuestion.class) {
             buttonAnchorPane.setVisible(false);
             sliderAnchorPane.setVisible(true);
         }
     }
-    public void updateQuestion(Question q){
+
+    public void updateQuestion(Question q) {
+        System.out.println("Question updated!!!");
         questionTitle.setText(q.getQuestionText());
         displayQuestion(q);
     }
-    private void nameCharacter(){
-        //TODO display screen with box for entering name of created character
-    }
-    public void guessCharacter(Character c){
-        buttonAnchorPane.setVisible(false);
-        sliderAnchorPane.setVisible(false);
-        Image image = new Image(c.getImagePath());
-        guessImage.setImage(image);
-        questionTitle.setText("You are thinking of:" + c.getName());
-    }
 
     @FXML
-    private void incorrectCharacter(ActionEvent event){
+    private void incorrectCharacter(ActionEvent event) {
         guessContainer.setVisible(false);
         createnewcharactercontainer.setVisible(true);
+        smurfinator.setCharacterCreationState();
     }
 
     @FXML
-    private void createNewCharacter(ActionEvent event){
-        String name = smurfname.getText();
-        model.smurfinator.createNewCharacter(name);
+    private void startsmurfcreate() {
+        guessContainer.setVisible(false);
+        createnewcharactercontainer.setVisible(false);
+        createsmurfcontainer.setVisible(false);
+        makeInitialCall();
+    }
+
+    @Override
+    public void makeGuess(Character c) {
+        buttonAnchorPane.setVisible(false);
+        sliderAnchorPane.setVisible(false);
+        
+        guessContainer.setVisible(true);
+        Image image = new Image(c.getImagePath());
+        guessImage.setImage(image);
+        System.out.println("Guessed a character!");
+        
+        questionTitle.setText("Are you thinking of: " + c.getName()+"?");
+    }
+
+    //TODO make it so that the player can decice if they want to create a  new character. If they do they have to answer the rest of the questions
+    @Override
+    public void switchToCreateCharacterOption() {
+        buttonAnchorPane.setVisible(false);
+        sliderAnchorPane.setVisible(false);
+        guessContainer.setVisible(false);
+        createnewcharactercontainer.setVisible(true);
+        questionTitle.setText("Character not found! Would you like to create a new character? (You have to answer all questions)");
+    }
+
+    @Override
+    public void switchToCreateCharacter() {
+        buttonAnchorPane.setVisible(false);
+        sliderAnchorPane.setVisible(false);
+        guessContainer.setVisible(false);
+        createsmurfcontainer.setVisible(true);
+        questionTitle.setText("Last step!");
     }
     @FXML
-    private void startsmurfcreate(){
-        createnewcharactercontainer.setVisible(false);
-        createsmurfcontainer.setVisible(true);
+    public void returnToMainMenu(){
+        smurfinator.reset();
+        //TODO return to main menu
     }
 }
