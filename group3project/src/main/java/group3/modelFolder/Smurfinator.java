@@ -253,6 +253,9 @@ public class Smurfinator implements SmurfinatorInterface{
     }
 
     public void removeOppositeTraits(Trait t){
+        for(int i = t.opppositeTraits.size(); i > 0; i-- ){
+            totalAmountOfQuestionsLeft--;
+        }
         traitsLeft.removeIf(oppositeTrait -> t.getOpppositeTraits().contains(oppositeTrait.getName()));
     }
 
