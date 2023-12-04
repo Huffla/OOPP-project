@@ -15,27 +15,6 @@ public class MainMenuController implements ControllerInitializer {
 
     @FXML
     Button playButton;
-<<<<<<< HEAD
-
-    @FXML
-    Button collectionButton;
-
-    @FXML
-    Button leaderboardButton;
-
-    @FXML
-    Button exitButton;
-
-    @FXML
-    Button loginButton;
-
-
-
-
-
-    public MainMenuController(){
-        
-=======
     SmurfinatorMainController controller;
     private static MainMenuController instance;
    private MainMenuController(SmurfinatorMainController c){
@@ -54,7 +33,6 @@ public class MainMenuController implements ControllerInitializer {
             throw new NullPointerException();
         }
         return instance;
->>>>>>> main
     }
 
 
@@ -92,44 +70,11 @@ public class MainMenuController implements ControllerInitializer {
             e.printStackTrace();
         }
     }
-<<<<<<< HEAD
-
-    @FXML
-    private void collection(ActionEvent event) {
-        String titlecss = getClass().getResource("styles/universalStyle.css").toExternalForm();
-        String scenecss = getClass().getResource("styles/collectionStyle.css").toExternalForm();
-        String[] stylesheetArray = { titlecss, scenecss };
-        Stage stage = (Stage) ((Node) event.getTarget()).getScene().getWindow();
-        SceneFactory sceneManager = new SceneFactory(stage);
-        sceneManager.loadAndShowScene("stages/compendiumscene.fxml", stylesheetArray, CompendiumController.class);
-    }
-
-
-    @FXML
-    private void leaderboard(ActionEvent event) {
-        String titlecss = getClass().getResource("styles/leaderboardStyle.css").toExternalForm();
-        String scenecss = getClass().getResource("styles/collectionStyle.css").toExternalForm();
-        String[] stylesheetArray = { titlecss, scenecss };
-        Stage stage = (Stage) ((Node) event.getTarget()).getScene().getWindow();
-        SceneFactory sceneManager = new SceneFactory(stage);
-        sceneManager.loadAndShowScene("stages/leaderboard.fxml", stylesheetArray, LeaderboardController.class);
-    }
-
-    @FXML
-    private void loginpopup() {
-        QuitMenuLoader.showPopup("stages/loginpopup.fxml", "Login");
-    }
-
-    @FXML
-    private void closeGame(){
-        javafx.application.Platform.exit();
-=======
     private void configureStage(Stage stage, Scene scene) {
         stage.setTitle("Smurfinator");
         stage.setWidth(1280);
         stage.setHeight(720);
         stage.setResizable(false);
->>>>>>> main
     }
 
 }
