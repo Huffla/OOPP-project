@@ -1,15 +1,15 @@
 package group3.modelFolder;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Random;
 import java.util.Dictionary;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import group3.SmurfinatorMainController;
-
-
 
 public class Smurfinator implements SmurfinatorInterface{
+    public static final double TRAITTRESHOLD = 0.1;
     ArrayList<Trait> traitsLeft;
     ArrayList<Character> characters;
     ArrayList<Character> remainingCharacters;
@@ -72,23 +72,6 @@ public class Smurfinator implements SmurfinatorInterface{
         }
     }
 
-
-    /**
-     * @return
-     *  Deep copy of a list of questions.
-
-    private ArrayList<Question> copyList(ArrayList<Question> q) {
-    ArrayList<Question> list = new ArrayList<>();
-    for(Question question: q){
-    Trait t = question.getQuestionTrait();
-    if(question.getClass() == MultipleChoiceQuestion.class){
-    list.add(new MultipleChoiceQuestion(question.getQuestionText(),new Trait(t.getName(), t.get_amount_of_trait())));
-    } else if(question.getClass() == rangeQuestion.class){
-    list.add(new rangeQuestion(question.getQuestionText(),new Trait(t.getName(), t.get_amount_of_trait())));
-    }
-    }
-    return list;
-    }*/
     // Gets Traits from the trait question dictionary and returns a list of them.
     private ArrayList<Trait> getTraitsFromDictionary() {
         ArrayList<Trait> traits = new ArrayList<>();
@@ -100,9 +83,11 @@ public class Smurfinator implements SmurfinatorInterface{
     /**
      * @ Returns a question if there exists one otherwise null
      */
-    // Howl(👑) skrev den här.
-    //TODO Refactor into two methods
-    private void getNextQuestion(){
+    /**
+     * Updates the currentQuestion and the corresponding currentTrait
+     * by choosing a new relevant question excluding ones already asked.
+     */
+    private void getNextQuestionFromRemainingCharacters(){
         if(traitsLeft.size() == 0){
             return;
             
@@ -113,22 +98,38 @@ public class Smurfinator implements SmurfinatorInterface{
         currentTrait = tempTrait;
         traitsLeft.remove(tempTrait);
     }
-    
 
 
 
+    /**
+     * calculates the most likely guess, comparing each possible alternative with the recorded answers i askedTraits.
+     * @return the guessed character
+     */
     private Character calculateGuess(){
         Character guess = new Character("null");
 
         Double previousClosestNumber = Double.MAX_VALUE;
         for(Character c: remainingCharacters){
-            Double currentValue = 0.0;
-
-            for(Trait t:askedTraits){
-                currentValue+= calculateDifference(c, t);
-            }
-            if(currentValue < previousClosestNumber) guess = c;
+            guess = calculateClosestCharacter(guess, previousClosestNumber, c);
         }
+        return guess;
+    }
+
+    /**
+     * Calculates the closest character given the input from the player given
+     * the characters that have already been calculated.
+     * @param guess
+     * @param previousClosestNumber
+     * @param c
+     * @return
+     */
+    private Character calculateClosestCharacter(Character guess, Double previousClosestNumber, Character c) {
+        Double currentValue = 0.0;
+
+        for(Trait t:askedTraits){
+            currentValue+= calculateDifference(c, t);
+        }
+        if(currentValue < previousClosestNumber) guess = c;
         return guess;
     }
 
@@ -144,99 +145,123 @@ public class Smurfinator implements SmurfinatorInterface{
         Double characterStat = 0.0;
         Double playerTraitStat = 0.0;
         for(Trait tr: c.getCharacterTraits()){
-            if(tr.getName() == traitName){ characterStat = tr.get_amount_of_trait();
-            }
+            if(tr.getName() == traitName){ characterStat = tr.get_amount_of_trait();}
         }
         playerTraitStat = t.get_amount_of_trait();
         currentValue = Math.abs(playerTraitStat-characterStat);
         return currentValue;
     }
 
-    
-    //TODO FIgure out how the controller answers when the user is given a prompt to create a new character.
+    /**
+     * Runs an update of the game, action depends on the current state of the game
+     */
     public void update(){
-
-
-
+        boolean switchedState = false;
         if(!characterCreatingState){
-
-            if(totalAmountOfQuestionsLeft == 0 || remainingCharacters.size() == 1){
-
-                this.guessedCharacter = calculateGuess();
-                
-                sendGuessToObservers();
-                return;
-            }
-            if(remainingCharacters.size() == 0 || totalAmountOfQuestionsLeft == 0){
-
-                setCharacterCreationState();
-                notifyObserversCreationStateOption();
-                return;
-            }
-            try {
-                getNextQuestion();
-            } catch (NullPointerException e) { }
-            totalAmountOfQuestionsLeft--;
-            sendNextQuestionToObservers();
-            
-            
+            switchedState = executeNormalGameUpdate();
         }
-        if(characterCreatingState){
-            // Keep asking to get trait results
-            // If no questions left do nothing and wait for the user to create a new character
-            if(totalAmountOfQuestionsLeft == 0){    
-                notifyObserversCreationState();
-                return;
-                
-            }
-            try {
-                getNextQuestion();
-                totalAmountOfQuestionsLeft--;
-                sendNextQuestionToObservers();
-            } catch (NullPointerException e) {
-                //TODO controller must realize when this happens and update the buttons so they correspond to the correct event.
-                System.out.println("tried to get from an empty list");
-            }
-
-            //TODO send new question to view
-
-
+        if(characterCreatingState && switchedState == false){
+            characterCreationStateUpdate();
         }
+        if(switchedState) switchedState = false;
 
     }
 
-    // Removes characters that are no longer relevant when considering the previous questions asked.
+    /**
+     * The update routine called on if characterCreationState is active
+     */
+    private void characterCreationStateUpdate() {
+        // Keep asking to get trait results
+        // If no questions left do nothing and wait for the user to create a new character
+        if(totalAmountOfQuestionsLeft == 0){
+            notifyObserversCreationState();
+            return;
+        }
+        attemptSendNextQuestion();
+
+    }
+
+    /**
+     * Attempts to get and send the next question to the view
+     */
+    private void attemptSendNextQuestion() {
+        try {
+            getNextQuestionFromRemainingCharacters();
+            totalAmountOfQuestionsLeft--;
+            sendNextQuestionToObservers();
+        } catch (NullPointerException e) {
+            System.out.println("tried to get from an empty list");
+        }
+    }
+
+    /**
+     * The update routine that is called if the model is in the state where it still guesses for characters.
+     * Sends guess if applicable and updates to character creation state if the criteria for it to happen is fulfilled.
+     * @return Boolean that states if the game changed into characterCreationMode
+     */
+    private Boolean executeNormalGameUpdate() {
+        if(totalAmountOfQuestionsLeft == 0 || remainingCharacters.size() == 1){
+            this.guessedCharacter = calculateGuess();
+            sendGuessToObservers();
+            return false;
+        }
+        if(remainingCharacters.size() == 0){
+            setCharacterCreationState();
+            notifyObserversCreationStateOption();
+            return true;
+        }
+        attemptSendNextQuestion();
+        return false;
+    }
+
+    /**
+     * Removes characters that are no longer relevant when considering the previous questions asked.
+     * Depends on the current trait and its value.
+     * @param d
+     */
     private void updateRemainingCharacters(Double d){
-        boolean traitFound = false;
+        double valueOfTrait;
         if(d<0 || d>1) throw new IllegalArgumentException();
         for (int i = remainingCharacters.size() - 1; i>=0; i--) {
+            valueOfTrait = 0.0;
             Character c = remainingCharacters.get(i);
             ArrayList<Trait> tList = c.getCharacterTraits();
 
-            for (Trait t : tList) {
-                if (t.getName().equals(currentTrait.getName())) {
-                    traitFound = true;
-                    if (! (Math.abs(t.get_amount_of_trait()-d) < 0.2)  ) {
-                        remainingCharacters.remove(c);
-                    }
-                }
-            }
-            if(!traitFound){
-                if (! (Math.abs(0-d) < 0.1)  ) {
-                        remainingCharacters.remove(c);
-                }
+            valueOfTrait = getValueOfTrait(tList);
 
+            if (! (Math.abs(valueOfTrait- d) < TRAITTRESHOLD)  ) {
+                remainingCharacters.remove(c);
             }
-            traitFound = false;
-                    
+
         }
     
+    }
+
+    /**
+     *  Gets the value of a trait from a list of trait.
+     * @param tList
+     * @return Returns the value of the current trait that is being looked at.
+     */
+    private double getValueOfTrait( @NotNull ArrayList<Trait> tList) {
+        double valueOfTrait = 0.0;
+        for (Trait t : tList) {
+            if (t.getName().equals(currentTrait.getName())) {
+                valueOfTrait = t.get_amount_of_trait();
+                break;
+            }
+        }
+        return valueOfTrait;
     }
 
     public void setCharacterName(String s){
         createdCharacterName = s;
     }
 
+    /**
+     * Creates a new character and saves
+     * @param name The name of a character
+     * @param path The path to the image of the character
+     */
     public void createNewCharacter(String name,String path){
         Character newCharacter =cFactory.createCharacter(askedTraits, name,path);
         characters.add(newCharacter);
@@ -252,13 +277,20 @@ public class Smurfinator implements SmurfinatorInterface{
         return guessedCharacter;
     }
 
+    /**
+     * Removes the traits that are in the oppositeTrait list within a trait.
+     * @param t The trait that we want to remove opposites from
+     */
     public void removeOppositeTraits(Trait t){
         for(int i = t.opppositeTraits.size(); i > 0; i-- ){
             totalAmountOfQuestionsLeft--;
         }
-        traitsLeft.removeIf(oppositeTrait -> t.getOpppositeTraits().contains(oppositeTrait.getName()));
+        traitsLeft.removeIf(oppositeTrait -> t.getOppositeTraits().contains(oppositeTrait.getName()));
     }
 
+    /**
+     * Updates the state of remaining characters and traits with consideration to the player answering yes.
+     */
     public void answerYes(){
         Trait tempTrait = currentTrait.copy(1.0);
         askedTraits.add(tempTrait);
@@ -282,9 +314,10 @@ public class Smurfinator implements SmurfinatorInterface{
         update();
     }
 
-    
 
-
+    /**
+     * Resets the program so that it can be run again.
+     */
     public void reset(){
         askedTraits.clear();
         traitsLeft.clear();

@@ -17,7 +17,7 @@ public class Trait implements Serializable{
 
     }
 
-    public ArrayList<String> getOpppositeTraits(){
+    public ArrayList<String> getOppositeTraits(){
         return opppositeTraits;
     }
     public void setName(String name) {
