@@ -107,7 +107,7 @@ public class CharacterInitializer {
             put("CALM", 1.0);
             put("CREATIVE", 1.0);
             put("ARTISTIC", 1.0);
-        }}, "Lute Smurf", "/lutesmorf"));
+        }}, "Lute Smurf", "/lutesmorf.png"));
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("BOY", 1.0);
             put("FACIAL HAIR", 1.0);

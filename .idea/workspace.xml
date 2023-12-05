@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="182ebb41-7fa8-4c58-8420-ddc6e06ab06f" name="Changes" comment="shit crazy, gissar om detn ska gissa wudaheeeal den tar bort opposite trats">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/SmurfinatorMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/SmurfinatorMainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/stages/questionscene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/stages/questionscene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Characters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Characters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/group3project.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/CharacterInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/CharacterInitializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/SmurfinatorMainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/SmurfinatorMainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/stages/questionscene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/stages/questionscene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +53,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Saker\oopp\group3project\src\main\java\group3" />
       <recent name="C:\Users\jonat\OneDrive\Skrivbord\OOPP-project\group3project\src\main\smurfs" />
       <recent name="C:\Users\jonat\OneDrive\Skrivbord\OOPP-project\group3project\src\main" />
       <recent name="C:\Users\jonat\OneDrive\Skrivbord\OOPP-project\group3project\src" />
