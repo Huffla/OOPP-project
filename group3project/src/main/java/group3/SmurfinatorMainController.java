@@ -56,6 +56,7 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     private Button createCharacterButton;
     @FXML
     private TextField smurfname;
+    
     @FXML
     private Button submitButton;
     @FXML
@@ -227,4 +228,6 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
         smurfinator.reset();
         //TODO return to main menu
     }
+    
+    
 }
