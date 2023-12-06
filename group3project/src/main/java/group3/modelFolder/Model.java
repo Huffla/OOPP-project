@@ -38,8 +38,8 @@ public class Model {
         ti.initialize();
         qi = new QuestionInitializer(questions_file_name);
         qi.initialize(); // initializes the question database with questions and their corresponding trait, remove if you do not want to create new each time
-        ci = new CharacterInitializer();
-        ci.intialize();
+        //ci = new CharacterInitializer();
+        //ci.intialize();
         user_list = user_handler.getUsers();
         traits_list = trait_handler.getTraits();
         character_list = character_handler.getCharacters();
