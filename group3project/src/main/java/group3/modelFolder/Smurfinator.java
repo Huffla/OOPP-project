@@ -282,7 +282,7 @@ public class Smurfinator implements SmurfinatorInterface{
      * @param t The trait that we want to remove opposites from
      */
     public void removeOppositeTraits(Trait t){
-        for(int i = t.opppositeTraits.size(); i > 0; i-- ){
+        for(String trait : t.getOppositeTraits()){
             totalAmountOfQuestionsLeft--;
         }
         traitsLeft.removeIf(oppositeTrait -> t.getOppositeTraits().contains(oppositeTrait.getName()));
@@ -324,6 +324,7 @@ public class Smurfinator implements SmurfinatorInterface{
         remainingCharacters = (ArrayList<Character>)characters.clone();
         characterCreatingState = false;
         totalAmountOfQuestionsLeft = remainingCharacters.size();
+        update();
     }
 
 

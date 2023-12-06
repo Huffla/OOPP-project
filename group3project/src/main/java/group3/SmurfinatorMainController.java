@@ -159,6 +159,9 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
         String name = smurfname.getText();
         String path = pathToImageTextBox.getText();
         smurfinator.createNewCharacter(name,path);
+        smurfinator.reset();
+        createsmurfcontainer.setVisible(false);
+
     }
 
     private void displayQuestion(Question q) {
