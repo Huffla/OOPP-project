@@ -5,13 +5,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="182ebb41-7fa8-4c58-8420-ddc6e06ab06f" name="Changes" comment="shit crazy, gissar om detn ska gissa wudaheeeal den tar bort opposite trats">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/group3project.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/Smurf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Characters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Characters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/Characters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/Characters.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/stages/questionscene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/stages/questionscene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/Abloec_As_Pastor_Joseff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/Clowckworksmurf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/Handy_Smurf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/Papa_Smurf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/Sassette_Smurfling.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/SmurfWillow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/Smurfette.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/Untitled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/alchemistsmurf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/gammelsmorf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/CompendiumController.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/CompendiumController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/LeaderboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/LeaderboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/MainMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/MainMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/QuitMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/QuitMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/QuitMenuLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/QuitMenuLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/SceneFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/SceneFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/Smurf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/SmurfinatorMainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/SmurfinatorMainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/CharacterDatabaseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/CharacterDatabaseHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/CharacterFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/CharacterFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/DatabaseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/DatabaseHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/InvalidPasswordException.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/InvalidPasswordException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/LoginAuth.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/LoginAuth.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Model.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/MultipleChoiceQuestion.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/MultipleChoiceQuestion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/NoUserFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/NoUserFoundException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Question.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/QuestionDatabaseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/QuestionDatabaseHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/QuestionInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/QuestionInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Smurfinator.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Smurfinator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Trait.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Trait.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/TraitDatabaseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/TraitDatabaseHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/TraitIntitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/TraitIntitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/UserDatabaseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/UserDatabaseHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/rangeQuestion.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/rangeQuestion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/stages/questionscene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/stages/questionscene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/lutesmorf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/sirjohan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/smurf_wizard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/sussypapasmurf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/vexy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/test-classes/CharacterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/test-classes/CharacterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/test-classes/DatabaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/test-classes/DatabaseTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/test-classes/LoginAuthTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/test-classes/LoginAuthTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,11 +105,11 @@
       <recent name="C:\Saker\oopp\group3project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Saker\oopp\group3project\src\main\smurfs" />
       <recent name="C:\Saker\oopp" />
       <recent name="C:\Saker\oopp\group3project" />
       <recent name="C:\Saker\oopp\group3project\src\main\java\group3" />
       <recent name="C:\Users\jonat\OneDrive\Skrivbord\OOPP-project\group3project\src\main\smurfs" />
-      <recent name="C:\Users\jonat\OneDrive\Skrivbord\OOPP-project\group3project\src\main" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">

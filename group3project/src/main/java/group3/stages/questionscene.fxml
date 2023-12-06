@@ -82,6 +82,5 @@
             <TextField fx:id="pathToImageTextBox" layoutX="149.0" layoutY="133.0" prefHeight="49.0" prefWidth="209.0" promptText="Path" />
          </children>
       </AnchorPane>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="169.0" layoutY="104.0" stroke="BLACK" strokeType="INSIDE" width="165.0" />
    </children>
 </AnchorPane>
