@@ -91,11 +91,15 @@ public class Model {
 
 
     // add a list of users to the database
-    public void setUsers(ArrayList<User> ulist){
+    public void addUsers(ArrayList<User> ulist){
         for(User u: ulist){
             user_handler.addUser(u);
         }
         user_list = user_handler.getUsers();
+    }
+    public void setUser(User u){
+        loggedInUser = u;
+
     }
 
     public void setCharacters(ArrayList<Character> clist){
@@ -105,15 +109,13 @@ public class Model {
         character_list = character_handler.getCharacters();
     }
 
-    public void addUser(User u){
-        user_handler.addToList(u);
-    }
+
     public void addCharacter(Character c){
         character_handler.addToList(c);
         character_list = character_handler.getCharacters();
     }
     // add a user to the database
-    public void setUser(User u){
+    public void addUser(User u){
         user_handler.addUser(u);
         user_list = user_handler.getUsers(); // should not matter since the arrayList has the same reference everywhere
     }

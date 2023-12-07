@@ -17,20 +17,14 @@ public class MainMenuController implements ControllerInitializer {
     Button playButton;
     SmurfinatorMainController controller;
     private static MainMenuController instance;
-   private MainMenuController(SmurfinatorMainController c){
-    controller = c;
+   private MainMenuController(){
+
+
    }
-   public static MainMenuController getInstance(SmurfinatorMainController c){
-        if(instance == null){
-            
-            instance = new MainMenuController(c);
-            return instance;
-        }
-        return instance;
-    }
     public static MainMenuController getInstance(){
         if(instance == null){
-            throw new NullPointerException();
+            instance = new MainMenuController();
+            return instance;
         }
         return instance;
     }
@@ -91,6 +85,10 @@ public class MainMenuController implements ControllerInitializer {
     @FXML
     private void loginpopup(){
         
+    }
+
+    public void setSmurfinatorController(SmurfinatorMainController smurfinatorController) {
+       controller = smurfinatorController;
     }
 }
 
