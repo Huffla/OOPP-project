@@ -1,59 +1,92 @@
-/* 
 package group3;
 
+import java.io.IOException;
+
+import group3.modelFolder.LoginAuth;
+import group3.modelFolder.User;
+import group3.modelFolder.UserDatabaseHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class LoginController implements ControllerInitializer {
-
+public class LoginController implements ControllerInitializer, LoginObserver {
 
     @FXML
-    private Button leaveButton;
-
+    private Button loginButton;
     @FXML
-    private Button enterButton;
+    private Button testButton;
+    @FXML
+    private Button createaccountButton;
+    @FXML
+    private Button guestButton;
+    MainMenuController controller;
+    private static LoginController instance;
+    LoginInterface loginInterface;
+    UserDatabaseHandler userDatabaseHandler = new UserDatabaseHandler("Users.txt");
 
+    private LoginController(LoginInterface li) {
+        loginInterface = li;
+        li.addObserver(this);
+    }
 
-    private Stage stage; // Reference to the stage
-
-    // Inject the stage using this method
-    public void setStage(Stage stage) {
-        this.stage = stage;
+    public static LoginController getInstance(LoginInterface li) {
+        if (instance == null) {
+            instance = new LoginController(li);
+            return instance;
+        }
+        return instance;
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-    leaveButton.setOnAction(event -> {
-        Stage stage = (Stage) leaveButton.getScene().getWindow();
-        stage.close();
-    });
+    public void initialize() {
+
     }
 
     @FXML
-    private void mainmenu(ActionEvent event) {
-        String titlecss = getClass().getResource("styles/mainmenuStyle.css").toExternalForm();
-        String scenecss = getClass().getResource("styles/universalStyle.css").toExternalForm();
+    private void createUser(String name, int password) {
+        loginInterface.createUser(name, password);
+    }
+
+    public void setMainMenuController(MainMenuController mainmenucontroller) {
+        controller = mainmenucontroller;
+    }
+
+    @FXML
+    private void test(ActionEvent event) {
+        String titlecss = getClass().getResource("styles/universalStyle.css").toExternalForm();
+        String scenecss = getClass().getResource("styles/sceneStyle.css").toExternalForm();
         String[] stylesheetArray = { titlecss, scenecss };
         Stage stage = (Stage) ((Node) event.getTarget()).getScene().getWindow();
-        SceneFactory sceneManager = new SceneFactory(stage);
-        sceneManager.loadAndShowScene("stages/mainmenu.fxml", stylesheetArray, MainMenuController.class);
-    }
 
-    @FXML
-    private void closeQuitMenu() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("stages/mainmenu.fxml"));
+            loader.setController(controller);
+            Parent root = loader.load();
+            System.out.println(loader.getController().toString());
 
-        if (stage != null && stage.isShowing()) {
-            stage.close();
+            controller.initialize();
+
+            Scene scene = new Scene(root);
+            scene.getStylesheets().addAll(stylesheetArray);
+
+            configureStage(stage, scene);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
-}
+    private void configureStage(Stage stage, Scene scene) {
+        stage.setTitle("Smurfinator");
+        stage.setWidth(1280);
+        stage.setHeight(720);
+        stage.setResizable(false);
+    }
 
-*/
+}

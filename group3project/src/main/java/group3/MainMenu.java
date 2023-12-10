@@ -9,23 +9,21 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
-
 public class MainMenu extends Application {
-    
-    
-    public static void launchapp(String[] args){
-        
+
+    public static void launchapp(String[] args) {
+
         launch(args);
     }
+
     @Override
     public void start(Stage primaryStage) {
-        
+
         String[] testArray = {};
-          try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("stages/mainmenu.fxml"));
-            
-            MainMenuController controller = MainMenuController.getInstance();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("stages/loginscene.fxml"));
+
+            LoginController controller = LoginController.getInstance(null);
             loader.setController(controller);
             Parent root = loader.load();
 
@@ -40,7 +38,7 @@ public class MainMenu extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    
+
     }
 
     private void configureStage(Stage stage, Scene scene) {
