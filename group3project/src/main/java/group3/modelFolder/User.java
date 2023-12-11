@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import java.util.ArrayList;
 
-public class User implements Serializable, LeaderboardEntry{
+public class User implements Serializable{
     private String name;
     private int hashedPassword;
 
@@ -42,9 +42,5 @@ public class User implements Serializable, LeaderboardEntry{
         return false;
         //contributions =
         //amountOfContributions = contributions.size();
-    }
-
-    public int getSortValue(){
-        return this.amountOfContributions;
     }
 }

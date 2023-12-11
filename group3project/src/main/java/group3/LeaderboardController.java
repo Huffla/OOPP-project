@@ -87,12 +87,13 @@ public class LeaderboardController implements ControllerInitializer, Leaderboard
         switchCategoryName(category);
     }
 
-    // Switch category to display based on button pressed
+    // Switch category to display characters
     @FXML
     private void switchCategoryCharacter(){
         leaderboard.switchCategory(characterLeaderboardCode);
     }
 
+    // Switch category to display users
     @FXML
     private void switchCategoryUser(){
         leaderboard.switchCategory(userLeaderboardCode);
@@ -104,34 +105,16 @@ public class LeaderboardController implements ControllerInitializer, Leaderboard
         this.leaderboardLabel.setText(category.getName());
     }
 
+    // Navigate to the Compendium
     @FXML
     private void switchToCollection(ActionEvent event) {
-        String titlecss = getClass().getResource("styles/universalStyle.css").toExternalForm();
-        String scenecss = getClass().getResource("styles/collectionStyle.css").toExternalForm();
-        String[] stylesheetArray = { titlecss, scenecss };
-        Stage stage = (Stage) ((Node) event.getTarget()).getScene().getWindow();
-        SceneFactory sceneManager = new SceneFactory(stage);
-        sceneManager.loadAndShowScene("stages/compendiumscene.fxml", stylesheetArray, CompendiumController.class);
+        sceneTransitionHandler.transitionToCompendium(event);
     }
 
+    // Navigate to the main menu
     @FXML
     private void switchToMainmenu(ActionEvent event) {
-        String titlecss = getClass().getResource("styles/universalStyle.css").toExternalForm();
-        String scenecss = getClass().getResource("styles/sceneStyle.css").toExternalForm();
-        String[] stylesheetArray = { titlecss, scenecss };
-        Stage stage = (Stage) ((Node) event.getTarget()).getScene().getWindow();
-
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("stages/mainmenu.fxml"));
-            Parent root = loader.load();
-            System.out.println(loader.getController().toString());
-            Scene scene = new Scene(root);
-            scene.getStylesheets().addAll(stylesheetArray);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        sceneTransitionHandler.transitionToMainMenu(event);
     }
 
 

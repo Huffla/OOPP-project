@@ -11,6 +11,7 @@ public class CharacterInitializer {
 
     }
 
+    // initialize the characters
     public ArrayList<Character> intialize(){
         cdh.clearList();
         ArrayList<Character> characters = new ArrayList<>();
@@ -62,6 +63,7 @@ public class CharacterInitializer {
             put("PLAYFUL", 1.0);
             put("HAT", 1.0);
             put("FUNNY", 1.0);
+            put("BABY", 1.0);
         }}, "Sussette Smurf", "/Sassette_Smurfling.png"));
         characters.add( cf.createCharacter(new Hashtable<String, Double>(){{
             put("MALE", 1.0);

@@ -4,19 +4,18 @@ import java.util.ArrayList;
 
 public class CategoryCharacter extends Category{
 
-    public CategoryCharacter(ArrayList<Character> list, int i) {
+    public CategoryCharacter(ArrayList<CharacterLeaderboardEntry> list, int i) {
         this.name = "amount of times guessed";
         this.list = charListToLbEList(list);
         this.categoryCode = i;
     }
 
-    public ArrayList<LeaderboardEntry> charListToLbEList(ArrayList<Character> list){
-        ArrayList<LeaderboardEntry> temp = new ArrayList<>();
-        for (Character character : list) {
-            temp.add(character);
-        }
-        return temp;
+    // turn a list of CharacterLeaderboardEntry into a list of LeaderboardEntry
+    public ArrayList<LeaderboardEntry> charListToLbEList(ArrayList<CharacterLeaderboardEntry> list){
+        return new ArrayList<>(list);
     }
+
+    // return the list of LeaderboardEntry
     public ArrayList<LeaderboardEntry> getList(){
         return this.list;
     }

@@ -47,9 +47,9 @@ public class Model {
         user_list = user_handler.getUsers();
         traits_list = trait_handler.getTraits();
         character_list = character_handler.getCharacters();
-        categoryCharacter = new CategoryCharacter(character_list, leaderboardCategories.size());
+        categoryCharacter = new CategoryCharacter(initiateCharacterLeaderboard(), leaderboardCategories.size());
         leaderboardCategories.add(categoryCharacter);
-        categoryUser = new CategoryUser(user_list, leaderboardCategories.size());
+        categoryUser = new CategoryUser(initiateUserLeaderboard(), leaderboardCategories.size());
         leaderboardCategories.add(categoryUser);
 
 
@@ -61,6 +61,21 @@ public class Model {
         leaderboard = new Leaderboard(leaderboardCategories);
     }
 
+    private ArrayList<CharacterLeaderboardEntry> initiateCharacterLeaderboard(){
+        ArrayList<CharacterLeaderboardEntry> temp = new ArrayList<>();
+        for(Character c: character_list){
+            temp.add(new CharacterLeaderboardEntry(c,c.getGuessedAmount()));
+        }
+        return temp;
+    }
+
+    private ArrayList<UserLeaderboardEntry> initiateUserLeaderboard(){
+        ArrayList<UserLeaderboardEntry> temp = new ArrayList<>();
+        for(User u: user_list){
+            temp.add(new UserLeaderboardEntry(u,u.getAmountOfContributions()));
+        }
+        return temp;
+    }
   
     public static Model getInstance(String user_file_name,String questions_file_name, String traits_file_name,String characters_file_name) {
         if (instance == null){

@@ -4,20 +4,18 @@ import java.util.ArrayList;
 
 public class CategoryUser extends Category{
 
-    public CategoryUser(ArrayList<User> list, int i) {
+    public CategoryUser(ArrayList<UserLeaderboardEntry> list, int i) {
         this.name = "amount of contributions";
         this.list = userListToLbEList(list);
         this.categoryCode = i;
     }
 
-    public ArrayList<LeaderboardEntry> userListToLbEList(ArrayList<User> list){
-        ArrayList<LeaderboardEntry> temp = new ArrayList<>();
-        for (User user : list) {
-            temp.add(user);
-        }
-        return temp;
+    // turn a list of UserLeaderboardEntry into a list of LeaderboardEntry
+    public ArrayList<LeaderboardEntry> userListToLbEList(ArrayList<UserLeaderboardEntry> list){
+        return new ArrayList<>(list);
     }
 
+    // return the list of LeaderboardEntry
     public ArrayList<LeaderboardEntry> getList(){
         return this.list;
     }
