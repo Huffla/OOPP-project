@@ -76,6 +76,8 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
 
     SmurfinatorInterface smurfinator;
 
+    SceneTransitionHandler sceneTransitionHandler = SceneTransitionHandler.getInstance();
+
     private SmurfinatorMainController(SmurfinatorInterface s) {
         smurfinator = s;
         smurfinator.addObserver(this);
