@@ -20,7 +20,11 @@ public class Model {
     QuestionInitializer qi;
     TraitIntitializer ti;
     CharacterInitializer ci;
+    private CategoryCharacter categoryCharacter;
+    private CategoryUser categoryUser;
+    private ArrayList<Category> leaderboardCategories = new ArrayList<>();
     private Smurfinator smurfinator;
+    private Leaderboard leaderboard;
     Dictionary<Trait,Question> traitQuestionDict = new Hashtable<>();
     private static Model instance;
     private User loggedInUser;
@@ -43,13 +47,18 @@ public class Model {
         user_list = user_handler.getUsers();
         traits_list = trait_handler.getTraits();
         character_list = character_handler.getCharacters();
+        categoryCharacter = new CategoryCharacter(character_list, leaderboardCategories.size());
+        leaderboardCategories.add(categoryCharacter);
+        categoryUser = new CategoryUser(user_list, leaderboardCategories.size());
+        leaderboardCategories.add(categoryUser);
+
+
 
         loginAuth = new LoginAuth(user_handler.getUsers());
         initializeDict(question_handler.getQuestions());
         //TODO current user
         smurfinator = new Smurfinator(traitQuestionDict, character_list, null);
-        
-
+        leaderboard = new Leaderboard(leaderboardCategories);
     }
 
   
@@ -74,8 +83,13 @@ public class Model {
 
 
     }
+    // returns the initiated smurfinator object
     public Smurfinator getSmurfinator(){
         return smurfinator;
+    }
+    // returns the initiated leaderboard object
+    public Leaderboard getLeaderboard(){
+        return leaderboard;
     }
     // returns the list of users
     public ArrayList<User> getUsers(){
@@ -87,6 +101,9 @@ public class Model {
     // returns the list of characters
     public ArrayList<Character> getCharacters(){
         return character_list;
+    }
+    public ArrayList<Category> getLeaderboardCategories(){
+        return leaderboardCategories;
     }
 
 

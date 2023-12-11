@@ -15,22 +15,20 @@ public class MainMenuController implements ControllerInitializer {
 
     @FXML
     Button playButton;
-    SmurfinatorMainController controller;
+    SmurfinatorMainController smurfinatorMainController;
+    LeaderboardController leaderboardController;
     private static MainMenuController instance;
-   private MainMenuController(SmurfinatorMainController c){
-    controller = c;
+
+    SceneTransitionHandler sceneTransitionHandler = SceneTransitionHandler.getInstance();
+
+   private MainMenuController(){
+
    }
-   public static MainMenuController getInstance(SmurfinatorMainController c){
+   public static MainMenuController getInstance(){
         if(instance == null){
             
-            instance = new MainMenuController(c);
+            instance = new MainMenuController();
             return instance;
-        }
-        return instance;
-    }
-    public static MainMenuController getInstance(){
-        if(instance == null){
-            throw new NullPointerException();
         }
         return instance;
     }
@@ -41,41 +39,21 @@ public class MainMenuController implements ControllerInitializer {
 
     }
 
+    // Navigate to the Smurfinator game
     @FXML
     private void playgame(ActionEvent event) {
-        String titlecss = getClass().getResource("styles/universalStyle.css").toExternalForm();
-        String scenecss = getClass().getResource("styles/sceneStyle.css").toExternalForm();
-        String[] stylesheetArray = { titlecss, scenecss };
-        Stage stage = (Stage) ((Node) event.getTarget()).getScene().getWindow();
-  
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("stages/questionscene.fxml"));
-            loader.setController(controller);
-            Parent root = loader.load();
-            System.out.println(loader.getController().toString());  
-            // MAKES INITIAL CALL THAT HAS TO BE MADE FOR SMURFINATOR TO WORK  
-            //TODO 
-            controller.makeInitialCall();
-            
-            
-            controller.initialize();
-
-            Scene scene = new Scene(root);
-            scene.getStylesheets().addAll(stylesheetArray);
-
-            configureStage(stage, scene);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        sceneTransitionHandler.transitionToSmurfinator(event);
     }
+
+    // configure program window
     private void configureStage(Stage stage, Scene scene) {
         stage.setTitle("Smurfinator");
         stage.setWidth(1280);
         stage.setHeight(720);
         stage.setResizable(false);
     }
+
+    // close the application
     @FXML
     private void closeGame(){
         javafx.application.Platform.exit();
@@ -84,9 +62,11 @@ public class MainMenuController implements ControllerInitializer {
     private void collection(){
 
     }
-    @FXML
-    private void leaderboard(){
 
+    // Navigate to the leaderboard screen
+    @FXML
+    private void leaderboard(ActionEvent event){
+        sceneTransitionHandler.transitionToLeaderboard(event);
     }
     @FXML
     private void loginpopup(){
