@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="182ebb41-7fa8-4c58-8420-ddc6e06ab06f" name="Changes" comment="shit crazy, gissar om detn ska gissa wudaheeeal den tar bort opposite trats">
-      <change afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/SceneTransitionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/MainMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/SceneTransitionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/SceneTransitionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/SmurfinatorMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/SmurfinatorMainController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
