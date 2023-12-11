@@ -4,29 +4,58 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: f5f5dc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: f5f5dc;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="smurfwizard" fitHeight="558.0" fitWidth="391.0" layoutX="119.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="70.45928955078125" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="770.0" AnchorPane.topAnchor="135.0">
+      <ImageView fitHeight="720.0" fitWidth="1302.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/smurf_wizard.png" />
+            <Image url="@../images/Smurfs-Vileaf.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="smurfinatorLabel" prefHeight="98.0" prefWidth="821.0" text="SMURFINATOR" />
-      <Button layoutX="626.0" layoutY="607.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="121.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="BACK" />
-      <AnchorPane fx:id="buttonAnchorPane" layoutX="626.0" layoutY="297.0" prefHeight="306.0" prefWidth="399.0" visible="false">
+      <Label alignment="CENTER" layoutX="14.0" prefHeight="140.0" prefWidth="651.0" styleClass="title" stylesheets="@../styles/mainmenuStyle.css" text="Smurf Discovery">
+         <font>
+            <Font name="Algerian" size="73.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="buttonAnchorPane" layoutX="798.0" layoutY="131.0" prefHeight="306.0" prefWidth="399.0">
          <children>
-            <Rectangle fx:id="buttonContainer" arcHeight="5.0" arcWidth="5.0" fill="#ffe39b" height="292.0" layoutX="-2.0" layoutY="13.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="379.0" />
-            <Button fx:id="yesButton" layoutX="76.0" layoutY="29.0" mnemonicParsing="false" onAction="#yesPressed" prefHeight="74.0" prefWidth="222.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="YES" />
-            <Button fx:id="noButton" layoutX="76.0" layoutY="120.0" mnemonicParsing="false" onAction="#noPressed" prefHeight="74.0" prefWidth="221.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="NO" />
-            <Button fx:id="dontknowButton" layoutX="76.0" layoutY="214.0" mnemonicParsing="false" onAction="#dontknowPressed" prefHeight="74.0" prefWidth="222.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="DON'T KNOW" />
+            <Rectangle fx:id="buttonContainer" arcHeight="5.0" arcWidth="5.0" fill="#ffe39b" height="292.0" layoutX="-2.0" layoutY="7.0" opacity="0.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="379.0" />
+            <Region layoutX="37.0" layoutY="6.0" opacity="0.75" prefHeight="299.0" prefWidth="299.0" styleClass="question-panel-background" stylesheets="@../styles/sceneStyle.css">
+               <effect>
+                  <DropShadow />
+               </effect></Region>
+            <Button fx:id="yesButton" layoutX="76.0" layoutY="29.0" mnemonicParsing="false" onAction="#yesPressed" prefHeight="74.0" prefWidth="222.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="YES">
+               <font>
+                  <Font name="Georgia Pro Black" size="34.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="noButton" layoutX="76.0" layoutY="120.0" mnemonicParsing="false" onAction="#noPressed" prefHeight="74.0" prefWidth="221.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="NO">
+               <font>
+                  <Font name="Georgia Pro Black" size="34.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="dontknowButton" alignment="CENTER" layoutX="76.0" layoutY="214.0" mnemonicParsing="false" onAction="#dontknowPressed" prefHeight="74.0" prefWidth="222.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="DON'T KNOW">
+               <font>
+                  <Font name="Georgia Pro Black" size="24.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="guessContainer" layoutX="626.0" layoutY="310.0" prefHeight="380.0" prefWidth="479.0" style="-fx-background-color: ffe39b;" visible="false">
@@ -36,25 +65,39 @@
             <Button fx:id="incorrectguess" layoutX="291.0" layoutY="271.0" mnemonicParsing="false" onAction="#incorrectCharacter" prefHeight="62.0" prefWidth="141.0" text="NO" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="556.0" layoutY="129.0" prefHeight="200.0" prefWidth="546.0">
+      <AnchorPane layoutX="226.0" layoutY="138.0" prefHeight="200.0" prefWidth="546.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fffeed" height="169.0" layoutX="-1.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="570.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fffeed" height="169.0" layoutX="-1.0" layoutY="-3.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="570.0" />
+            <Region opacity="0.75" prefHeight="170.0" prefWidth="570.0" styleClass="question-panel-background" stylesheets="@../styles/sceneStyle.css">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Region>
             <AnchorPane layoutX="121.0" prefHeight="169.0" prefWidth="450.0">
                <children>
-                  <Text fx:id="questionTitle" layoutX="5.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="**QUESTION PLACEHOLDER**" wrappingWidth="439.19987792968755" />
+                  <Text fx:id="questionTitle" fill="WHITE" layoutX="5.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="**QUESTION PLACEHOLDER**" textAlignment="CENTER" wrappingWidth="439.19987792968755">
+                     <font>
+                        <Font name="Georgia Pro Cond" size="21.0" />
+                     </font></Text>
                </children>
             </AnchorPane>
-            <Polyline fill="#fffeed" layoutX="14.0" layoutY="91.0" points="-15.0, 52.79998779296875, -8.4000244140625, 52.79998779296875, -85.46664428710938, 66.13333129882812, -8.4000244140625, 16.79998779296875" strokeType="INSIDE" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffe39b" height="169.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="121.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffe39b" height="169.0" layoutY="-3.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="121.0" />
+            <Region prefHeight="169.0" prefWidth="122.0" styleClass="question-panel-background-2" stylesheets="@../styles/sceneStyle.css">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Region>
             <AnchorPane prefHeight="169.0" prefWidth="122.0">
                <children>
-                  <Label fx:id="questionCounter" layoutX="52.8" layoutY="63.8" prefHeight="18.0" prefWidth="16.0" text="1" textAlignment="CENTER" AnchorPane.bottomAnchor="88.2" AnchorPane.leftAnchor="52.8" AnchorPane.rightAnchor="53.599999999999994" AnchorPane.topAnchor="63.8" />
+                  <Label fx:id="questionCounter" layoutX="53.0" layoutY="64.0" prefHeight="30.0" prefWidth="29.0" text="1" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="76.0" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="64.0">
+                     <font>
+                        <Font name="Georgia Pro Black" size="29.0" />
+                     </font></Label>
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
-      <Button fx:id="settingsButton" layoutX="48.0" layoutY="598.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#quitpopup" prefHeight="70.0" prefWidth="70.0" styleClass="settings-button" stylesheets="@../styles/buttonStyle.css" />
-      <AnchorPane fx:id="sliderAnchorPane" layoutX="626.0" layoutY="297.0" prefHeight="306.0" prefWidth="399.0">
+      <AnchorPane fx:id="sliderAnchorPane" layoutX="748.0" layoutY="138.0" prefHeight="306.0" prefWidth="399.0" visible="false">
          <children>
             <Rectangle fx:id="buttonContainer1" arcHeight="5.0" arcWidth="5.0" fill="#ffe39b" height="292.0" layoutX="-2.0" layoutY="13.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="379.0" />
             <Button fx:id="dontknowbuttonrange" layoutX="76.0" layoutY="214.0" mnemonicParsing="false" onAction="#dontknowPressed" prefHeight="74.0" prefWidth="222.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" text="DON'T KNOW" />
@@ -82,5 +125,78 @@
             <TextField fx:id="pathToImageTextBox" layoutX="149.0" layoutY="133.0" prefHeight="49.0" prefWidth="209.0" promptText="Path" />
          </children>
       </AnchorPane>
+      <AnchorPane layoutX="340.0" layoutY="264.0" prefHeight="471.0" prefWidth="506.0">
+         <children>
+            <Region layoutX="40.0" layoutY="61.0" prefHeight="370.0" prefWidth="379.0" styleClass="particle-background" stylesheets="@../styles/sceneStyle.css">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Region>
+            <ImageView fitHeight="349.0" fitWidth="345.0" layoutX="57.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/blue_particle_animation.gif" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Button alignment="CENTER" layoutX="226.0" layoutY="322.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="122.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="PREVIOUS QUESTION" textAlignment="CENTER" wrapText="true">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="Georgia Pro Cond Black Italic" size="14.0" />
+         </font></Button>
+      <Button fx:id="exitButton" layoutX="38.0" layoutY="627.0" mnemonicParsing="false" onAction="#closeGame" prefHeight="43.0" prefWidth="83.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="EXIT">
+         <font>
+            <Font name="Franklin Gothic Heavy Italic" size="22.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="collectionButton" layoutX="38.0" layoutY="541.0" mnemonicParsing="false" onAction="#collection" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="START PAGE">
+         <font>
+            <Font name="Georgia Pro Cond Black Italic" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="leaderboardButton" layoutX="38.0" layoutY="482.0" mnemonicParsing="false" onAction="#leaderboard" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="COLLECTION">
+         <font>
+            <Font name="Georgia Pro Cond Black Italic" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="leaderboardButton1" layoutX="38.0" layoutY="423.0" mnemonicParsing="false" onAction="#leaderboard" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="LEADERBOARD">
+         <font>
+            <Font name="Georgia Pro Cond Black Italic" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Label layoutX="14.0" layoutY="14.0" text="+" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT" size="42.0" />
+         </font>
+         <effect>
+            <Glow level="1.0">
+               <input>
+                  <DropShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="0.24705882370471954" />
+                     </color>
+                     <input>
+                        <Bloom threshold="0.0" />
+                     </input>
+                  </DropShadow>
+               </input>
+            </Glow>
+         </effect>
+      </Label>
+      <Button fx:id="settingsButton" disable="true" layoutX="1181.0" layoutY="25.0" mnemonicParsing="false" onAction="#quitpopup" prefHeight="62.0" prefWidth="66.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" />
    </children>
 </AnchorPane>

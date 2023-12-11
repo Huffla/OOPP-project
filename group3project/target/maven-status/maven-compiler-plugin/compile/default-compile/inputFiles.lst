@@ -2,6 +2,7 @@ C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\gro
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\DatabaseHandler.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\NoUserFoundException.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\LoginController.java
+C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\CompendiumInterface.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\MainMenu.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\SmurfinatorInterface.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\TraitDatabaseHandler.java
@@ -14,6 +15,7 @@ C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\gro
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\UserDatabaseHandler.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\Character.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\Model.java
+C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\Compendium.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\MainMenuController.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\CompendiumController.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\CharacterDatabaseHandler.java
@@ -26,10 +28,10 @@ C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\gro
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\LoginAuth.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\QuestionDatabaseHandler.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\SceneFactory.java
+C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\CompendiumObserver.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\QuitMenuLoader.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\CharacterFactory.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\QuestionInitializer.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\TraitIntitializer.java
-C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\Smurf.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\InvalidPasswordException.java
 C:\Users\noelw\OOPP-project\Project\OOPP-project\group3project\src\main\java\group3\modelFolder\User.java

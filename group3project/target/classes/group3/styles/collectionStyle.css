@@ -1,6 +1,8 @@
 .title{
     -fx-text-fill: white;
+    /*
     -fx-effect: dropshadow(gaussian, black, 20, 0.1, 0.1, 0);
+    */
 }
 
 /*
@@ -8,13 +10,6 @@
 
 */
 
-
-.background{
-    -fx-background-image: url(grass-v1.jpg);
-    -fx-background-size: contain;
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
-}
 
 
 .back-button{
