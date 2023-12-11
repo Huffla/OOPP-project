@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="182ebb41-7fa8-4c58-8420-ddc6e06ab06f" name="Changes" comment="shit crazy, gissar om detn ska gissa wudaheeeal den tar bort opposite trats">
+      <change afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/CompendiumModelInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/CompendiumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/CompendiumController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/SceneTransitionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/SceneTransitionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/SmurfinatorMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/SmurfinatorMainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Compendium.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Compendium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/CompendiumInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/CompendiumController.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/CompendiumController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/MainMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/MainMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Model.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>

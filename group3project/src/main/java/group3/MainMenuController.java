@@ -42,12 +42,12 @@ public class MainMenuController implements ControllerInitializer {
         javafx.application.Platform.exit();
     }
     @FXML
-    private void collection(){
-
+    private void collection(ActionEvent event){
+        sceneTransitionHandler.transitionToCompendium(event);
     }
     @FXML
-    private void leaderboard(){
-
+    private void leaderboard(ActionEvent event){
+    sceneTransitionHandler.transitionToLeaderboard(event);
     }
     @FXML
     private void loginpopup(){
