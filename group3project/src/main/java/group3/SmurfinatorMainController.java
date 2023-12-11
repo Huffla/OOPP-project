@@ -56,6 +56,9 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     private Button createCharacterButton;
     @FXML
     private TextField smurfname;
+
+    @FXML
+    private AnchorPane imageContainer;
     
     @FXML
     private Button submitButton;
@@ -75,6 +78,8 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     public TextField pathToImageTextBox;
 
     SmurfinatorInterface smurfinator;
+
+    SceneTransitionHandler sceneTransitionHandler = SceneTransitionHandler.getInstance();
 
     private SmurfinatorMainController(SmurfinatorInterface s) {
         smurfinator = s;
@@ -168,9 +173,11 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
         if (q.getClass() == MultipleChoiceQuestion.class) {
             sliderAnchorPane.setVisible(false);
             buttonAnchorPane.setVisible(true);
+            imageContainer.setVisible(true);
         } else if (q.getClass() == rangeQuestion.class) {
             buttonAnchorPane.setVisible(false);
             sliderAnchorPane.setVisible(true);
+            imageContainer.setVisible(true);
         }
     }
 
@@ -198,6 +205,7 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     @Override
     public void makeGuess(Character c) {
         buttonAnchorPane.setVisible(false);
+        imageContainer.setVisible(false);
         sliderAnchorPane.setVisible(false);
         
         guessContainer.setVisible(true);
@@ -212,6 +220,7 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     @Override
     public void switchToCreateCharacterOption() {
         buttonAnchorPane.setVisible(false);
+        imageContainer.setVisible(false);
         sliderAnchorPane.setVisible(false);
         guessContainer.setVisible(false);
         createnewcharactercontainer.setVisible(true);
@@ -221,6 +230,7 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     @Override
     public void switchToCreateCharacter() {
         buttonAnchorPane.setVisible(false);
+        imageContainer.setVisible(false);
         sliderAnchorPane.setVisible(false);
         guessContainer.setVisible(false);
         createsmurfcontainer.setVisible(true);

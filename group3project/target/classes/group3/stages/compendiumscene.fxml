@@ -5,6 +5,8 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,14 +14,26 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3.CompendiumController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="848.0" fitWidth="1539.0" layoutX="-129.0" layoutY="-74.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/grass-v4.png" />
          </image>
+         <effect>
+            <Lighting bumpInput="$null">
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="0.6370370388031006" green="0.8971604704856873" blue="1.0" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
       </ImageView>
       <ImageView fitHeight="727.0" fitWidth="1020.0" layoutX="130.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -141,10 +155,13 @@
             </Label>
          </children>
       </AnchorPane>
-      <Label alignment="CENTER" layoutX="292.0" layoutY="14.0" prefHeight="130.0" prefWidth="696.0" styleClass="title" stylesheets="@../styles/collectionStyle.css" text="The Smurf Compendium" underline="true">
+      <Label alignment="CENTER" layoutX="251.0" layoutY="14.0" prefHeight="130.0" prefWidth="755.0" styleClass="title" stylesheets="@../styles/collectionStyle.css" text="The Smurf Compendium" underline="true">
          <font>
-            <Font name="Script MT Bold" size="68.0" />
+            <Font name="Harrington" size="73.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
       <Button fx:id="mainmenuButton" layoutX="28.0" layoutY="531.0" mnemonicParsing="false" onAction="#mainmenu" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="START PAGE">
          <font>
@@ -169,6 +186,20 @@
          <effect>
             <DropShadow />
          </effect>
+      </Button>
+      <ImageView fitHeight="348.0" fitWidth="303.0" layoutX="1020.0" layoutY="-51.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/mushroom-transformed.png" />
+         </image>
+      </ImageView>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="937.0" layoutY="450.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="90.0">
+         <graphic>
+            <ImageView depthTest="DISABLE" fitHeight="87.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/fresh-blue-arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </children>
 </AnchorPane>

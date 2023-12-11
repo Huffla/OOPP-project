@@ -5,34 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="182ebb41-7fa8-4c58-8420-ddc6e06ab06f" name="Changes" comment="shit crazy, gissar om detn ska gissa wudaheeeal den tar bort opposite trats">
+      <change afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/CompendiumModelInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/CompendiumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/CompendiumController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/MainMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Compendium.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Compendium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/CompendiumInterface.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/Abloec_As_Pastor_Joseff.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/Clowckworksmurf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/Handy_Smurf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/Papa_Smurf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/Sassette_Smurfling.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/SmurfWillow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/Smurfette.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/Untitled.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/alchemistsmurf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/gammelsmorf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/SmurfinatorMainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/SmurfinatorMainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/CompendiumController.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/CompendiumController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/MainMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/MainMenuController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Smurfinator.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Smurfinator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/lutesmorf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/noCharacter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/sirjohan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/smurf_wizard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/sussypapasmurf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/vexy.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -217,12 +213,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Smurfinator.java</url>
-          <line>268</line>
+          <line>266</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Smurfinator.java</url>
-          <line>294</line>
+          <line>292</line>
           <properties>
             <option name="count-filter" value="40" />
             <option name="count-filter-enabled" value="true" />
