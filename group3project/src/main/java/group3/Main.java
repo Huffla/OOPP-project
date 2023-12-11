@@ -12,10 +12,11 @@ public class Main {
         model = Model.getInstance("Users.txt","Questions.txt","Traits.txt","Characters.txt");
         SmurfinatorMainController smurfinatorController = SmurfinatorMainController.getInstance(model.getSmurfinator());
         MainMenuController mainMenuController = MainMenuController.getInstance();
+        CompendiumController compendiumController = CompendiumController.getInstance(model.getCompendium());
 
-        //mainMenuController.setSmurfinatorController(smurfinatorController);
         sceneTransitionHandler.setSmurfinatorController(smurfinatorController);
         sceneTransitionHandler.setMainMenuController(mainMenuController);
+        sceneTransitionHandler.setCompendiumController(compendiumController);
 
         MainMenu.launchapp(args);
         

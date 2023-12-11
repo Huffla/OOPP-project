@@ -1,9 +1,11 @@
 package group3.modelFolder;
 
+import group3.CompendiumModelInterface;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class Compendium {
+public class Compendium implements CompendiumModelInterface {
     private Map<String, Boolean> smurfs;
 
     public Compendium() {

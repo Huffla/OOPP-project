@@ -24,7 +24,7 @@ public class Model {
     Dictionary<Trait,Question> traitQuestionDict = new Hashtable<>();
     private static Model instance;
     private User loggedInUser;
-    
+    private  Compendium compendium = new Compendium();
     
     MainMenuController mainmenucontroller;
 
@@ -43,7 +43,7 @@ public class Model {
         user_list = user_handler.getUsers();
         traits_list = trait_handler.getTraits();
         character_list = character_handler.getCharacters();
-
+        compendium = new Compendium();
         loginAuth = new LoginAuth(user_handler.getUsers());
         initializeDict(question_handler.getQuestions());
         //TODO current user
@@ -52,7 +52,9 @@ public class Model {
 
     }
 
-  
+    public Compendium getCompendium(){
+        return compendium;
+    }
     public static Model getInstance(String user_file_name,String questions_file_name, String traits_file_name,String characters_file_name) {
         if (instance == null){
             instance = new Model(user_file_name,questions_file_name,traits_file_name,characters_file_name);
