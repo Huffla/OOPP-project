@@ -18,8 +18,10 @@ public class MainMenu extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-
-        String[] testArray = {};
+        String titlecss = getClass().getResource("styles/universalStyle.css").toExternalForm();
+        String buttoncss = getClass().getResource("styles/buttonStyle.css").toExternalForm();
+        String universalcss = getClass().getResource("styles/universalStyle.css").toExternalForm();
+        String[] styleArray = { titlecss, buttoncss, universalcss };
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("stages/loginscene.fxml"));
 
@@ -30,7 +32,7 @@ public class MainMenu extends Application {
             controller.initialize();
 
             Scene scene = new Scene(root);
-            scene.getStylesheets().addAll(testArray);
+            scene.getStylesheets().addAll(styleArray);
 
             configureStage(primaryStage, scene);
             primaryStage.setScene(scene);

@@ -47,15 +47,17 @@ public class LoginController implements ControllerInitializer, LoginObserver {
     private Button testing;
     @FXML
     private Button goBackButton;
-    String userpwrd = "omg";
-    String username = "omfg";
-    String newuserpwrd = " ";
-    String newusername = " ";
+    @FXML
+    private Label errorText;
+
+    String userpwrd = "";
+    String username = "";
+    String newuserpwrd = "";
+    String newusername = "";
 
     MainMenuController controller;
     private static LoginController instance;
     LoginInterface loginInterface;
-   
 
     private LoginController(LoginInterface li) {
         loginInterface = li;
@@ -72,8 +74,8 @@ public class LoginController implements ControllerInitializer, LoginObserver {
 
     @Override
     public void initialize() {
-          
-          createpassfield.textProperty().addListener((observable, oldValue, newValue) -> {
+
+        createpassfield.textProperty().addListener((observable, oldValue, newValue) -> {
             newuserpwrd = newValue;
         });
 
@@ -87,19 +89,19 @@ public class LoginController implements ControllerInitializer, LoginObserver {
 
         userfield.textProperty().addListener((observable, oldValue, newValue) -> {
             username = newValue;
-           
-        });
 
+        });
 
     }
 
     @FXML
-    private void toggleCreateUser(ActionEvent event){
+    private void toggleCreateUser(ActionEvent event) {
         loginContainer.setVisible(false);
         createContainer.setVisible(true);
     }
-     @FXML
-    private void toggleLogin(ActionEvent event){
+
+    @FXML
+    private void toggleLogin(ActionEvent event) {
         loginContainer.setVisible(true);
         createContainer.setVisible(false);
     }
@@ -111,38 +113,41 @@ public class LoginController implements ControllerInitializer, LoginObserver {
     }
 
     @FXML
-    private void goBack(){
+    private void goBack() {
         toggleLogin(null);
     }
 
     public void setMainMenuController(MainMenuController mainmenucontroller) {
         controller = mainmenucontroller;
     }
-    
+
     @FXML
-    public void attemptLogin() throws NoSuchFieldException{
+    public void attemptLogin() throws NoSuchFieldException {
         loginInterface.attemptLogin(username, userpwrd);
-        
+
     }
 
-    
+    public void userExistsError() {
+        errorText.setText("User already exists!");
+    }
+
     public void gotoMainMenu() {
         String titlecss = getClass().getResource("styles/universalStyle.css").toExternalForm();
         String scenecss = getClass().getResource("styles/sceneStyle.css").toExternalForm();
         String[] stylesheetArray = { titlecss, scenecss };
-        
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("stages/mainmenu.fxml"));
             loader.setController(controller);
             Parent root = loader.load();
             System.out.println(loader.getController().toString());
-    
+
             controller.initialize();
-    
-            Stage stage = new Stage();  // Create a new Stage
+
+            Stage stage = new Stage(); // Create a new Stage
             Scene scene = new Scene(root);
             scene.getStylesheets().addAll(stylesheetArray);
-    
+
             configureStage(stage, scene);
             stage.setScene(scene);
             stage.show();
