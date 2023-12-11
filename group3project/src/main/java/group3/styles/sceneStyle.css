@@ -1,9 +1,12 @@
+
+/*
 .button{
     -fx-font-size: 25;
     -fx-font-family:"Arial Black";
     -fx-text-fill: #09cdda;
     -fx-font-weight: 900;
 }
+*/
 
 #questionTitle{
     -fx-font-size: 25;
@@ -11,12 +14,14 @@
     -fx-font-weight: 900;
 }
 
+/*
 #questionCounter{
     -fx-font-size: 25;
     -fx-font-family:"Arial Black";
     -fx-text-fill: #da9809;
     -fx-font-weight: 900;
 }
+*/
 
 #slider-display-value{
     -fx-font-size: 30;

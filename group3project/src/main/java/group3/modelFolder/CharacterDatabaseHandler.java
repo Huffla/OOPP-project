@@ -8,6 +8,7 @@ public class CharacterDatabaseHandler extends DatabaseHandler{
         super(name);
         
     }
+    
     public ArrayList<Character> getCharacters(){
         ArrayList<Character> characters = new ArrayList<>();
         for(Object elem: data_list){
@@ -15,11 +16,13 @@ public class CharacterDatabaseHandler extends DatabaseHandler{
         }
         return characters;
     }
+
     public void addCharacters(ArrayList<Character> cList){
         for(Character c: cList){
             super.addToList(c);
         }
     }
+
     public void addCharacter(Character c){
         super.addToList(c);
     }
