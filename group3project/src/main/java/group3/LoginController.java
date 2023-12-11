@@ -12,6 +12,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class LoginController implements ControllerInitializer, LoginObserver {
@@ -24,10 +27,35 @@ public class LoginController implements ControllerInitializer, LoginObserver {
     private Button createaccountButton;
     @FXML
     private Button guestButton;
+    @FXML
+    private TextField createuserfield;
+    @FXML
+    private TextField userfield;
+    @FXML
+    private TextField passfield;
+    @FXML
+    private TextField createpassfield;
+    @FXML
+    private Button submitaccountButton;
+    @FXML
+    private Label displaytest;
+    @FXML
+    private AnchorPane loginContainer;
+    @FXML
+    private AnchorPane createContainer;
+    @FXML
+    private Button testing;
+    @FXML
+    private Button goBackButton;
+    String userpwrd = "omg";
+    String username = "omfg";
+    String newuserpwrd = " ";
+    String newusername = " ";
+
     MainMenuController controller;
     private static LoginController instance;
     LoginInterface loginInterface;
-    UserDatabaseHandler userDatabaseHandler = new UserDatabaseHandler("Users.txt");
+   
 
     private LoginController(LoginInterface li) {
         loginInterface = li;
@@ -44,36 +72,77 @@ public class LoginController implements ControllerInitializer, LoginObserver {
 
     @Override
     public void initialize() {
+          
+          createpassfield.textProperty().addListener((observable, oldValue, newValue) -> {
+            newuserpwrd = newValue;
+        });
+
+        createuserfield.textProperty().addListener((observable, oldValue, newValue) -> {
+            newusername = newValue;
+        });
+
+        passfield.textProperty().addListener((observable, oldValue, newValue) -> {
+            userpwrd = newValue;
+        });
+
+        userfield.textProperty().addListener((observable, oldValue, newValue) -> {
+            username = newValue;
+           
+        });
+
 
     }
 
     @FXML
-    private void createUser(String name, int password) {
-        loginInterface.createUser(name, password);
+    private void toggleCreateUser(ActionEvent event){
+        loginContainer.setVisible(false);
+        createContainer.setVisible(true);
+    }
+     @FXML
+    private void toggleLogin(ActionEvent event){
+        loginContainer.setVisible(true);
+        createContainer.setVisible(false);
+    }
+
+    @FXML
+    private void createUser() {
+        loginInterface.createUser(newusername, newuserpwrd);
+        toggleLogin(null);
+    }
+
+    @FXML
+    private void goBack(){
+        toggleLogin(null);
     }
 
     public void setMainMenuController(MainMenuController mainmenucontroller) {
         controller = mainmenucontroller;
     }
-
+    
     @FXML
-    private void test(ActionEvent event) {
+    public void attemptLogin() throws NoSuchFieldException{
+        loginInterface.attemptLogin(username, userpwrd);
+        
+    }
+
+    
+    public void gotoMainMenu() {
         String titlecss = getClass().getResource("styles/universalStyle.css").toExternalForm();
         String scenecss = getClass().getResource("styles/sceneStyle.css").toExternalForm();
         String[] stylesheetArray = { titlecss, scenecss };
-        Stage stage = (Stage) ((Node) event.getTarget()).getScene().getWindow();
-
+        
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("stages/mainmenu.fxml"));
             loader.setController(controller);
             Parent root = loader.load();
             System.out.println(loader.getController().toString());
-
+    
             controller.initialize();
-
+    
+            Stage stage = new Stage();  // Create a new Stage
             Scene scene = new Scene(root);
             scene.getStylesheets().addAll(stylesheetArray);
-
+    
             configureStage(stage, scene);
             stage.setScene(scene);
             stage.show();

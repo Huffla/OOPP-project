@@ -52,10 +52,10 @@ public class Model {
         traits_list = trait_handler.getTraits();
         character_list = character_handler.getCharacters();
 
-        loginAuth = new LoginAuth(user_handler.getUsers());
+        
         initializeDict(question_handler.getQuestions());
         // TODO current user
-        loginmodel = new LoginModel();
+        loginmodel = new LoginModel(user_handler);
         smurfinator = new Smurfinator(traitQuestionDict, character_list, null);
 
     }
