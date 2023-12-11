@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import group3.modelFolder.LoginAuth;
 import group3.modelFolder.User;
 import group3.modelFolder.UserDatabaseHandler;
+import javafx.event.ActionEvent;
 
 public class LoginModel implements LoginInterface {
     private ArrayList<LoginObserver> loginObservers = new ArrayList();
@@ -49,18 +50,18 @@ public class LoginModel implements LoginInterface {
         }
     }
 
-    public void attemptLogin(String username, String password) throws NoSuchFieldException {
+    public void attemptLogin(String username, String password, ActionEvent event) throws NoSuchFieldException {
         LoginAuth loginauth = new LoginAuth(udbh.getUsers());
         loggedinuser = loginauth.attemptLogin(username, password);
         if (loggedinuser != null) {
-            gotoMainMenu();
+            gotoMainMenu(event);
         }
         System.out.println("Login Successful!");
     }
 
-    private void gotoMainMenu() {
+    private void gotoMainMenu(ActionEvent event) {
         for (LoginObserver lo : loginObservers) {
-            lo.gotoMainMenu();
+            lo.gotoMainMenu(event);
         }
     }
 

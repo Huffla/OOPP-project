@@ -2,6 +2,8 @@ package group3;
 
 import java.io.IOException;
 
+import javax.swing.Action;
+
 import group3.modelFolder.LoginAuth;
 import group3.modelFolder.User;
 import group3.modelFolder.UserDatabaseHandler;
@@ -55,6 +57,7 @@ public class LoginController implements ControllerInitializer, LoginObserver {
     String newuserpwrd = "";
     String newusername = "";
 
+    SceneTransitionHandler sceneTransitionHandler = SceneTransitionHandler.getInstance();
     MainMenuController controller;
     private static LoginController instance;
     LoginInterface loginInterface;
@@ -109,7 +112,7 @@ public class LoginController implements ControllerInitializer, LoginObserver {
     @FXML
     private void createUser() {
         loginInterface.createUser(newusername, newuserpwrd);
-        toggleLogin(null);
+
     }
 
     @FXML
@@ -122,8 +125,8 @@ public class LoginController implements ControllerInitializer, LoginObserver {
     }
 
     @FXML
-    public void attemptLogin() throws NoSuchFieldException {
-        loginInterface.attemptLogin(username, userpwrd);
+    public void attemptLogin(ActionEvent event) throws NoSuchFieldException {
+        loginInterface.attemptLogin(username, userpwrd, event);
 
     }
 
@@ -131,29 +134,9 @@ public class LoginController implements ControllerInitializer, LoginObserver {
         errorText.setText("User already exists!");
     }
 
-    public void gotoMainMenu() {
-        String titlecss = getClass().getResource("styles/universalStyle.css").toExternalForm();
-        String scenecss = getClass().getResource("styles/sceneStyle.css").toExternalForm();
-        String[] stylesheetArray = { titlecss, scenecss };
+    public void gotoMainMenu(ActionEvent event) {
+        sceneTransitionHandler.transitionToMainMenu(event);
 
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("stages/mainmenu.fxml"));
-            loader.setController(controller);
-            Parent root = loader.load();
-            System.out.println(loader.getController().toString());
-
-            controller.initialize();
-
-            Stage stage = new Stage(); // Create a new Stage
-            Scene scene = new Scene(root);
-            scene.getStylesheets().addAll(stylesheetArray);
-
-            configureStage(stage, scene);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     private void configureStage(Stage stage, Scene scene) {

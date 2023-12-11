@@ -12,7 +12,8 @@ public class Main {
         SmurfinatorMainController smurfinatorController = SmurfinatorMainController.getInstance(model.getSmurfinator());
         MainMenuController mainMenuController = MainMenuController.getInstance();
         CompendiumController compendiumController = CompendiumController.getInstance(model.getCompendium());
-
+        LoginController loginController = LoginController.getInstance(model.getLoginModel());
+        sceneTransitionHandler.setLoginController(loginController);
         sceneTransitionHandler.setSmurfinatorController(smurfinatorController);
         sceneTransitionHandler.setMainMenuController(mainMenuController);
         sceneTransitionHandler.setCompendiumController(compendiumController);
