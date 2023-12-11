@@ -146,7 +146,7 @@
          <font>
             <Font name="Georgia Pro Cond Black Italic" size="14.0" />
          </font></Button>
-      <Button fx:id="exitButton" layoutX="38.0" layoutY="627.0" mnemonicParsing="false" onAction="#closeGame" prefHeight="43.0" prefWidth="83.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="EXIT">
+      <Button fx:id="exitButton" layoutX="38.0" layoutY="627.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="83.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="EXIT">
          <font>
             <Font name="Franklin Gothic Heavy Italic" size="22.0" />
          </font>
@@ -154,7 +154,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="collectionButton" layoutX="38.0" layoutY="541.0" mnemonicParsing="false" onAction="#collection" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="START PAGE">
+      <Button fx:id="mainmenuButton" layoutX="38.0" layoutY="541.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="START PAGE">
          <font>
             <Font name="Georgia Pro Cond Black Italic" size="14.0" />
          </font>
@@ -162,7 +162,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="leaderboardButton" layoutX="38.0" layoutY="482.0" mnemonicParsing="false" onAction="#leaderboard" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="COLLECTION">
+      <Button fx:id="collectionButton" layoutX="38.0" layoutY="482.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="COLLECTION">
          <font>
             <Font name="Georgia Pro Cond Black Italic" size="14.0" />
          </font>
@@ -170,7 +170,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="leaderboardButton1" layoutX="38.0" layoutY="423.0" mnemonicParsing="false" onAction="#leaderboard" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="LEADERBOARD">
+      <Button fx:id="leaderboardButton" layoutX="38.0" layoutY="423.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="LEADERBOARD">
          <font>
             <Font name="Georgia Pro Cond Black Italic" size="14.0" />
          </font>
