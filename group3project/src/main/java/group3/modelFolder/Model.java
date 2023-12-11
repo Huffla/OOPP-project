@@ -28,7 +28,6 @@ public class Model {
     private Leaderboard leaderboard;
     Dictionary<Trait,Question> traitQuestionDict = new Hashtable<>();
     private LoginModel loginmodel;
-    Dictionary<Trait, Question> traitQuestionDict = new Hashtable<>();
     private static Model instance;
     private User loggedInUser;
     private Compendium compendium = new Compendium();
@@ -52,8 +51,8 @@ public class Model {
         qi = new QuestionInitializer(questions_file_name);
         qi.initialize(); // initializes the question database with questions and their corresponding
                          // trait, remove if you do not want to create new each time
-        // ci = new CharacterInitializer();
-        // ci.intialize();
+        ci = new CharacterInitializer();
+        ci.intialize();
         user_list = user_handler.getUsers();
         traits_list = trait_handler.getTraits();
         character_list = character_handler.getCharacters();
