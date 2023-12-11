@@ -87,10 +87,19 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
 
     }
 
+    // Singleton pattern
     public static SmurfinatorMainController getInstance(SmurfinatorInterface s) {
         if (instance == null) {
             instance = new SmurfinatorMainController(s);
 
+        }
+        return instance;
+    }
+
+    // Singleton pattern
+    public static SmurfinatorMainController getInstance(){
+        if(instance == null){
+            throw new NullPointerException();
         }
         return instance;
     }

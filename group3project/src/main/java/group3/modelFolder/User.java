@@ -13,7 +13,7 @@ public class User implements Serializable{
      * @param hashedPassword Takes a hashedpassword and saves it to a user
      */
     private ArrayList<Character> contributions;
-    private int amountOfContributions;
+    private int amountOfContributions = 0;
 
     public ArrayList<Character> getContributions() {
         return contributions;

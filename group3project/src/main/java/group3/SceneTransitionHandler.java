@@ -65,6 +65,7 @@ public class SceneTransitionHandler {
     public void transitionToLeaderboard(ActionEvent event) {
         createScene(event, "styles/universalStyle.css", "styles/leaderboardStyle.css", "stages/leaderboard.fxml",
                 "Leaderboard", leaderboardController);
+        leaderboardController.makeInitialCall();
     }
 
     public void transitionToSmurfinator(ActionEvent event) {

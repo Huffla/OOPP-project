@@ -21,7 +21,12 @@ public class Model {
     QuestionInitializer qi;
     TraitIntitializer ti;
     CharacterInitializer ci;
+    private CategoryCharacter categoryCharacter;
+    private CategoryUser categoryUser;
+    private ArrayList<Category> leaderboardCategories = new ArrayList<>();
     private Smurfinator smurfinator;
+    private Leaderboard leaderboard;
+    Dictionary<Trait,Question> traitQuestionDict = new Hashtable<>();
     private LoginModel loginmodel;
     Dictionary<Trait, Question> traitQuestionDict = new Hashtable<>();
     private static Model instance;
@@ -52,13 +57,36 @@ public class Model {
         user_list = user_handler.getUsers();
         traits_list = trait_handler.getTraits();
         character_list = character_handler.getCharacters();
+        categoryCharacter = new CategoryCharacter(initiateCharacterLeaderboard(), leaderboardCategories.size());
+        leaderboardCategories.add(categoryCharacter);
+        categoryUser = new CategoryUser(initiateUserLeaderboard(), leaderboardCategories.size());
+        leaderboardCategories.add(categoryUser);
+
+
+
         compendium = new Compendium();
         loginAuth = new LoginAuth(user_handler.getUsers());
         initializeDict(question_handler.getQuestions());
         // TODO current user
         loginmodel = new LoginModel(user_handler);
         smurfinator = new Smurfinator(traitQuestionDict, character_list, null);
+        leaderboard = new Leaderboard(leaderboardCategories);
+    }
 
+    private ArrayList<CharacterLeaderboardEntry> initiateCharacterLeaderboard(){
+        ArrayList<CharacterLeaderboardEntry> temp = new ArrayList<>();
+        for(Character c: character_list){
+            temp.add(new CharacterLeaderboardEntry(c,c.getGuessedAmount()));
+        }
+        return temp;
+    }
+
+    private ArrayList<UserLeaderboardEntry> initiateUserLeaderboard(){
+        ArrayList<UserLeaderboardEntry> temp = new ArrayList<>();
+        for(User u: user_list){
+            temp.add(new UserLeaderboardEntry(u,u.getAmountOfContributions()));
+        }
+        return temp;
     }
 
     public Compendium getCompendium() {
@@ -92,6 +120,10 @@ public class Model {
     public Smurfinator getSmurfinator() {
         return smurfinator;
     }
+    // returns the initiated leaderboard object
+    public Leaderboard getLeaderboard(){
+        return leaderboard;
+    }
 
     public LoginModel getLoginModel() {
         return loginmodel;
@@ -109,6 +141,9 @@ public class Model {
     // returns the list of characters
     public ArrayList<Character> getCharacters() {
         return character_list;
+    }
+    public ArrayList<Category> getLeaderboardCategories(){
+        return leaderboardCategories;
     }
 
     // add a list of users to the database

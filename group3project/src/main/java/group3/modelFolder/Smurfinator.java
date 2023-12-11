@@ -314,6 +314,7 @@ public class Smurfinator implements SmurfinatorInterface{
         update();
     }
 
+    
 
     /**
      * Resets the program so that it can be run again.
