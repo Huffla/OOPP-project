@@ -1,17 +1,9 @@
 package group3;
 
+import group3.modelFolder.*;
+import group3.modelFolder.Character;
 import javafx.scene.control.TextField;
 
-import javax.swing.Action;
-
-import group3.modelFolder.Character;
-import group3.modelFolder.Model;
-import group3.modelFolder.MultipleChoiceQuestion;
-import group3.modelFolder.Question;
-import group3.modelFolder.Smurfinator;
-import group3.modelFolder.SmurfinatorInterface;
-import group3.modelFolder.SmurfinatorObserver;
-import group3.modelFolder.rangeQuestion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -22,7 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
-public class SmurfinatorMainController implements ControllerInitializer, SmurfinatorObserver {
+public class SmurfinatorWindowHandler implements ControllerInitializer, SmurfinatorObserver {
 
     @FXML
     private Rectangle buttonContainer;
@@ -71,26 +63,26 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     @FXML
     private Button dontknowbuttonrange;
 
-    private static SmurfinatorMainController instance;
+    private static SmurfinatorWindowHandler instance;
     @FXML
     public Text questionTitle;
     @FXML
     public TextField pathToImageTextBox;
 
-    SmurfinatorInterface smurfinator;
+
 
     SceneTransitionHandler sceneTransitionHandler = SceneTransitionHandler.getInstance();
-
-    private SmurfinatorMainController(SmurfinatorInterface s) {
-        smurfinator = s;
-        smurfinator.addObserver(this);
+    private SmurfinatorController controller;
+    private SmurfinatorWindowHandler(SmurfinatorInterface s) {
+        s.addObserver(this);
+        controller = new SmurfinatorController(s);
 
     }
 
     // Singleton pattern
-    public static SmurfinatorMainController getInstance(SmurfinatorInterface s) {
+    public static SmurfinatorWindowHandler getInstance(SmurfinatorInterface s) {
         if (instance == null) {
-            instance = new SmurfinatorMainController(s);
+            instance = new SmurfinatorWindowHandler(s);
 
         }
         return instance;
@@ -103,16 +95,13 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     }*/
 
     // Singleton pattern
-    public static SmurfinatorMainController getInstance(){
+    public static SmurfinatorWindowHandler getInstance(){
         if(instance == null){
             throw new NullPointerException();
         }
         return instance;
     }
 
-    public void makeInitialCall() {
-        smurfinator.makeInitialCall();
-    }
 
     @Override
     public void initialize() {
@@ -155,22 +144,22 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
 
     @FXML
     private void answerRange(ActionEvent event) {
-        smurfinator.answerRange(sliderValue);
+        controller.sliderValueNextPressed(sliderValue);
     }
 
     @FXML
     private void yesPressed(ActionEvent event) {
-        smurfinator.answerYes();
+        controller.questionYesPressed();
     }
 
     @FXML
     private void noPressed(ActionEvent event) {
-        smurfinator.answerNo();
+        controller.questionNoPressed();
     }
 
     @FXML
     private void dontknowPressed(ActionEvent event) {
-        smurfinator.answerDontKnow();
+        controller.dontKnowPressed();
     }
 
 
@@ -178,8 +167,7 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     private void createNewCharacter(ActionEvent event) {
         String name = smurfname.getText();
         String path = pathToImageTextBox.getText();
-        smurfinator.createNewCharacter(name,path);
-        smurfinator.reset();
+        controller.createNewCharacterPressed(name,path);
         createsmurfcontainer.setVisible(false);
 
     }
@@ -206,7 +194,7 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
     private void incorrectCharacter(ActionEvent event) {
         guessContainer.setVisible(false);
         createnewcharactercontainer.setVisible(true);
-        smurfinator.setCharacterCreationState();
+        controller.incorrectCharacterSignal();
     }
 
     @FXML
@@ -214,7 +202,7 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
         guessContainer.setVisible(false);
         createnewcharactercontainer.setVisible(false);
         createsmurfcontainer.setVisible(false);
-        makeInitialCall();
+        controller.createCharacterOptionPressed();
     }
 
     @Override
@@ -252,10 +240,13 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
         questionTitle.setText("Last step!");
     }
     @FXML
-    public void returnToMainMenu(){
-        smurfinator.reset();
-        //TODO return to main menu
+    public void returnToMainMenu(ActionEvent event){
+        controller.backToMainPressed();
+        sceneTransitionHandler.transitionToMainMenu(event);
     }
-    
-    
+
+
+    public void newGameStart() {
+        controller.startNewGame();
+    }
 }

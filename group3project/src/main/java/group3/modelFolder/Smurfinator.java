@@ -39,7 +39,6 @@ public class Smurfinator implements SmurfinatorInterface{
         this.traitQuestionDict = traitQuestionDict;
         this.traitsLeft = getTraitsFromDictionary();
         totalAmountOfQuestionsLeft = traitsLeft.size();
-        
     }
         
     /**
@@ -267,6 +266,7 @@ public class Smurfinator implements SmurfinatorInterface{
         characters.add(newCharacter);
         cdh.addCharacter(newCharacter);
         user.increaseContributions();
+        reset();
     }
     public void setCharacterCreationState(){
         characterCreatingState = true;

@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SceneTransitionHandler {
-    private SmurfinatorMainController smurfinatorController;
+    private SmurfinatorWindowHandler smurfinatorWindowHandler;
     private MainMenuController mainMenuController;
     private CompendiumController compendiumController;
     private LeaderboardController leaderboardController;
@@ -26,8 +26,8 @@ public class SceneTransitionHandler {
     }
 
     // This is a setter for the controllers
-    public void setSmurfinatorController(SmurfinatorMainController smurfinatorController) {
-        this.smurfinatorController = smurfinatorController;
+    public void setSmurfinatorWindowHandler(SmurfinatorWindowHandler smurfinatorController) {
+        this.smurfinatorWindowHandler = smurfinatorController;
     }
 
     public void setLoginController(LoginController loginController) {
@@ -70,8 +70,8 @@ public class SceneTransitionHandler {
 
     public void transitionToSmurfinator(ActionEvent event) {
         createScene(event, "styles/universalStyle.css", "styles/sceneStyle.css", "stages/questionscene.fxml",
-                "Smurfinator", smurfinatorController);
-        smurfinatorController.makeInitialCall();
+                "Smurfinator", smurfinatorWindowHandler);
+        smurfinatorWindowHandler.newGameStart();
     }
 
     /**

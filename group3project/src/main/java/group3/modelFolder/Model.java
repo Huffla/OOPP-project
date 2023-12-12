@@ -7,7 +7,6 @@ import java.util.Hashtable;
 
 import group3.LoginModel;
 import group3.MainMenuController;
-import group3.SmurfinatorMainController;
 
 public class Model {
     ArrayList<User> user_list;

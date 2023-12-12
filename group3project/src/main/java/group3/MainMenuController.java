@@ -3,14 +3,12 @@ package group3;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
 
 public class MainMenuController implements ControllerInitializer {
 
     @FXML
     Button playButton;
-    SmurfinatorMainController controller;
+    SmurfinatorWindowHandler controller;
     private static MainMenuController instance;
 
     SceneTransitionHandler sceneTransitionHandler = SceneTransitionHandler.getInstance();
