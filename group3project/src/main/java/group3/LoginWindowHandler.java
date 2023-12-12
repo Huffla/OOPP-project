@@ -104,9 +104,18 @@ public class LoginWindowHandler implements ControllerInitializer, LoginObserver 
     }
 
     @FXML
-    private void createUser() {
-        controller.createUserPressed(newusername,newuserpwrd);
+    private void continueGuest() {
+        controller.continueGuest();
+    }
 
+    @FXML
+    private void createUser() {
+        controller.createUserPressed(newusername, newuserpwrd);
+
+    }
+
+    public void userCreatedMsg() {
+        errorText.setText("User Created!");
     }
 
     @FXML
@@ -116,7 +125,7 @@ public class LoginWindowHandler implements ControllerInitializer, LoginObserver 
 
     @FXML
     public void attemptLogin(ActionEvent event) throws NoSuchFieldException {
-        controller.loginPressed(event,username,userpwrd);
+        controller.loginPressed(event, username, userpwrd);
 
     }
 

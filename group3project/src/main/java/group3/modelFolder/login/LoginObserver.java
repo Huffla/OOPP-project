@@ -6,4 +6,6 @@ public interface LoginObserver {
     public void gotoMainMenu(ActionEvent event);
 
     public void userExistsError();
+
+    public void userCreatedMsg();
 }

@@ -9,4 +9,6 @@ public interface LoginInterface {
 
     public void createUser(String name, String password);
 
+    public void continueGuest();
+
 }
