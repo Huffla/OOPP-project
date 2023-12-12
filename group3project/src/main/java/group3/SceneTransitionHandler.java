@@ -11,10 +11,10 @@ import java.io.IOException;
 
 public class SceneTransitionHandler {
     private SmurfinatorWindowHandler smurfinatorWindowHandler;
-    private MainMenuController mainMenuController;
+    private MainMenuWindowHandler mainMenuWindowHandler;
     private CompendiumController compendiumController;
     private LeaderboardController leaderboardController;
-    private LoginController loginController;
+    private LoginWindowHandler loginWindowHandler;
     private static SceneTransitionHandler instance;
 
     public static SceneTransitionHandler getInstance() {
@@ -30,12 +30,12 @@ public class SceneTransitionHandler {
         this.smurfinatorWindowHandler = smurfinatorController;
     }
 
-    public void setLoginController(LoginController loginController) {
-        this.loginController = loginController;
+    public void setLoginController(LoginWindowHandler loginWindowHandler) {
+        this.loginWindowHandler = loginWindowHandler;
     }
 
-    public void setMainMenuController(MainMenuController mainMenuController) {
-        this.mainMenuController = mainMenuController;
+    public void setMainMenuController(MainMenuWindowHandler mainMenuWindowHandler) {
+        this.mainMenuWindowHandler = mainMenuWindowHandler;
     }
 
     public void setCompendiumController(CompendiumController compendiumController) {
@@ -54,7 +54,7 @@ public class SceneTransitionHandler {
 
     public void transitionToMainMenu(ActionEvent event) {
         createScene(event, "styles/universalStyle.css", "styles/mainmenuStyle.css", "stages/mainmenu.fxml", "Main Menu",
-                mainMenuController);
+                mainMenuWindowHandler);
     }
 
     public void transitionToCompendium(ActionEvent event) {

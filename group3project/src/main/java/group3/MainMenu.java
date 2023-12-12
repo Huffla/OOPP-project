@@ -2,7 +2,6 @@ package group3;
 
 import java.io.IOException;
 
-import group3.modelFolder.Model;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -25,7 +24,7 @@ public class MainMenu extends Application {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("stages/loginscene.fxml"));
 
-            LoginController controller = LoginController.getInstance(null);
+            LoginWindowHandler controller = LoginWindowHandler.getInstance(null);
             loader.setController(controller);
             Parent root = loader.load();
 

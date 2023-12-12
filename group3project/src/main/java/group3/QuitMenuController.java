@@ -53,7 +53,7 @@ public class QuitMenuController implements Initializable {
         Stage stage = (Stage) ((Node) event.getTarget()).getScene().getWindow();
         SceneFactory sceneManager = new SceneFactory(stage);
         String[] stylearray = {};
-        sceneManager.loadAndShowScene("stages/mainmenu.fxml", stylearray , MainMenuController.class);
+        sceneManager.loadAndShowScene("stages/mainmenu.fxml", stylearray , MainMenuWindowHandler.class);
 
     }
 }

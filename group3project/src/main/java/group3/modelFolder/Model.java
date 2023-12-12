@@ -6,7 +6,7 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 
 import group3.LoginModel;
-import group3.MainMenuController;
+import group3.MainMenuWindowHandler;
 
 public class Model {
     ArrayList<User> user_list;
@@ -31,7 +31,7 @@ public class Model {
     private User loggedInUser;
     private Compendium compendium = new Compendium();
 
-    MainMenuController mainmenucontroller;
+    MainMenuWindowHandler mainmenucontroller;
 
     // TODO fixa att smurfinator bara körs om man e inloggad, sätter user till null
     // så länge,
@@ -99,7 +99,7 @@ public class Model {
         return instance;
     }
 
-    public void setMainMenuController(MainMenuController m) {
+    public void setMainMenuController(MainMenuWindowHandler m) {
         mainmenucontroller = m;
     }
 

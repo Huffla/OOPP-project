@@ -4,22 +4,22 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class MainMenuController implements ControllerInitializer {
+public class MainMenuWindowHandler implements ControllerInitializer {
 
     @FXML
     Button playButton;
     SmurfinatorWindowHandler controller;
-    private static MainMenuController instance;
+    private static MainMenuWindowHandler instance;
 
     SceneTransitionHandler sceneTransitionHandler = SceneTransitionHandler.getInstance();
-   private MainMenuController(){
+   private MainMenuWindowHandler(){
 
 
    }
 
-    public static MainMenuController getInstance(){
+    public static MainMenuWindowHandler getInstance(){
         if(instance == null){
-            instance = new MainMenuController();
+            instance = new MainMenuWindowHandler();
             return instance;
         }
         return instance;
