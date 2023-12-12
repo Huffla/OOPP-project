@@ -1,3 +1,17 @@
 workspace.xml
 *.class
 classes/
+group3project/target/classes/group3/QuitMenuController.class
+group3project/target/classes/group3/modelFolder/UserDatabaseHandler.class
+group3project/target/classes/group3/modelFolder/User.class
+group3project/target/classes/group3/modelFolder/Smurfinator.class
+group3project/target/classes/group3/modelFolder/Model.class
+group3project/target/classes/group3/modelFolder/DatabaseHandler.class
+group3project/target/classes/group3/modelFolder/CharacterDatabaseHandler.class
+group3project/target/classes/group3/MainMenu.class
+group3project/target/classes/group3/Main.class
+group3project/target/classes/group3/LeaderboardController.class
+group3project/target/classes/group3/CompendiumController.class
+.idea/workspace.xml
+*.class
+*.xml
