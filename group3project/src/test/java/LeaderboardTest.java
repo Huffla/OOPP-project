@@ -1,7 +1,8 @@
 import group3.LeaderboardController;
-import group3.modelFolder.Character;
+import group3.modelFolder.database.UserDatabaseHandler;
+import group3.modelFolder.leaderboard.Leaderboard;
+import group3.modelFolder.model.Model;
 import org.junit.jupiter.api.Test;
-import group3.modelFolder.*;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,6 +1,5 @@
 package group3;
 
-import group3.modelFolder.User;
 import javafx.event.ActionEvent;
 
 public interface LoginInterface {

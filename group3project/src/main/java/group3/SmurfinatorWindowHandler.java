@@ -1,7 +1,12 @@
 package group3;
 
-import group3.modelFolder.*;
-import group3.modelFolder.Character;
+import group3.modelFolder.character.Character;
+import group3.modelFolder.question.MultipleChoiceQuestion;
+import group3.modelFolder.question.Question;
+import group3.modelFolder.question.rangeQuestion;
+import group3.CONTROLLER.SmurfinatorController;
+import group3.modelFolder.smurfinator.SmurfinatorInterface;
+import group3.modelFolder.smurfinator.SmurfinatorObserver;
 import javafx.scene.control.TextField;
 
 import javafx.event.ActionEvent;

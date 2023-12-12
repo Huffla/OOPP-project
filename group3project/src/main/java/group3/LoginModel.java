@@ -2,9 +2,9 @@ package group3;
 
 import java.util.ArrayList;
 
-import group3.modelFolder.LoginAuth;
-import group3.modelFolder.User;
-import group3.modelFolder.UserDatabaseHandler;
+import group3.modelFolder.login.LoginAuth;
+import group3.modelFolder.user.User;
+import group3.modelFolder.database.UserDatabaseHandler;
 import javafx.event.ActionEvent;
 
 public class LoginModel implements LoginInterface {

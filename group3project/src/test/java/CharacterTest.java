@@ -1,8 +1,6 @@
-import group3.modelFolder.Character;
+import group3.modelFolder.character.Character;
+import group3.modelFolder.character.CharacterFactory;
 import org.junit.jupiter.api.Test;
-import group3.modelFolder.*;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,24 +1,22 @@
 package group3;
 
-import group3.modelFolder.leaderboard.category.Category;
+import group3.CONTROLLER.LeaderboardController;
 import group3.modelFolder.leaderboard.LeaderboardEntry;
 import group3.modelFolder.leaderboard.LeaderboardInterface;
 import group3.modelFolder.leaderboard.LeaderboardObserver;
+import group3.modelFolder.leaderboard.category.Category;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+public class LeaderboardWindowHandler implements ControllerInitializer, LeaderboardObserver {
 
-public class LeaderboardController implements ControllerInitializer, LeaderboardObserver {
-
-    private static LeaderboardController instance;
+    private static LeaderboardWindowHandler instance;
 
     LeaderboardInterface leaderboard;
 
-    final int characterLeaderboardCode = 0;
-    final int userLeaderboardCode = 1;
 
     @FXML
     Button mainmenuButton;
@@ -36,6 +34,8 @@ public class LeaderboardController implements ControllerInitializer, Leaderboard
 
     SceneTransitionHandler sceneTransitionHandler = SceneTransitionHandler.getInstance();
 
+    private LeaderboardController controller;
+
 
     private Stage stage; // Reference to the stage
 
@@ -45,16 +45,16 @@ public class LeaderboardController implements ControllerInitializer, Leaderboard
     }
 
     // Constructor
-    private LeaderboardController(LeaderboardInterface s) {
+    private LeaderboardWindowHandler(LeaderboardInterface s) {
         leaderboard = s;
         leaderboard.addObserver(this);
 
     }
 
     // Singleton pattern
-    public static LeaderboardController getInstance(LeaderboardInterface s) {
+    public static LeaderboardWindowHandler getInstance(LeaderboardInterface s) {
         if (instance == null) {
-            instance = new LeaderboardController(s);
+            instance = new LeaderboardWindowHandler(s);
 
         }
         return instance;
@@ -80,20 +80,20 @@ public class LeaderboardController implements ControllerInitializer, Leaderboard
             lbE = category.getList().get(i);
             tempString = leaderboardField.getText();
             leaderboardField.setText(tempString + lbE.getName() + ":" + " " + lbE.getSortValue() + "\n");
-            }
+        }
         switchCategoryName(category);
     }
 
     // Switch category to display characters
     @FXML
     private void switchCategoryCharacter(){
-        leaderboard.switchCategory(characterLeaderboardCode);
+        controller.switchCategoryCharacter();
     }
 
     // Switch category to display users
     @FXML
     private void switchCategoryUser(){
-        leaderboard.switchCategory(userLeaderboardCode);
+        controller.switchCategoryUser();
     }
 
     // Change label describing leaderboard type

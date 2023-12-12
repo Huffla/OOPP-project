@@ -1,6 +1,6 @@
 package group3;
 
-import group3.modelFolder.Model;
+import group3.modelFolder.model.Model;
 
 public class Main {
 
