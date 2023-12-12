@@ -1,8 +1,10 @@
-package group3;
+package group3.modelFolder.login;
 
 import java.util.ArrayList;
 
 import group3.modelFolder.login.LoginAuth;
+import group3.modelFolder.login.LoginInterface;
+import group3.modelFolder.login.LoginObserver;
 import group3.modelFolder.user.User;
 import group3.modelFolder.database.UserDatabaseHandler;
 import javafx.event.ActionEvent;

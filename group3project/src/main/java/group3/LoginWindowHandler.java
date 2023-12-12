@@ -1,5 +1,9 @@
 package group3;
 
+import group3.CONTROLLER.ControllerInitializer;
+import group3.CONTROLLER.LoginController;
+import group3.modelFolder.login.LoginInterface;
+import group3.modelFolder.login.LoginObserver;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;

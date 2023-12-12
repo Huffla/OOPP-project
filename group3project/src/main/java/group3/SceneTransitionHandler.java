@@ -1,5 +1,7 @@
 package group3;
 
+import group3.CONTROLLER.CompendiumController;
+import group3.CONTROLLER.ControllerInitializer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -13,7 +15,7 @@ public class SceneTransitionHandler {
     private SmurfinatorWindowHandler smurfinatorWindowHandler;
     private MainMenuWindowHandler mainMenuWindowHandler;
     private CompendiumController compendiumController;
-    private LeaderboardController leaderboardController;
+    private LeaderboardWindowHandler leaderboardWindowHandler;
     private LoginWindowHandler loginWindowHandler;
     private static SceneTransitionHandler instance;
 
@@ -42,8 +44,8 @@ public class SceneTransitionHandler {
         this.compendiumController = compendiumController;
     }
 
-    public void setLeaderboardController(LeaderboardController leaderboardController) {
-        this.leaderboardController = leaderboardController;
+    public void setLeaderboardController(LeaderboardWindowHandler leaderboardWindowHandler) {
+        this.leaderboardWindowHandler = leaderboardWindowHandler;
     }
 
     private SceneTransitionHandler() {
@@ -64,8 +66,8 @@ public class SceneTransitionHandler {
 
     public void transitionToLeaderboard(ActionEvent event) {
         createScene(event, "styles/universalStyle.css", "styles/leaderboardStyle.css", "stages/leaderboard.fxml",
-                "Leaderboard", leaderboardController);
-        leaderboardController.makeInitialCall();
+                "Leaderboard", leaderboardWindowHandler);
+        leaderboardWindowHandler.makeInitialCall();
     }
 
     public void transitionToSmurfinator(ActionEvent event) {

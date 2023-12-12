@@ -1,5 +1,6 @@
 package group3;
 
+import group3.CONTROLLER.ControllerInitializer;
 import group3.CONTROLLER.LeaderboardController;
 import group3.modelFolder.leaderboard.LeaderboardEntry;
 import group3.modelFolder.leaderboard.LeaderboardInterface;
@@ -47,8 +48,8 @@ public class LeaderboardWindowHandler implements ControllerInitializer, Leaderbo
     // Constructor
     private LeaderboardWindowHandler(LeaderboardInterface s) {
         leaderboard = s;
-        leaderboard.addObserver(this);
-
+        s.addObserver(this);
+        controller = new LeaderboardController(s);
     }
 
     // Singleton pattern

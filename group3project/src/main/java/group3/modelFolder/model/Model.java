@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
-import group3.LoginModel;
+import group3.modelFolder.login.LoginModel;
 import group3.MainMenuWindowHandler;
 import group3.modelFolder.character.Character;
 import group3.modelFolder.character.CharacterInitializer;

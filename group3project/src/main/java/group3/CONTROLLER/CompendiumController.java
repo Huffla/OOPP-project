@@ -1,7 +1,9 @@
 
-package group3;
+package group3.CONTROLLER;
 
 
+import group3.modelFolder.compendium.CompendiumModelInterface;
+import group3.SceneTransitionHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

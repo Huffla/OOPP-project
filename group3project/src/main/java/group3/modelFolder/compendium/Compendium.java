@@ -1,7 +1,5 @@
 package group3.modelFolder.compendium;
 
-import group3.CompendiumModelInterface;
-
 import java.util.HashMap;
 import java.util.Map;
 

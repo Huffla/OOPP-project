@@ -1,4 +1,4 @@
-package group3;
+package group3.CONTROLLER;
 
 public interface ControllerInitializer {
     void initialize();

@@ -1,5 +1,6 @@
 package group3;
 
+import group3.CONTROLLER.ControllerInitializer;
 import group3.modelFolder.character.Character;
 import group3.modelFolder.question.MultipleChoiceQuestion;
 import group3.modelFolder.question.Question;

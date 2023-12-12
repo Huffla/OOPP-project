@@ -9,6 +9,10 @@ public class LeaderboardController {
     final int userLeaderboardCode = 1;
 
     LeaderboardInterface leaderboard;
+
+    public LeaderboardController(LeaderboardInterface lbi){
+        leaderboard = lbi;
+    }
     public void switchCategoryCharacter() {
         leaderboard.switchCategory(characterLeaderboardCode);
     }

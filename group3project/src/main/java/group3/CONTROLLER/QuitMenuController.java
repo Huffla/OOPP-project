@@ -1,9 +1,11 @@
 
-package group3;
+package group3.CONTROLLER;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import group3.MainMenuWindowHandler;
+import group3.SceneFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

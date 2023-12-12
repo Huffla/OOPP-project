@@ -1,10 +1,10 @@
 package group3;
 
+import group3.CONTROLLER.ControllerInitializer;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
 
@@ -16,7 +16,7 @@ public class SceneFactory {
     }
 
     public <T extends ControllerInitializer> void loadAndShowScene(String fxmlPath, String[] stylesheets,
-            Class<T> controllerClass) {
+                                                                   Class<T> controllerClass) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();

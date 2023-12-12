@@ -1,5 +1,6 @@
-package group3;
+package group3.CONTROLLER;
 
+import group3.modelFolder.login.LoginInterface;
 import javafx.event.ActionEvent;
 
 public class LoginController {
