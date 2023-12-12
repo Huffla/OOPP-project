@@ -96,6 +96,12 @@ public class SmurfinatorMainController implements ControllerInitializer, Smurfin
         return instance;
     }
 
+    /*public void addCreateCharacterButtonListener(CharacterCreationController c) { Niklas Broberg skrev dessa rader, behåll för good luck
+        createCharacterButton.setOnAction(e -> {
+            c.createNewCharacter();
+        });
+    }*/
+
     // Singleton pattern
     public static SmurfinatorMainController getInstance(){
         if(instance == null){

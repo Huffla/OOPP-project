@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="182ebb41-7fa8-4c58-8420-ddc6e06ab06f" name="Changes" comment="shit crazy, gissar om detn ska gissa wudaheeeal den tar bort opposite trats">
-      <change afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/CompendiumModelInterface.java" afterDir="false" />
+    <list default="true" id="182ebb41-7fa8-4c58-8420-ddc6e06ab06f" name="Changes" comment="leaderboard tillagd, bör fungera annars blir jag ledsen, jag kommer gråta :(">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/CompendiumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/CompendiumController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Compendium.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Compendium.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/CompendiumInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/CompendiumController.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/CompendiumController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/MainMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/MainMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Model.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Users.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/group3project.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/SmurfinatorMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/SmurfinatorMainController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +178,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701455612368</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="leaderboard tillagd, bör fungera annars blir jag ledsen, jag kommer gråta :(">
+      <created>1702329382239</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702329382239</updated>
+    </task>
+    <task id="LOCAL-00006" summary="leaderboard tillagd, bör fungera annars blir jag ledsen, jag kommer gråta :(">
+      <created>1702330369431</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1702330369431</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -201,7 +210,8 @@
     <MESSAGE value="fler karaktärer" />
     <MESSAGE value="bilder mmm" />
     <MESSAGE value="shit crazy, gissar om detn ska gissa wudaheeeal den tar bort opposite trats" />
-    <option name="LAST_COMMIT_MESSAGE" value="shit crazy, gissar om detn ska gissa wudaheeeal den tar bort opposite trats" />
+    <MESSAGE value="leaderboard tillagd, bör fungera annars blir jag ledsen, jag kommer gråta :(" />
+    <option name="LAST_COMMIT_MESSAGE" value="leaderboard tillagd, bör fungera annars blir jag ledsen, jag kommer gråta :(" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -213,17 +223,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Smurfinator.java</url>
-          <line>266</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Smurfinator.java</url>
-          <line>292</line>
+          <line>293</line>
           <properties>
             <option name="count-filter" value="40" />
             <option name="count-filter-enabled" value="true" />
           </properties>
           <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Smurfinator.java</url>
+          <line>157</line>
+          <properties class="group3.modelFolder.Smurfinator" method="update">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
