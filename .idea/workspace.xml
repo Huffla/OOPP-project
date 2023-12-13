@@ -5,27 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="182ebb41-7fa8-4c58-8420-ddc6e06ab06f" name="Changes" comment="japp paket">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Users.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/CONTROLLER/QuitMenuController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/CONTROLLER/SmurfinatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/CONTROLLER/SmurfinatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/QuitMenuLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/SceneFactory.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/SmurfinatorWindowHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/SmurfinatorWindowHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/database/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/database/DatabaseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/smurfinator/Smurfinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/smurfinator/Smurfinator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/smurfinator/SmurfinatorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/smurfinator/SmurfinatorInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/stages/mainmenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/stages/mainmenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/stages/questionscene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/stages/questionscene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/MainMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/QuitMenuLoader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/SceneFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/test-classes/CharacterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/test-classes/CharacterTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/test-classes/DatabaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/test-classes/DatabaseTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/test-classes/LoginAuthTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/test-classes/LoginAuthTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/stages/quitpopup.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +57,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
