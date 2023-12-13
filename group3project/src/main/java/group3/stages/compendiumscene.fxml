@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.effect.Light.Distant?>
@@ -35,7 +36,12 @@
             </Lighting>
          </effect>
       </ImageView>
-      <ImageView fitHeight="727.0" fitWidth="1020.0" layoutX="130.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="270.0" fitWidth="1280.0" layoutY="450.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/bottom-border.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="727.0" fitWidth="1020.0" layoutX="130.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/ancient-opened-book-v1.png" />
          </image>
@@ -43,124 +49,152 @@
             <InnerShadow />
          </effect>
       </ImageView>
-      <AnchorPane layoutX="274.0" layoutY="101.0" prefHeight="200.0" prefWidth="200.0">
+      <ImageView fitHeight="348.0" fitWidth="303.0" layoutX="1000.0" layoutY="-73.0" pickOnBounds="true" preserveRatio="true" rotate="-10.7">
+         <image>
+            <Image url="@../images/mushroom-transformed.png" />
+         </image>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </ImageView>
+      <AnchorPane layoutX="274.0" layoutY="85.0">
          <children>
-            <ScrollPane hbarPolicy="NEVER" prefHeight="374.0" prefWidth="710.0" styleClass="back-pane" stylesheets="@../styles/collectionStyle.css">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="384.0" prefWidth="710.0">
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <GridPane layoutY="14.0" prefHeight="360.0" prefWidth="694.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="204.00001831054686" minWidth="10.0" prefWidth="171.19998779296876" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.20001220703125" minWidth="10.0" prefWidth="160.80001220703124" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.39996337890625" minWidth="10.0" prefWidth="48.60002441406249" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="224.8000366210938" minWidth="10.0" prefWidth="133.59998779296882" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.20001220703125" minWidth="10.0" prefWidth="171.20001220703125" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="88.60001220703126" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="280.0" minHeight="10.0" prefHeight="280.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="151.20001831054685" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="280.0" minHeight="10.0" prefHeight="280.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="229.2" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
                      <children>
-                        <GridPane>
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                        </GridPane>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../images/Smurfs/Papa_Smurf.png" />
+                           </image>
+                           <effect>
+                              <Shadow blurType="ONE_PASS_BOX" height="0.0" radius="0.0" width="0.0" />
+                           </effect>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="52.0" prefWidth="109.0" text="Papa Smurf" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Script MT Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="165.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                           <image>
+                              <Image url="@../images/Smurfs/Smurfette.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="142.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../images/Smurfs/Clumsy_Smurf.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                           <image>
+                              <Image url="@../images/Smurfs/Brainy_Smurf.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="52.0" prefWidth="109.0" text="Smurfette" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Script MT Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="52.0" prefWidth="109.0" text="Brainy Smurf" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Script MT Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="52.0" prefWidth="109.0" text="Clumsy Smurf" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Script MT Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../images/Smurfs/VanitySmurfPerfume.png" />
+                           </image>
+                           <effect>
+                              <Shadow height="0.0" radius="0.0" width="0.0" />
+                           </effect>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="52.0" prefWidth="109.0" text="Vanity Smurf" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Script MT Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                           <image>
+                              <Image url="@../images/Smurfs/Sassette_Smurfling.png" />
+                           </image>
+                           <effect>
+                              <Shadow blurType="ONE_PASS_BOX" height="0.0" radius="0.0" width="0.0" />
+                           </effect>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="52.0" prefWidth="109.0" text="Sassette" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Script MT Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="130.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../images/Smurfs/Hefty_Smurf.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="52.0" prefWidth="109.0" text="Hefty Smurf" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Script MT Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="142.0" fitWidth="139.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                           <image>
+                              <Image url="@../images/Smurfs/Handy_Smurf_Black.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" text="???" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Script MT Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../images/Smurfs/Papa_Smurf.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" text="???" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Script MT Bold" size="17.0" />
+                           </font>
+                        </Label>
                      </children>
-                  </AnchorPane>
-              </content>
-            </ScrollPane>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="39.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/Smurfs/Papa_Smurf.png" />
-               </image>
-               <effect>
-                  <Shadow blurType="ONE_PASS_BOX" height="0.0" radius="0.0" width="0.0" />
-               </effect>
-            </ImageView>
-            <Label alignment="CENTER" layoutX="37.0" layoutY="160.0" prefHeight="52.0" prefWidth="109.0" text="Papa Smurf">
-               <font>
-                  <Font name="Script MT Bold" size="17.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="165.0" fitWidth="177.0" layoutX="7.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/Smurfs/Smurfette.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="202.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/Smurfs/Brainy_Smurf.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="116.0" layoutX="219.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/Smurfs/Clumsy_Smurf.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="130.0" fitWidth="110.0" layoutX="570.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/Smurfs/Hefty_Smurf.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="419.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/Smurfs/Sassette_Smurfling.png" />
-               </image>
-               <effect>
-                  <Shadow blurType="ONE_PASS_BOX" height="0.0" radius="0.0" width="0.0" />
-               </effect>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="398.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/Smurfs/VanitySmurfPerfume.png" />
-               </image>
-               <effect>
-                  <Shadow height="0.0" radius="0.0" width="0.0" />
-               </effect>
-            </ImageView>
-            <ImageView fitHeight="142.0" fitWidth="139.0" layoutX="554.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/Smurfs/Handy_Smurf_Black.png" />
-               </image>
-            </ImageView>
-            <Label alignment="CENTER" layoutX="233.0" layoutY="322.0" prefHeight="52.0" prefWidth="109.0" text="Brainy Smurf">
-               <font>
-                  <Font name="Script MT Bold" size="17.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="221.0" layoutY="160.0" prefHeight="52.0" prefWidth="109.0" text="Clumsy Smurf">
-               <font>
-                  <Font name="Script MT Bold" size="17.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="568.0" layoutY="160.0" prefHeight="52.0" prefWidth="109.0" text="Hefty Smurf">
-               <font>
-                  <Font name="Script MT Bold" size="17.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="418.0" layoutY="160.0" prefHeight="52.0" prefWidth="109.0" text="Vanity Smurf">
-               <font>
-                  <Font name="Script MT Bold" size="17.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="418.0" layoutY="311.0" prefHeight="52.0" prefWidth="109.0" text="Sassette">
-               <font>
-                  <Font name="Script MT Bold" size="17.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="623.0" layoutY="326.0" text="???">
-               <font>
-                  <Font name="Script MT Bold" size="17.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="45.0" layoutY="322.0" prefHeight="52.0" prefWidth="109.0" text="Smurfette">
-               <font>
-                  <Font name="Script MT Bold" size="17.0" />
-               </font>
-            </Label>
+                  </GridPane>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
-      <Label alignment="CENTER" layoutX="251.0" layoutY="14.0" prefHeight="130.0" prefWidth="755.0" styleClass="title" stylesheets="@../styles/collectionStyle.css" text="The Smurf Compendium" underline="true">
+      <Label alignment="CENTER" layoutX="251.0" prefHeight="130.0" prefWidth="755.0" styleClass="title" stylesheets="@../styles/collectionStyle.css" text="The Smurf Compendium" underline="true">
          <font>
             <Font name="Harrington" size="73.0" />
          </font>
          <effect>
-            <DropShadow />
+            <DropShadow>
+               <input>
+                  <Bloom threshold="0.0" />
+               </input>
+            </DropShadow>
          </effect>
       </Label>
       <Button fx:id="mainmenuButton" layoutX="28.0" layoutY="531.0" mnemonicParsing="false" onAction="#mainmenu" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="START PAGE">
@@ -187,19 +221,24 @@
             <DropShadow />
          </effect>
       </Button>
-      <ImageView fitHeight="348.0" fitWidth="303.0" layoutX="1020.0" layoutY="-51.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/mushroom-transformed.png" />
-         </image>
-      </ImageView>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="937.0" layoutY="450.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="90.0">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="895.0" layoutY="469.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="83.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css">
          <graphic>
             <ImageView depthTest="DISABLE" fitHeight="87.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/fresh-blue-arrow.png" />
                </image>
+               <effect>
+                  <InnerShadow>
+                     <input>
+                        <DropShadow />
+                     </input>
+                  </InnerShadow>
+               </effect>
             </ImageView>
          </graphic>
+         <effect>
+            <DropShadow />
+         </effect>
       </Button>
    </children>
 </AnchorPane>

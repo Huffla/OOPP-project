@@ -43,5 +43,11 @@
 }
 
 .other-button:pressed{
-    -fx-background-color: #09be66;
+    -fx-background-color: #006AB6;
 }
+
+/*
+#003E6A
+#006AB6
+#09be66
+*/

@@ -11,12 +11,16 @@
 
 .title{
     -fx-text-fill: #09cdda;
+    /*
     -fx-effect: dropshadow(gaussian, black, 20, 0.1, 0.1, 0);
+    */
 }
 
 .subtitle{
     -fx-text-fill: white;
+    /*
     -fx-effect: dropshadow(gaussian, black, 20, 0.1, 0.1, 0);
+    */
 }
 
 /*
@@ -42,7 +46,7 @@
 }
 
 .play-button:pressed{
-    -fx-background-color: #09be66;
+    -fx-background-color: #006AB6;
 }
 
 .other-button{
@@ -61,5 +65,11 @@
 }
 
 .other-button:pressed{
-    -fx-background-color: #09be66;
+    -fx-background-color: #006AB6;
 }
+
+/*
+#003E6A
+#006AB6
+#09be66
+*/

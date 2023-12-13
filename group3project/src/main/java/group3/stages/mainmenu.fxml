@@ -18,6 +18,11 @@
             <Image url="@../images/Smurf-village-v1.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="270.0" fitWidth="1280.0" layoutY="450.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/bottom-border.png" />
+         </image>
+      </ImageView>
       <Button fx:id="playButton" layoutX="507.0" layoutY="464.0" mnemonicParsing="false" onAction="#playgame" styleClass="play-button" stylesheets="@../styles/mainmenuStyle.css" text="PLAY">
          <font>
             <Font name="Georgia Pro Cond Black" size="55.0" />
@@ -44,6 +49,13 @@
          <font>
             <Font name="Algerian" size="90.0" />
          </font>
+         <effect>
+            <DropShadow>
+               <input>
+                  <Bloom threshold="0.05" />
+               </input>
+            </DropShadow>
+         </effect>
       </Label>
       <Button fx:id="leaderboardButton" layoutX="28.0" layoutY="472.0" mnemonicParsing="false" onAction="#leaderboard" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="LEADERBOARD">
          <font>
@@ -56,6 +68,9 @@
          <font>
             <Font name="Algerian" size="35.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
       <Button fx:id="loginButton" layoutX="584.0" layoutY="583.0" mnemonicParsing="false" onAction="#loginpopup" prefHeight="37.0" prefWidth="75.0" styleClass="play-button" stylesheets="@../styles/mainmenuStyle.css" text="LOGIN">
          <font>

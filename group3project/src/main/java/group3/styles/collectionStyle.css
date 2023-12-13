@@ -1,5 +1,5 @@
 .title{
-    -fx-text-fill: white;
+    -fx-text-fill: #00C3FF;
     /*
     -fx-effect: dropshadow(gaussian, black, 20, 0.1, 0.1, 0);
     */
@@ -47,5 +47,11 @@
 }
 
 .other-button:pressed{
-    -fx-background-color: #09be66;
+    -fx-background-color: #006AB6;
 }
+
+/*
+#003E6A
+#006AB6
+#09be66
+*/
