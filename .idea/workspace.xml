@@ -4,18 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="182ebb41-7fa8-4c58-8420-ddc6e06ab06f" name="Changes" comment="shit crazy, gissar om detn ska gissa wudaheeeal den tar bort opposite trats">
-      <change afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/CompendiumModelInterface.java" afterDir="false" />
+    <list default="true" id="182ebb41-7fa8-4c58-8420-ddc6e06ab06f" name="Changes" comment="japp paket">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/CompendiumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/CompendiumController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/CONTROLLER/LeaderboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/CONTROLLER/LeaderboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/CompendiumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/CONTROLLER/CompendiumController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/CompendiumModelInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/compendium/CompendiumModelInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/ControllerInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/CONTROLLER/ControllerInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/LeaderboardController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/LeaderboardWindowHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/LeaderboardWindowHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/CONTROLLER/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/LoginInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/login/LoginInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/LoginModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/login/LoginModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/LoginObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/login/LoginObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/LoginWindowHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/LoginWindowHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Compendium.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Compendium.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/CompendiumInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/CompendiumController.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/CompendiumController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/MainMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/MainMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/modelFolder/Model.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/MainMenuWindowHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/MainMenuWindowHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/QuitMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/CONTROLLER/QuitMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/QuitMenuLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/QuitMenuLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/SceneFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/SceneFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/SceneTransitionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/SceneTransitionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/SmurfinatorWindowHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/SmurfinatorWindowHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/compendium/Compendium.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/compendium/Compendium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/src/main/java/group3/stages/quitpopup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/src/main/java/group3/stages/quitpopup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/CompendiumController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/ControllerInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/LeaderboardController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/QuitMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/QuitMenuLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/QuitMenuLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/group3project/target/classes/group3/SceneFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/group3project/target/classes/group3/SceneFactory.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +44,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -75,6 +94,10 @@
       <recent name="C:\Saker\oopp\group3project\src\main\java\group3" />
       <recent name="C:\Users\jonat\OneDrive\Skrivbord\OOPP-project\group3project\src\main\smurfs" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="group3" />
+      <recent name="group3.modelFolder" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -82,7 +105,7 @@
       <module name="group3project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="group3.*" />
+          <option name="PATTERN" value="group3.CONTROLLER.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -94,7 +117,7 @@
       <module name="group3project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="group3.modelFolder.*" />
+          <option name="PATTERN" value="group3.modelFolder.leaderboard.category.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -109,7 +132,7 @@
       <module name="group3project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="group3.modelFolder.*" />
+          <option name="PATTERN" value="group3.modelFolder.leaderboard.category.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,7 +148,7 @@
       <module name="group3project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="group3.modelFolder.*" />
+          <option name="PATTERN" value="group3.modelFolder.leaderboard.category.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -183,7 +206,28 @@
       <option name="project" value="LOCAL" />
       <updated>1701455612368</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="leaderboard tillagd, bör fungera annars blir jag ledsen, jag kommer gråta :(">
+      <created>1702329382239</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702329382239</updated>
+    </task>
+    <task id="LOCAL-00006" summary="leaderboard tillagd, bör fungera annars blir jag ledsen, jag kommer gråta :(">
+      <created>1702330369431</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1702330369431</updated>
+    </task>
+    <task id="LOCAL-00007" summary="japp paket">
+      <created>1702380737790</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1702380737790</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -201,29 +245,35 @@
     <MESSAGE value="fler karaktärer" />
     <MESSAGE value="bilder mmm" />
     <MESSAGE value="shit crazy, gissar om detn ska gissa wudaheeeal den tar bort opposite trats" />
-    <option name="LAST_COMMIT_MESSAGE" value="shit crazy, gissar om detn ska gissa wudaheeeal den tar bort opposite trats" />
+    <MESSAGE value="leaderboard tillagd, bör fungera annars blir jag ledsen, jag kommer gråta :(" />
+    <MESSAGE value="japp paket" />
+    <option name="LAST_COMMIT_MESSAGE" value="japp paket" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/group3project/src/test/java/group3/modelFolder/SmurfinatorTest.java</url>
-          <line>16</line>
+          <line>20</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Smurfinator.java</url>
-          <line>266</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/Smurfinator.java</url>
-          <line>292</line>
+          <url>file://$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/smurfinator/Smurfinator.java</url>
+          <line>297</line>
           <properties>
             <option name="count-filter" value="40" />
             <option name="count-filter-enabled" value="true" />
           </properties>
           <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/group3project/src/main/java/group3/modelFolder/smurfinator/Smurfinator.java</url>
+          <line>160</line>
+          <properties class="group3.modelFolder.Smurfinator" method="update">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

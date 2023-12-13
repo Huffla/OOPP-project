@@ -1,5 +1,6 @@
 package group3;
 
+import group3.CONTROLLER.QuitMenuController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

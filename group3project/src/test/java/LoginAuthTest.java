@@ -1,9 +1,10 @@
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import group3.modelFolder.login.LoginAuth;
+import group3.modelFolder.model.Model;
+import group3.modelFolder.user.User;
 import org.junit.jupiter.api.Test;
-
-import group3.modelFolder.*;
 
 public class LoginAuthTest {
     Model model = Model.getInstance("UsersTest.txt","Questions.txt","Traits.txt","Characters.txt");

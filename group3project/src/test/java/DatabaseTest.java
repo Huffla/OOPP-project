@@ -1,6 +1,8 @@
-import group3.modelFolder.Character;
+import group3.modelFolder.character.Character;
+import group3.modelFolder.database.UserDatabaseHandler;
+import group3.modelFolder.model.Model;
+import group3.modelFolder.user.User;
 import org.junit.jupiter.api.Test;
-import group3.modelFolder.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 

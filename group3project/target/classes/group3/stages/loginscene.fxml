@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: f5f5dc;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="smurfinatorLabel" layoutX="318.0" layoutY="70.0" prefHeight="154.0" prefWidth="802.0" text="SMURFINATOR" textAlignment="CENTER" AnchorPane.bottomAnchor="495.6" AnchorPane.leftAnchor="318.0" AnchorPane.rightAnchor="159.5999999999999" AnchorPane.topAnchor="70.0">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="loginContainer" layoutX="450.0" layoutY="252.0" prefHeight="376.0" prefWidth="379.0" style="-fx-background-color: ffe39b;">
+         <children>
+            <Button fx:id="loginButton" layoutX="113.0" layoutY="212.0" mnemonicParsing="false" onAction="#attemptLogin" prefHeight="64.0" prefWidth="153.0" styleClass="login-button" text="Login">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="createaccountButton" layoutX="198.0" layoutY="288.0" mnemonicParsing="false" onAction="#toggleCreateUser" prefHeight="64.0" prefWidth="172.0" styleClass="login-button" text="Create Account">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="guestButton" layoutX="14.0" layoutY="288.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="172.0" styleClass="login-button" text="Continue as Guest" textAlignment="CENTER" wrapText="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <TextField fx:id="userfield" layoutX="82.0" layoutY="32.0" prefHeight="47.0" prefWidth="214.0" promptText="Username">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="passfield" layoutX="82.0" layoutY="112.0" prefHeight="47.0" prefWidth="214.0" promptText="Password">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="createContainer" layoutX="418.0" layoutY="256.0" prefHeight="419.0" prefWidth="460.0" style="-fx-background-color: ffe39b;" visible="false">
+         <children>
+            <Label fx:id="errorText" alignment="CENTER" layoutX="103.0" layoutY="262.0" prefHeight="39.0" prefWidth="254.0" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="130.0" layoutY="14.0" prefHeight="39.0" prefWidth="234.0" text="Create Account">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <TextField fx:id="createuserfield" layoutX="103.0" layoutY="116.0" prefHeight="47.0" prefWidth="254.0" promptText="Name">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="createpassfield" layoutX="103.0" layoutY="197.0" prefHeight="47.0" prefWidth="254.0" promptText="Password">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <Button fx:id="submitaccountButton" layoutX="240.0" layoutY="314.0" mnemonicParsing="false" onAction="#createUser" prefHeight="63.0" prefWidth="139.0" styleClass="login-button" text="Create Account">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="goBackButton" layoutX="79.0" layoutY="314.0" mnemonicParsing="false" onAction="#goBack" prefHeight="63.0" prefWidth="139.0" styleClass="login-button" text="Go Back">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
