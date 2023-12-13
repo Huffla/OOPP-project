@@ -11,11 +11,7 @@ public class LoginAuth {
     private String name;
     private int hashedPassword;
     private ArrayList<User> userDatabase;
-    /**
-     * @param name Name of user
-     * @param password  a password that is not hashed.
-     * 
-     */
+
     
     public LoginAuth(ArrayList<User> db){
         userDatabase = db;
