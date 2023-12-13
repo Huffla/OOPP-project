@@ -30,4 +30,8 @@ public class SmurfinatorController {
     public void startNewGame() {
         smurfinator.makeInitialCall();
     }
+
+    public void answerYesGuessPressed() {
+        smurfinator.guessWasCorrect();
+    }
 }

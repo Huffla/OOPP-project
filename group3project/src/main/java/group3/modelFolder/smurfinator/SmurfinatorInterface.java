@@ -10,4 +10,6 @@ public interface SmurfinatorInterface {
     public void makeInitialCall();
     public void setCharacterCreationState();
     public void reset();
+
+    public void guessWasCorrect();
 }

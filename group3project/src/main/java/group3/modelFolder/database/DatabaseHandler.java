@@ -67,7 +67,8 @@ public abstract class DatabaseHandler {
         writeToFile();
     }
 
-    
-    
-    
+
+    public void updateFile() {
+        writeToFile();
+    }
 }

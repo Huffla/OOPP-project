@@ -345,5 +345,12 @@ public class Smurfinator implements SmurfinatorInterface{
         update();
     }
 
+    @Override
+    public void guessWasCorrect() {
+        guessedCharacter.increaseGuessedAmount();
+        cdh.updateFile();
+        reset();
+    }
+
 
 }

@@ -176,7 +176,6 @@ public class Model {
 
     public void setUser(User u) {
         loggedInUser = u;
-
     }
 
     public void setCharacters(ArrayList<Character> clist) {
