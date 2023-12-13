@@ -19,8 +19,11 @@ public class LoginModel implements LoginInterface {
 
     public LoginModel(UserDatabaseHandler database) {
         udbh = database;
-        model = Model.getInstance("Users.txt", "Questions.txt", "Traits.txt", "Characters.txt");
+    
+    }
 
+    public void setModel(Model m){
+        model = m;
     }
 
     @Override
@@ -79,8 +82,5 @@ public class LoginModel implements LoginInterface {
         }
     }
 
-    public void continueGuest() {
-        User guestuser = new User("luqas", 123124342);
-        model.setCurrentUser(guestuser);
-    }
+    
 }

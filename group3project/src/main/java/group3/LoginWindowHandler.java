@@ -103,11 +103,7 @@ public class LoginWindowHandler implements ControllerInitializer, LoginObserver 
         createContainer.setVisible(false);
     }
 
-    @FXML
-    private void continueGuest() {
-        controller.continueGuest();
-    }
-
+    
     @FXML
     private void createUser() {
         controller.createUserPressed(newusername, newuserpwrd);

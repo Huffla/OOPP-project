@@ -22,7 +22,4 @@ public class LoginController {
         }
     }
 
-    public void continueGuest() {
-        loginInterface.continueGuest();
-    }
 }

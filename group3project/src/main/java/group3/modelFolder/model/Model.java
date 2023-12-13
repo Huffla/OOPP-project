@@ -121,6 +121,7 @@ public class Model {
 
     public void setCurrentUser(User u) {
         loggedInUser = u;
+        
     }
 
     public void setMainMenuController(MainMenuWindowHandler m) {
@@ -178,10 +179,7 @@ public class Model {
         user_list = user_handler.getUsers();
     }
 
-    public void setUser(User u) {
-        loggedInUser = u;
-
-    }
+    
 
     public void setCharacters(ArrayList<Character> clist) {
         for (Character c : clist) {

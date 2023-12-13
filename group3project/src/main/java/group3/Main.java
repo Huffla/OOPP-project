@@ -15,6 +15,7 @@ public class Main {
         CompendiumController compendiumController = CompendiumController.getInstance(model.getCompendium());
         LoginWindowHandler loginWindowHandler = LoginWindowHandler.getInstance(model.getLoginModel());
         LeaderboardWindowHandler leaderboardWindowHandler = LeaderboardWindowHandler.getInstance(model.getLeaderboard());
+        model.getLoginModel().setModel(model);
         sceneTransitionHandler.setLeaderboardController(leaderboardWindowHandler);
         sceneTransitionHandler.setLoginController(loginWindowHandler);
         sceneTransitionHandler.setSmurfinatorWindowHandler(smurfinatorWindowHandler);
