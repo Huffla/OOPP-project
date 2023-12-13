@@ -271,6 +271,5 @@
             </Glow>
          </effect>
       </Label>
-      <Button fx:id="settingsButton" disable="true" layoutX="1172.0" layoutY="618.0" mnemonicParsing="false" onAction="#quitpopup" prefHeight="62.0" prefWidth="66.0" styleClass="answer-button" stylesheets="@../styles/buttonStyle.css" />
    </children>
 </AnchorPane>

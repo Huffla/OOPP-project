@@ -35,7 +35,7 @@ public class Smurfinator implements SmurfinatorInterface{
     int totalAmountOfQuestionsLeft;
 
     CharacterDatabaseHandler cdh = new CharacterDatabaseHandler("Characters.txt");
-    
+
 
 
     public Smurfinator(Dictionary<Trait,Question> traitQuestionDict, ArrayList<Character> c, User u) {
@@ -339,10 +339,19 @@ public class Smurfinator implements SmurfinatorInterface{
     public void reset(){
         askedTraits.clear();
         traitsLeft.clear();
+        traitsLeft = getTraitsFromDictionary();
         remainingCharacters = (ArrayList<Character>)characters.clone();
         characterCreatingState = false;
         totalAmountOfQuestionsLeft = remainingCharacters.size();
         update();
+
+    }
+
+    @Override
+    public void guessWasCorrect() {
+        guessedCharacter.increaseGuessedAmount();
+        cdh.updateFile();
+        reset();
     }
 
 

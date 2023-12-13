@@ -5,17 +5,21 @@ import javafx.event.ActionEvent;
 
 public class LoginController {
     LoginInterface loginInterface;
-    public LoginController(LoginInterface li){
+
+    public LoginController(LoginInterface li) {
         loginInterface = li;
     }
-    public void createUserPressed(String name, String password){
-        loginInterface.createUser(name,password);
+
+    public void createUserPressed(String name, String password) {
+        loginInterface.createUser(name, password);
     }
-    public void loginPressed(ActionEvent event, String username,String password){
+
+    public void loginPressed(ActionEvent event, String username, String password) {
         try {
-            loginInterface.attemptLogin(username,password,event);
+            loginInterface.attemptLogin(username, password, event);
         } catch (NoSuchFieldException e) {
 
         }
     }
+
 }

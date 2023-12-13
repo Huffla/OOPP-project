@@ -24,8 +24,7 @@ public class SmurfinatorWindowHandler implements ControllerInitializer, Smurfina
 
     @FXML
     private Rectangle buttonContainer;
-    @FXML
-    private Button settingsButton;
+
     @FXML
     private Button yesButton;
     @FXML
@@ -111,7 +110,6 @@ public class SmurfinatorWindowHandler implements ControllerInitializer, Smurfina
 
     @Override
     public void initialize() {
-        settingsButtonBuilder();
         buttonContainer.setArcWidth(40.0);
         buttonContainer.setArcHeight(40.0);
         addSliderListener();
@@ -126,27 +124,7 @@ public class SmurfinatorWindowHandler implements ControllerInitializer, Smurfina
         });
     }
 
-    private void settingsButtonBuilder() {
-        Image settingsicon = new Image("group3/images/settingsicon.png");
-        ImageView settingsImageView = new ImageView(settingsicon);
-        settingsButton.setGraphic(settingsImageView);
-        settingsImageView.setPreserveRatio(true);
-        settingsImageView.fitWidthProperty().bind(settingsButton.widthProperty());
-        settingsImageView.fitHeightProperty().bind(settingsButton.heightProperty());
-        settingsImageView.setScaleX(0.7);
-        settingsImageView.setScaleY(0.7);
-    }
 
-    @FXML
-    private void quitpopup() {
-        QuitMenuLoader.showPopup("stages/quitpopup.fxml", "Settings");
-
-    }
-
-    @FXML
-    private void gobackQuestion() {
-
-    }
 
     @FXML
     private void answerRange(ActionEvent event) {
@@ -250,7 +228,11 @@ public class SmurfinatorWindowHandler implements ControllerInitializer, Smurfina
         controller.backToMainPressed();
         sceneTransitionHandler.transitionToMainMenu(event);
     }
-
+    @FXML
+    public void answerYesGuess(ActionEvent event){
+        controller.answerYesGuessPressed();
+        sceneTransitionHandler.transitionToMainMenu(event);
+    }
 
     public void newGameStart() {
         controller.startNewGame();

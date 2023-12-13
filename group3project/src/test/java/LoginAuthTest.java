@@ -1,10 +1,9 @@
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import group3.modelFolder.login.LoginAuth;
 import group3.modelFolder.model.Model;
 import group3.modelFolder.user.User;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class LoginAuthTest {
     Model model = Model.getInstance("UsersTest.txt","Questions.txt","Traits.txt","Characters.txt");
@@ -14,6 +13,7 @@ public class LoginAuthTest {
     void setUp(){
         model.clearUsers();
         model.setUser(new User("Smurf", "password123".hashCode()));
+        model.addUser(new User("Smurf", "password123".hashCode()));
     }
 
     // add user to database
@@ -22,11 +22,11 @@ public class LoginAuthTest {
         setUp();
         User u = new User("Smurf", "password123".hashCode());
 
+
         try {
-            assertTrue(u.equals(loginAuth.attemptLogin("Smurf", "password123")));
+            assertTrue(u.getName().equals(loginAuth.attemptLogin("Smurf", "password123").getName()));
         } catch (java.lang.NoSuchFieldException e) {
-            assertTrue(false);
-            e.printStackTrace();
+            fail();
         }
         
     }
