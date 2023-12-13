@@ -7,6 +7,7 @@
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -183,13 +184,40 @@
       </AnchorPane>
       <AnchorPane fx:id="guessContainer" layoutX="371.0" layoutY="316.0" prefHeight="380.0" prefWidth="762.0" visible="false">
          <children>
-            <ImageView fx:id="guessImage" fitHeight="299.0" fitWidth="299.0" layoutX="49.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
             <Region layoutX="26.0" layoutY="9.0" prefHeight="342.0" prefWidth="344.0" styleClass="particle-background" stylesheets="@../styles/sceneStyle.css">
                <effect>
                   <DropShadow />
                </effect>
             </Region>
             <Region layoutX="394.0" layoutY="72.0" opacity="0.75" prefHeight="236.0" prefWidth="286.0" styleClass="question-panel-background" stylesheets="@../styles/sceneStyle.css" />
+            <ImageView fx:id="guessImage" fitHeight="299.0" fitWidth="299.0" layoutX="49.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="226.0" fitWidth="210.0" layoutX="94.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/reveal_star.png" />
+               </image>
+               <effect>
+                  <Bloom>
+                     <input>
+                        <Glow level="0.6">
+                           <input>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="0.0784313753247261" green="0.5137255191802979" blue="0.8745098114013672" />
+                                 </color>
+                                 <input>
+                                    <InnerShadow>
+                                       <color>
+                                          <Color red="0.0784313753247261" green="0.5137255191802979" blue="0.8745098114013672" />
+                                       </color>
+                                    </InnerShadow>
+                                 </input>
+                              </DropShadow>
+                           </input>
+                        </Glow>
+                     </input>
+                  </Bloom>
+               </effect>
+            </ImageView>
             <Button fx:id="correctguess" layoutX="426.0" layoutY="105.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="222.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="YES">
                <effect>
                   <DropShadow />

@@ -51,12 +51,13 @@
 
 .other-button{
     -fx-text-fill: white;
+    -fx-font-family: "Georgia Pro Cond Black";
     -fx-background-color: #09cdda;
     -fx-background-radius: 5;
     -fx-border-color: white;
     -fx-border-radius: 5;
     -fx-border-width: 2;
-
+    
 }
 
 .other-button:hover{
