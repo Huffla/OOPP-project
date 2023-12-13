@@ -78,8 +78,6 @@ public class Model {
         categoryUser = new CategoryUser(initiateUserLeaderboard(), leaderboardCategories.size());
         leaderboardCategories.add(categoryUser);
 
-
-
         compendium = new Compendium();
         loginAuth = new LoginAuth(user_handler.getUsers());
         initializeDict(question_handler.getQuestions());
@@ -89,18 +87,18 @@ public class Model {
         leaderboard = new Leaderboard(leaderboardCategories);
     }
 
-    private ArrayList<CharacterLeaderboardEntry> initiateCharacterLeaderboard(){
+    private ArrayList<CharacterLeaderboardEntry> initiateCharacterLeaderboard() {
         ArrayList<CharacterLeaderboardEntry> temp = new ArrayList<>();
-        for(Character c: character_list){
-            temp.add(new CharacterLeaderboardEntry(c,c.getGuessedAmount()));
+        for (Character c : character_list) {
+            temp.add(new CharacterLeaderboardEntry(c, c.getGuessedAmount()));
         }
         return temp;
     }
 
-    private ArrayList<UserLeaderboardEntry> initiateUserLeaderboard(){
+    private ArrayList<UserLeaderboardEntry> initiateUserLeaderboard() {
         ArrayList<UserLeaderboardEntry> temp = new ArrayList<>();
-        for(User u: user_list){
-            temp.add(new UserLeaderboardEntry(u,u.getAmountOfContributions()));
+        for (User u : user_list) {
+            temp.add(new UserLeaderboardEntry(u, u.getAmountOfContributions()));
         }
         return temp;
     }
@@ -119,6 +117,11 @@ public class Model {
             instance = new Model(user_file_name, questions_file_name, traits_file_name, characters_file_name);
         }
         return instance;
+    }
+
+    public void setCurrentUser(User u) {
+        loggedInUser = u;
+        
     }
 
     public void setMainMenuController(MainMenuWindowHandler m) {
@@ -140,8 +143,9 @@ public class Model {
     public Smurfinator getSmurfinator() {
         return smurfinator;
     }
+
     // returns the initiated leaderboard object
-    public Leaderboard getLeaderboard(){
+    public Leaderboard getLeaderboard() {
         return leaderboard;
     }
 
@@ -162,7 +166,8 @@ public class Model {
     public ArrayList<Character> getCharacters() {
         return character_list;
     }
-    public ArrayList<Category> getLeaderboardCategories(){
+
+    public ArrayList<Category> getLeaderboardCategories() {
         return leaderboardCategories;
     }
 
@@ -177,6 +182,7 @@ public class Model {
     public void setUser(User u) {
         loggedInUser = u;
     }
+    
 
     public void setCharacters(ArrayList<Character> clist) {
         for (Character c : clist) {
