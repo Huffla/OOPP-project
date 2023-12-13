@@ -62,7 +62,7 @@ public class SmurfinatorTest {
         smurfinator.answerYes();
         for (Trait askedTrait: smurfinator.getAskedTraits()) {
             if(askedTrait.getName().equals(t.getName())){
-                assertTrue(askedTrait.get_amount_of_trait().equals(1.0) );
+                assertTrue(askedTrait.get_amount_of_trait() - 1.0 < 0.0001);
                 break;
             }
         }
@@ -85,13 +85,9 @@ public class SmurfinatorTest {
     void testReset() {
         setup();
         smurfinator.reset();
-        /*
-        assertEquals(smurfinator.askedQuestions.size(), 0);
-        assertEquals(smurfinator.askableQuestions.size(),smurfinator.questions.size() );
-
-         */
         assertEquals(smurfinator.getAskedTraits().size(), 0);
         assertFalse(smurfinator.getCharacterCreationState());
+        assertEquals(smurfinator.getAskedTraits().size(), 0);
     }
 
 

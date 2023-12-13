@@ -60,4 +60,8 @@ public class Leaderboard implements LeaderboardInterface{
     public ArrayList<LeaderboardEntry> getLeaderboard(){
         return new ArrayList<>(category.getList());
     }
+
+    public Category getCategory() {
+        return category;
+    }
 }
