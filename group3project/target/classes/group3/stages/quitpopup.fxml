@@ -5,7 +5,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="360.0" style="-fx-background-color: #ffe39b;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3.QuitMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="360.0" style="-fx-background-color: #ffe39b;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3.CONTROLLER.QuitMenuController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffe39b" height="450.0" stroke="#da9809" strokeType="INSIDE" strokeWidth="7.0" width="360.0" />
       <Button fx:id="resumeButton" layoutX="27.0" layoutY="66.0" mnemonicParsing="false" onAction="#closeQuitMenu" prefHeight="78.0" prefWidth="308.0" styleClass="menu-buttons" stylesheets="@../styles/buttonStyle.css" text="RESUME" textFill="WHITE">
