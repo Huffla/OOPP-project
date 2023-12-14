@@ -28,6 +28,13 @@
          <image>
             <Image url="@../images/bottom-border.png" />
          </image>
+         <effect>
+            <InnerShadow>
+               <input>
+                  <DropShadow />
+               </input>
+            </InnerShadow>
+         </effect>
       </ImageView>
       <Label alignment="CENTER" layoutX="14.0" prefHeight="140.0" prefWidth="651.0" styleClass="title" stylesheets="@../styles/mainmenuStyle.css" text="Smurf Discovery">
          <font>
@@ -190,8 +197,12 @@
                </effect>
             </Region>
             <Region layoutX="394.0" layoutY="72.0" opacity="0.75" prefHeight="236.0" prefWidth="286.0" styleClass="question-panel-background" stylesheets="@../styles/sceneStyle.css" />
-            <ImageView fx:id="guessImage" fitHeight="299.0" fitWidth="299.0" layoutX="49.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="226.0" fitWidth="210.0" layoutX="94.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="315.0" fitWidth="311.0" layoutX="42.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/blue_particle_animation.gif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="226.0" fitWidth="222.0" layoutX="94.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" rotate="18.0">
                <image>
                   <Image url="@../images/reveal_star.png" />
                </image>
@@ -200,14 +211,14 @@
                      <input>
                         <Glow level="0.6">
                            <input>
-                              <DropShadow>
+                              <DropShadow spread="0.3">
                                  <color>
                                     <Color red="0.0784313753247261" green="0.5137255191802979" blue="0.8745098114013672" />
                                  </color>
                                  <input>
                                     <InnerShadow>
                                        <color>
-                                          <Color red="0.0784313753247261" green="0.5137255191802979" blue="0.8745098114013672" />
+                                          <Color red="0.35686275362968445" green="0.9686274528503418" blue="0.9647058844566345" />
                                        </color>
                                     </InnerShadow>
                                  </input>
@@ -218,6 +229,19 @@
                   </Bloom>
                </effect>
             </ImageView>
+            <ImageView fitHeight="242.0" fitWidth="175.0" layoutX="116.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ordinary_smurf_v2.png" />
+               </image>
+               <effect>
+                  <InnerShadow>
+                     <input>
+                        <DropShadow />
+                     </input>
+                  </InnerShadow>
+               </effect>
+            </ImageView>
+            <ImageView fx:id="guessImage" fitHeight="299.0" fitWidth="299.0" layoutX="52.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
             <Button fx:id="correctguess" layoutX="426.0" layoutY="105.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="222.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="YES">
                <effect>
                   <DropShadow />
@@ -244,7 +268,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="mainmenuButton" layoutX="38.0" layoutY="541.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="43.0" prefWidth="151.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="Main Menu">
+      <Button fx:id="mainmenuButton" layoutX="38.0" layoutY="541.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="43.0" prefWidth="151.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="MAIN MENU">
          <font>
             <Font name="Georgia Pro Cond Black Italic" size="14.0" />
          </font>

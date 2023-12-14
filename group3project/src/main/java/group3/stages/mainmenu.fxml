@@ -5,6 +5,7 @@
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,6 +23,13 @@
          <image>
             <Image url="@../images/bottom-border.png" />
          </image>
+         <effect>
+            <InnerShadow>
+               <input>
+                  <DropShadow />
+               </input>
+            </InnerShadow>
+         </effect>
       </ImageView>
       <Button fx:id="playButton" layoutX="507.0" layoutY="464.0" mnemonicParsing="false" onAction="#playgame" styleClass="play-button" stylesheets="@../styles/mainmenuStyle.css" text="PLAY">
          <font>
@@ -72,7 +80,7 @@
             <DropShadow />
          </effect>
       </Label>
-      <Label layoutX="214.0" layoutY="163.0" text="+" textAlignment="CENTER" textFill="WHITE">
+      <Label layoutX="203.0" layoutY="164.0" text="+" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Bodoni MT" size="51.0" />
          </font>

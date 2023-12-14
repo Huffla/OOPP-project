@@ -40,6 +40,13 @@
          <image>
             <Image url="@../images/bottom-border.png" />
          </image>
+         <effect>
+            <InnerShadow>
+               <input>
+                  <DropShadow />
+               </input>
+            </InnerShadow>
+         </effect>
       </ImageView>
       <ImageView fitHeight="727.0" fitWidth="1020.0" layoutX="130.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -131,7 +138,7 @@
                               <Shadow height="0.0" radius="0.0" width="0.0" />
                            </effect>
                         </ImageView>
-                        <Label alignment="CENTER" prefHeight="52.0" prefWidth="109.0" text="Vanity Smurf" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                        <Label alignment="CENTER" prefHeight="52.0" prefWidth="109.0" text="Missing ??" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                            <font>
                               <Font name="Script MT Bold" size="17.0" />
                            </font>
@@ -140,9 +147,6 @@
                            <image>
                               <Image url="@../images/Smurfs/Sassette_Smurfling.png" />
                            </image>
-                           <effect>
-                              <Shadow blurType="ONE_PASS_BOX" height="0.0" radius="0.0" width="0.0" />
-                           </effect>
                         </ImageView>
                         <Label alignment="CENTER" prefHeight="52.0" prefWidth="109.0" text="Sassette" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                            <font>
@@ -164,7 +168,7 @@
                               <Image url="@../images/Smurfs/Handy_Smurf_Black.png" />
                            </image>
                         </ImageView>
-                        <Label alignment="CENTER" text="???" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                        <Label alignment="CENTER" text="Missing ??" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                            <font>
                               <Font name="Script MT Bold" size="17.0" />
                            </font>
@@ -296,6 +300,25 @@
                         </Label>
                      </children>
                   </GridPane>
+                  <Button fx:id="nexButton" alignment="CENTER" contentDisplay="CENTER" layoutX="721.0" layoutY="406.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css">
+                     <graphic>
+                        <ImageView depthTest="DISABLE" fitHeight="87.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/fresh-blue-arrow.png" />
+                           </image>
+                           <effect>
+                              <InnerShadow>
+                                 <input>
+                                    <DropShadow />
+                                 </input>
+                              </InnerShadow>
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
                </children>
             </AnchorPane>
          </children>
@@ -312,7 +335,7 @@
             </DropShadow>
          </effect>
       </Label>
-      <Button fx:id="mainmenuButton" layoutX="28.0" layoutY="531.0" mnemonicParsing="false" onAction="#mainmenu" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="START PAGE">
+      <Button fx:id="mainmenuButton" layoutX="28.0" layoutY="531.0" mnemonicParsing="false" onAction="#mainmenu" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="MAIN MENU">
          <font>
             <Font name="Georgia Pro Cond Black Italic" size="14.0" />
          </font>
@@ -332,25 +355,6 @@
          <font>
             <Font name="Franklin Gothic Heavy Italic" size="22.0" />
          </font>
-         <effect>
-            <DropShadow />
-         </effect>
-      </Button>
-      <Button fx:id="nexButton" alignment="CENTER" contentDisplay="CENTER" layoutX="895.0" layoutY="469.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="83.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css">
-         <graphic>
-            <ImageView depthTest="DISABLE" fitHeight="87.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/fresh-blue-arrow.png" />
-               </image>
-               <effect>
-                  <InnerShadow>
-                     <input>
-                        <DropShadow />
-                     </input>
-                  </InnerShadow>
-               </effect>
-            </ImageView>
-         </graphic>
          <effect>
             <DropShadow />
          </effect>

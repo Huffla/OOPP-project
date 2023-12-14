@@ -51,7 +51,9 @@
 
 .other-button{
     -fx-text-fill: white;
+    /*
     -fx-font-family: "Georgia Pro Cond Black";
+    */
     -fx-background-color: #09cdda;
     -fx-background-radius: 5;
     -fx-border-color: white;
@@ -62,11 +64,17 @@
 
 .other-button:hover{
     -fx-background-color: #09babe;
+    /*
+    -fx-font-family: "Georgia Pro Cond Black";
+    */
     -fx-cursor: hand;
 }
 
 .other-button:pressed{
     -fx-background-color: #006AB6;
+    /*
+    -fx-font-family: "Georgia Pro Cond Black";
+    */
 }
 
 /*
