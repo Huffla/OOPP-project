@@ -21,7 +21,7 @@
             </ImageView>
             <AnchorPane fx:id="loginContainer" layoutX="283.0" layoutY="27.0" prefHeight="376.0" prefWidth="379.0">
                <children>
-                  <Button fx:id="loginButton" layoutX="23.0" layoutY="298.0" mnemonicParsing="false" onAction="#attemptLogin" prefHeight="64.0" prefWidth="153.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="Login">
+                  <Button fx:id="loginButton" layoutX="23.0" layoutY="298.0" mnemonicParsing="false" onAction="#attemptLogin" prefHeight="64.0" prefWidth="153.0" styleClass="misc-button" stylesheets="@../styles/buttonStyle.css" text="Login">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -32,7 +32,7 @@
                         <Font name="Georgia Bold Italic" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="createaccountButton" layoutX="190.0" layoutY="298.0" mnemonicParsing="false" onAction="#toggleCreateUser" prefHeight="64.0" prefWidth="172.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="Create Account">
+                  <Button fx:id="createaccountButton" layoutX="190.0" layoutY="298.0" mnemonicParsing="false" onAction="#toggleCreateUser" prefHeight="64.0" prefWidth="172.0" styleClass="misc-button" stylesheets="@../styles/buttonStyle.css" text="Create Account">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -103,7 +103,7 @@
                         <DropShadow />
                      </effect>
                   </TextField>
-                  <Button fx:id="submitaccountButton" layoutX="230.0" layoutY="316.0" mnemonicParsing="false" onAction="#createUser" prefHeight="64.0" prefWidth="172.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="Create Account">
+                  <Button fx:id="submitaccountButton" layoutX="230.0" layoutY="316.0" mnemonicParsing="false" onAction="#createUser" prefHeight="64.0" prefWidth="172.0" styleClass="misc-button" stylesheets="@../styles/buttonStyle.css" text="Create Account">
                      <font>
                         <Font name="Georgia Bold Italic" size="18.0" />
                      </font>
@@ -111,7 +111,7 @@
                         <DropShadow />
                      </effect>
                   </Button>
-                  <Button fx:id="goBackButton" layoutX="63.0" layoutY="316.0" mnemonicParsing="false" onAction="#goBack" prefHeight="64.0" prefWidth="153.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="Go Back">
+                  <Button fx:id="goBackButton" layoutX="63.0" layoutY="316.0" mnemonicParsing="false" onAction="#goBack" prefHeight="64.0" prefWidth="153.0" styleClass="misc-button" stylesheets="@../styles/buttonStyle.css" text="Go Back">
                      <font>
                         <Font name="Georgia Bold Italic" size="20.0" />
                      </font>

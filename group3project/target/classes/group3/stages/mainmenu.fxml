@@ -31,7 +31,7 @@
             </InnerShadow>
          </effect>
       </ImageView>
-      <Button fx:id="playButton" layoutX="527.0" layoutY="472.0" mnemonicParsing="false" onAction="#playgame" styleClass="play-button" stylesheets="@../styles/mainmenuStyle.css" text="Play">
+      <Button fx:id="playButton" layoutX="527.0" layoutY="472.0" mnemonicParsing="false" onAction="#playgame" styleClass="play-button" stylesheets="@../styles/buttonStyle.css" text="Play">
          <font>
             <Font name="Georgia Bold Italic" size="55.0" />
          </font>
@@ -39,14 +39,14 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="exitButton" layoutX="28.0" layoutY="617.0" mnemonicParsing="false" onAction="#closeGame" prefHeight="43.0" prefWidth="83.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="EXIT">
+      <Button fx:id="exitButton" layoutX="28.0" layoutY="617.0" mnemonicParsing="false" onAction="#closeGame" prefHeight="43.0" prefWidth="83.0" styleClass="misc-button" stylesheets="@../styles/buttonStyle.css" text="EXIT">
          <font>
             <Font name="Franklin Gothic Heavy Italic" size="22.0" />
          </font>
          <effect>
             <DropShadow />
          </effect></Button>
-      <Button fx:id="collectionButton" layoutX="28.0" layoutY="531.0" mnemonicParsing="false" onAction="#collection" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="Collection">
+      <Button fx:id="collectionButton" layoutX="28.0" layoutY="531.0" mnemonicParsing="false" onAction="#collection" prefHeight="43.0" prefWidth="138.0" styleClass="misc-button" stylesheets="@../styles/buttonStyle.css" text="Collection">
          <font>
             <Font name="Georgia Bold Italic" size="16.0" />
          </font>
@@ -65,7 +65,7 @@
             </DropShadow>
          </effect>
       </Label>
-      <Button fx:id="leaderboardButton" layoutX="28.0" layoutY="472.0" mnemonicParsing="false" onAction="#leaderboard" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="Leaderboard">
+      <Button fx:id="leaderboardButton" layoutX="28.0" layoutY="472.0" mnemonicParsing="false" onAction="#leaderboard" prefHeight="43.0" prefWidth="138.0" styleClass="misc-button" stylesheets="@../styles/buttonStyle.css" text="Leaderboard">
          <font>
             <Font name="Georgia Bold Italic" size="16.0" />
          </font>

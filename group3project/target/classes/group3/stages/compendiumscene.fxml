@@ -300,7 +300,7 @@
                         </Label>
                      </children>
                   </GridPane>
-                  <Button fx:id="nexButton" alignment="CENTER" contentDisplay="CENTER" layoutX="721.0" layoutY="406.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css">
+                  <Button fx:id="nexButton" alignment="CENTER" contentDisplay="CENTER" layoutX="721.0" layoutY="406.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" styleClass="misc-button" stylesheets="@../styles/buttonStyle.css">
                      <graphic>
                         <ImageView depthTest="DISABLE" fitHeight="87.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -323,7 +323,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <Label alignment="CENTER" layoutX="251.0" prefHeight="130.0" prefWidth="755.0" styleClass="title" stylesheets="@../styles/collectionStyle.css" text="The Smurf Compendium" underline="true">
+      <Label alignment="CENTER" layoutX="251.0" prefHeight="130.0" prefWidth="755.0" styleClass="title" stylesheets="@../styles/collectionStyle.css" text="The Smurf Compendium">
          <font>
             <Font name="Georgia Bold Italic" size="59.0" />
          </font>
@@ -335,7 +335,7 @@
             </DropShadow>
          </effect>
       </Label>
-      <Button fx:id="mainmenuButton" layoutX="28.0" layoutY="531.0" mnemonicParsing="false" onAction="#mainmenu" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="Main Menu">
+      <Button fx:id="mainmenuButton" layoutX="28.0" layoutY="531.0" mnemonicParsing="false" onAction="#mainmenu" prefHeight="43.0" prefWidth="138.0" styleClass="misc-button" stylesheets="@../styles/buttonStyle.css" text="Main Menu">
          <font>
             <Font name="Georgia Bold Italic" size="16.0" />
          </font>
@@ -343,7 +343,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="leaderboardButton" layoutX="28.0" layoutY="472.0" mnemonicParsing="false" onAction="#leaderboard" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="Leaderboard">
+      <Button fx:id="leaderboardButton" layoutX="28.0" layoutY="472.0" mnemonicParsing="false" onAction="#leaderboard" prefHeight="43.0" prefWidth="138.0" styleClass="misc-button" stylesheets="@../styles/buttonStyle.css" text="Leaderboard">
          <font>
             <Font name="Georgia Bold Italic" size="16.0" />
          </font>
@@ -351,7 +351,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="exitButton" layoutX="28.0" layoutY="617.0" mnemonicParsing="false" onAction="#closeGame" prefHeight="43.0" prefWidth="83.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="EXIT">
+      <Button fx:id="exitButton" layoutX="28.0" layoutY="617.0" mnemonicParsing="false" onAction="#closeGame" prefHeight="43.0" prefWidth="83.0" styleClass="misc-button" stylesheets="@../styles/buttonStyle.css" text="EXIT">
          <font>
             <Font name="Franklin Gothic Heavy Italic" size="22.0" />
          </font>

@@ -67,7 +67,7 @@
                         </DropShadow>
                      </effect>
                   </Label>
-                  <Button fx:id="characterLeaderboardButton" layoutX="19.0" layoutY="119.0" mnemonicParsing="false" onAction="#switchCategoryCharacter" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="Characters" textAlignment="CENTER">
+                  <Button fx:id="characterLeaderboardButton" layoutX="19.0" layoutY="119.0" mnemonicParsing="false" onAction="#switchCategoryCharacter" prefHeight="43.0" prefWidth="138.0" styleClass="misc-button" stylesheets="@../styles/buttonStyle.css" text="Characters" textAlignment="CENTER">
                      <font>
                         <Font name="Georgia Bold Italic" size="16.0" />
                      </font>
@@ -75,7 +75,7 @@
                         <DropShadow />
                      </effect>
                   </Button>
-                  <Button fx:id="userLeaderboardButton" layoutX="19.0" layoutY="178.0" mnemonicParsing="false" onAction="#switchCategoryUser" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="Users" textAlignment="CENTER">
+                  <Button fx:id="userLeaderboardButton" layoutX="19.0" layoutY="178.0" mnemonicParsing="false" onAction="#switchCategoryUser" prefHeight="43.0" prefWidth="138.0" styleClass="misc-button" stylesheets="@../styles/buttonStyle.css" text="Users" textAlignment="CENTER">
                      <font>
                         <Font name="Georgia Bold Italic" size="16.0" />
                      </font>
@@ -95,7 +95,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <Button fx:id="mainmenuButton" layoutX="28.0" layoutY="531.0" mnemonicParsing="false" onAction="#switchToMainmenu" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="Main Menu" textAlignment="CENTER">
+      <Button fx:id="mainmenuButton" layoutX="28.0" layoutY="531.0" mnemonicParsing="false" onAction="#switchToMainmenu" prefHeight="43.0" prefWidth="138.0" styleClass="misc-button" stylesheets="@../styles/buttonStyle.css" text="Main Menu" textAlignment="CENTER">
          <font>
             <Font name="Georgia Bold Italic" size="16.0" />
          </font>
@@ -103,7 +103,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="exitButton" layoutX="28.0" layoutY="617.0" mnemonicParsing="false" onAction="#closeGame" prefHeight="43.0" prefWidth="83.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="EXIT" textAlignment="CENTER">
+      <Button fx:id="exitButton" layoutX="28.0" layoutY="617.0" mnemonicParsing="false" onAction="#closeGame" prefHeight="43.0" prefWidth="83.0" styleClass="misc-button" stylesheets="@../styles/buttonStyle.css" text="EXIT" textAlignment="CENTER">
          <font>
             <Font name="Franklin Gothic Heavy Italic" size="22.0" />
          </font>
@@ -111,7 +111,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="collectionButton" layoutX="28.0" layoutY="472.0" mnemonicParsing="false" onAction="#collection" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="Collection">
+      <Button fx:id="collectionButton" layoutX="28.0" layoutY="472.0" mnemonicParsing="false" onAction="#collection" prefHeight="43.0" prefWidth="138.0" styleClass="misc-button" stylesheets="@../styles/buttonStyle.css" text="Collection">
          <font>
             <Font name="Georgia Bold Italic" size="16.0" />
          </font>

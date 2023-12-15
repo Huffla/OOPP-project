@@ -1,4 +1,61 @@
 
+.play-button{
+    -fx-text-fill: white;
+    -fx-background-color: #09cdda;
+    -fx-background-radius: 40;
+    -fx-border-color: white;
+    -fx-border-radius: 40;
+    -fx-border-width: 2;
+    
+}
+
+.play-button:hover{
+    -fx-background-color: #09babe;
+    -fx-cursor: hand;
+}
+
+.play-button:pressed{
+    -fx-background-color: #006AB6;
+    -fx-effect: innerShadow(gaussian, rgba(0,0,0,0.5), 10, 0.0, 0, 2);
+}
+
+
+.misc-button{
+    -fx-text-fill: white;
+    -fx-background-color: #09cdda;
+    -fx-background-radius: 5;
+    -fx-border-color: white;
+    -fx-border-radius: 5;
+    -fx-border-width: 2;
+}
+
+.misc-button:hover{
+    -fx-background-color: #09babe;
+    -fx-cursor: hand;
+}
+
+.misc-button:pressed{
+    -fx-background-color: #006AB6;
+    -fx-effect: innerShadow(gaussian, rgba(0,0,0,0.5), 10, 0.0, 0, 2);
+    
+    /*
+    transform: scale(0.98); 
+    */
+}
+
+/*
+#003E6A
+#006AB6
+#09be66
+*/
+
+/*
+-fx-font-family: "Georgia Pro Cond Black";
+*/
+
+
+
+/*
 .answer-button{
     -fx-background-color: #09cdda;
     -fx-text-fill: white;
@@ -41,5 +98,5 @@
     -fx-font-size:15;
 
 }
-
+*/
 

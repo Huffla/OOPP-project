@@ -1,3 +1,17 @@
+/*
+.root{
+    -fx-background-color: Beige;
+}
+
+#smurfinatorLabel{
+    -fx-font-size: 80;
+    -fx-font-family: "Boldstrom";
+    -fx-text-fill: #09cdda;
+    -fx-effect: dropshadow(gaussian, black, 20, 0.1, 0.1, 0);
+    
+
+}
+*/
 
 /*
 .button{
@@ -8,20 +22,21 @@
 }
 */
 
+/*
 #questionTitle{
     -fx-font-size: 25;
     -fx-font-family:"Arial Black";
     -fx-font-weight: 900;
 }
 
-/*
+
 #questionCounter{
     -fx-font-size: 25;
     -fx-font-family:"Arial Black";
     -fx-text-fill: #da9809;
     -fx-font-weight: 900;
 }
-*/
+
 
 #slider-display-value{
     -fx-font-size: 30;
@@ -29,6 +44,7 @@
     -fx-text-fill: #da9809;
     -fx-font-weight: 900;
 }
+*/
 
 
 .particle-background{

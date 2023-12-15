@@ -20,7 +20,6 @@
 }
 
 
-
 .scroll-pane > .viewport {
     -fx-background-color: transparent;
  }
@@ -66,36 +65,11 @@
 }
 
 .leaderboard-scrollpane .scroll-bar:vertical .thumb:hover {
-    -fx-background-color: #09cdda;
+    -fx-background-color: rgba(255, 255, 255, 0.662);
     -fx-cursor: hand;
 }
 
 .leaderboard-scrollpane .scroll-bar:vertical .thumb:pressed {
-    -fx-background-color: #006AB6;
-}
-
-
-.other-button{
-    -fx-text-fill: white;
-    -fx-background-color: #09cdda;
-    -fx-background-radius: 5;
-    -fx-border-color: white;
-    -fx-border-radius: 5;
-    -fx-border-width: 2;
-    
-}
-
-.other-button:hover{
     -fx-background-color: #09babe;
-    -fx-cursor: hand;
+    -fx-effect: innerShadow(gaussian, rgba(0,0,0,0.5), 10, 0.0, 0, 2);
 }
-
-.other-button:pressed{
-    -fx-background-color: #006AB6;
-}
-
-/*
-#003E6A
-#006AB6
-#09be66
-*/
