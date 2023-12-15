@@ -30,21 +30,27 @@
             </InnerShadow>
          </effect>
       </ImageView>
-      <AnchorPane layoutX="265.0" layoutY="102.0">
+      <AnchorPane layoutX="265.0" layoutY="85.0">
          <children>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="514.0" prefWidth="749.0">
                <children>
-                  <Region layoutX="3.0" layoutY="2.0" opacity="0.6" prefHeight="509.0" prefWidth="743.0" styleClass="leaderboard-background" stylesheets="@../styles/leaderboardStyle.css" />
+                  <Region layoutX="3.0" layoutY="2.0" opacity="0.65" prefHeight="509.0" prefWidth="743.0" styleClass="leaderboard-background" stylesheets="@../styles/leaderboardStyle.css" />
                   <AnchorPane layoutX="171.0" layoutY="131.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <ScrollPane hbarPolicy="NEVER" prefHeight="333.0" prefWidth="407.0">
+                        <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="333.0" prefWidth="407.0" styleClass="shoppingcart-scrollpane" stylesheets="@../styles/leaderboardStyle.css">
                            <content>
-                              <Label fx:id="leaderboardField" alignment="TOP_LEFT" prefHeight="333.0" prefWidth="392.0" text="Label">
+                              <Label fx:id="leaderboardField" alignment="TOP_LEFT" contentDisplay="CENTER" lineSpacing="10.0" prefHeight="489.0" prefWidth="392.0" text="Label" textFill="WHITE">
                                  <font>
-                                    <Font name="System Bold" size="18.0" />
+                                    <Font name="Georgia Italic" size="18.0" />
                                  </font>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
                               </Label>
                            </content>
+                           <effect>
+                              <DropShadow />
+                           </effect>
                         </ScrollPane>
                      </children>
                   </AnchorPane>
@@ -53,22 +59,22 @@
                         <Font name="Impact" size="40.0" />
                      </font>
                   </Label>
-                  <Label fx:id="leaderboardLabel" layoutX="297.0" layoutY="94.0" styleClass="leaderboard-title" stylesheets="@../styles/leaderboardStyle.css" text="User Contributions" textAlignment="CENTER">
+                  <Label fx:id="leaderboardLabel" alignment="CENTER" layoutX="204.0" layoutY="94.0" prefHeight="24.0" prefWidth="339.0" styleClass="leaderboard-title" stylesheets="@../styles/leaderboardStyle.css" text="User Contributions" textAlignment="CENTER">
                      <font>
                         <Font name="Impact" size="20.0" />
                      </font>
                   </Label>
-                  <Button fx:id="characterLeaderboardButton" layoutX="19.0" layoutY="257.0" mnemonicParsing="false" onAction="#switchCategoryCharacter" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="CHARACTERS" textAlignment="CENTER">
+                  <Button fx:id="characterLeaderboardButton" layoutX="19.0" layoutY="131.0" mnemonicParsing="false" onAction="#switchCategoryCharacter" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="Characters" textAlignment="CENTER">
                      <font>
-                        <Font name="Georgia Pro Cond Black Italic" size="15.0" />
+                        <Font name="Georgia Bold Italic" size="16.0" />
                      </font>
                      <effect>
                         <DropShadow />
                      </effect>
                   </Button>
-                  <Button fx:id="userLeaderboardButton" layoutX="19.0" layoutY="322.0" mnemonicParsing="false" onAction="#switchCategoryUser" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="USERS" textAlignment="CENTER">
+                  <Button fx:id="userLeaderboardButton" layoutX="19.0" layoutY="188.0" mnemonicParsing="false" onAction="#switchCategoryUser" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="Users" textAlignment="CENTER">
                      <font>
-                        <Font name="Georgia Pro Cond Black Italic" size="16.0" />
+                        <Font name="Georgia Bold Italic" size="16.0" />
                      </font>
                      <effect>
                         <DropShadow />
@@ -78,9 +84,9 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <Button fx:id="mainmenuButton" layoutX="29.0" layoutY="539.0" mnemonicParsing="false" onAction="#switchToMainmenu" prefHeight="57.0" prefWidth="164.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="MAIN MENU" textAlignment="CENTER">
+      <Button fx:id="mainmenuButton" layoutX="29.0" layoutY="539.0" mnemonicParsing="false" onAction="#switchToMainmenu" prefHeight="57.0" prefWidth="164.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="Main Menu" textAlignment="CENTER">
          <font>
-            <Font name="Georgia Pro Cond Black Italic" size="18.0" />
+            <Font name="Georgia Bold Italic" size="16.0" />
          </font>
          <effect>
             <DropShadow />

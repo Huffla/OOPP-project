@@ -84,10 +84,13 @@
             </Region>
             <AnchorPane layoutX="121.0" prefHeight="169.0" prefWidth="450.0">
                <children>
-                  <Text fx:id="questionTitle" fill="WHITE" layoutX="5.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="**QUESTION PLACEHOLDER**" textAlignment="CENTER" wrappingWidth="439.19987792968755">
+                  <Text fx:id="questionTitle" fill="WHITE" layoutX="5.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="**QUESTION PLACEHOLDER**" textAlignment="CENTER" wrappingWidth="439.19987792968755">
                      <font>
                         <Font name="Georgia Pro Cond" size="21.0" />
-                     </font></Text>
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect></Text>
                </children>
             </AnchorPane>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffe39b" height="169.0" layoutY="-3.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="121.0" />
@@ -101,7 +104,10 @@
                   <Label fx:id="questionCounter" layoutX="53.0" layoutY="64.0" prefHeight="30.0" prefWidth="29.0" text="1" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="76.0" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="64.0">
                      <font>
                         <Font name="Georgia Pro Black" size="29.0" />
-                     </font></Label>
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect></Label>
                </children>
             </AnchorPane>
          </children>

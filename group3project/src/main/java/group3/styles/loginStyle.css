@@ -1,14 +1,5 @@
 
-
-.image-view-wrapper:border {
-    -fx-border-color: black;
-    -fx-border-style: solid;
-    -fx-border-width: 5;
-}
-
-
-
-.question-panel-background-2{
+.image-background{
     -fx-background-color: transparent;
     /*
     -fx-background-color: linear-gradient(to top, #000000, #09babe);
@@ -16,7 +7,7 @@
     -fx-background-radius: 12;
     -fx-border-color: white;
     -fx-border-radius: 10;
-    -fx-border-width: 6;
+    -fx-border-width: 7;
 }
 
 

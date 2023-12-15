@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="login-background" stylesheets="@../styles/loginStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutX="165.0" layoutY="118.0" prefHeight="421.0" prefWidth="950.0" styleClass="question-panel-background-2" stylesheets="@../styles/loginStyle.css">
+      <AnchorPane layoutX="165.0" layoutY="118.0" prefHeight="421.0" prefWidth="950.0" styleClass="image-background" stylesheets="@../styles/loginStyle.css">
          <children>
             <ImageView fitHeight="419.0" fitWidth="925.0" layoutX="12.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -61,7 +61,7 @@
                   </TextField>
                   <Label alignment="CENTER" layoutX="57.0" layoutY="35.0" prefHeight="39.0" prefWidth="263.0" text="Begin Adventure" textFill="WHITE">
                      <font>
-                        <Font name="Georgia Bold Italic" size="28.0" />
+                        <Font name="Georgia Bold Italic" size="30.0" />
                      </font>
                      <effect>
                         <DropShadow />
@@ -69,48 +69,51 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="createContainer" layoutX="245.0" layoutY="5.0" prefHeight="419.0" prefWidth="460.0" visible="false">
+            <AnchorPane fx:id="createContainer" layoutX="243.0" layoutY="9.0" prefHeight="419.0" prefWidth="460.0" visible="false">
                <children>
-                  <Label fx:id="errorText" alignment="CENTER" layoutX="103.0" layoutY="262.0" prefHeight="39.0" prefWidth="254.0" textFill="RED">
+                  <Label fx:id="errorText" alignment="CENTER" layoutX="101.0" layoutY="267.0" prefHeight="39.0" prefWidth="254.0" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER" layoutX="103.0" layoutY="52.0" prefHeight="39.0" prefWidth="254.0" text="Create Account" textFill="WHITE">
-                     <font>
-                        <Font name="Georgia Pro Cond Black Italic" size="28.0" />
+                        <Font name="Georgia Bold Italic" size="20.0" />
                      </font>
                      <effect>
                         <DropShadow />
                      </effect>
                   </Label>
-                  <TextField fx:id="createuserfield" layoutX="103.0" layoutY="142.0" prefHeight="47.0" prefWidth="254.0" promptText="Name">
+                  <Label alignment="CENTER" layoutX="102.0" layoutY="53.0" prefHeight="39.0" prefWidth="254.0" text="Create Account" textFill="WHITE">
                      <font>
-                        <Font name="Georgia Pro Black Italic" size="16.0" />
+                        <Font name="Georgia Bold Italic" size="30.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <TextField fx:id="createuserfield" layoutX="121.0" layoutY="142.0" prefHeight="47.0" prefWidth="214.0" promptText="Name">
+                     <font>
+                        <Font name="Georgia Bold Italic" size="16.0" />
                      </font>
                      <effect>
                         <DropShadow />
                      </effect>
                   </TextField>
-                  <TextField fx:id="createpassfield" layoutX="103.0" layoutY="210.0" prefHeight="47.0" prefWidth="254.0" promptText="Password">
+                  <TextField fx:id="createpassfield" layoutX="121.0" layoutY="212.0" prefHeight="47.0" prefWidth="214.0" promptText="Password">
                      <font>
-                        <Font name="Georgia Pro Black Italic" size="16.0" />
+                        <Font name="Georgia Bold Italic" size="16.0" />
                      </font>
                      <effect>
                         <DropShadow />
                      </effect>
                   </TextField>
-                  <Button fx:id="submitaccountButton" layoutX="230.0" layoutY="324.0" mnemonicParsing="false" onAction="#createUser" prefHeight="63.0" prefWidth="172.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="CREATE ACCOUNT">
+                  <Button fx:id="submitaccountButton" layoutX="230.0" layoutY="316.0" mnemonicParsing="false" onAction="#createUser" prefHeight="64.0" prefWidth="172.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="Create Account">
                      <font>
-                        <Font name="Georgia Pro Cond Black" size="15.0" />
+                        <Font name="Georgia Bold Italic" size="18.0" />
                      </font>
                      <effect>
                         <DropShadow />
                      </effect>
                   </Button>
-                  <Button fx:id="goBackButton" layoutX="60.0" layoutY="324.0" mnemonicParsing="false" onAction="#goBack" prefHeight="63.0" prefWidth="139.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="GO BACK">
+                  <Button fx:id="goBackButton" layoutX="63.0" layoutY="316.0" mnemonicParsing="false" onAction="#goBack" prefHeight="64.0" prefWidth="153.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="Go Back">
                      <font>
-                        <Font name="Georgia Pro Cond Black" size="18.0" />
+                        <Font name="Georgia Bold Italic" size="20.0" />
                      </font>
                      <effect>
                         <DropShadow />

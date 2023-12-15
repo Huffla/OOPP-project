@@ -325,7 +325,7 @@
       </AnchorPane>
       <Label alignment="CENTER" layoutX="251.0" prefHeight="130.0" prefWidth="755.0" styleClass="title" stylesheets="@../styles/collectionStyle.css" text="The Smurf Compendium" underline="true">
          <font>
-            <Font name="Harrington" size="73.0" />
+            <Font name="Georgia Bold Italic" size="59.0" />
          </font>
          <effect>
             <DropShadow>
@@ -335,17 +335,17 @@
             </DropShadow>
          </effect>
       </Label>
-      <Button fx:id="mainmenuButton" layoutX="28.0" layoutY="531.0" mnemonicParsing="false" onAction="#mainmenu" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="MAIN MENU">
+      <Button fx:id="mainmenuButton" layoutX="28.0" layoutY="531.0" mnemonicParsing="false" onAction="#mainmenu" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="Main Menu">
          <font>
-            <Font name="Georgia Pro Cond Black Italic" size="14.0" />
+            <Font name="Georgia Bold Italic" size="16.0" />
          </font>
          <effect>
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="leaderboardButton" layoutX="28.0" layoutY="472.0" mnemonicParsing="false" onAction="#leaderboard" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="LEADERBOARD">
+      <Button fx:id="leaderboardButton" layoutX="28.0" layoutY="472.0" mnemonicParsing="false" onAction="#leaderboard" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="Leaderboard">
          <font>
-            <Font name="Georgia Pro Cond Black Italic" size="14.0" />
+            <Font name="Georgia Bold Italic" size="16.0" />
          </font>
          <effect>
             <DropShadow />

@@ -31,9 +31,9 @@
             </InnerShadow>
          </effect>
       </ImageView>
-      <Button fx:id="playButton" layoutX="507.0" layoutY="464.0" mnemonicParsing="false" onAction="#playgame" styleClass="play-button" stylesheets="@../styles/mainmenuStyle.css" text="PLAY">
+      <Button fx:id="playButton" layoutX="527.0" layoutY="472.0" mnemonicParsing="false" onAction="#playgame" styleClass="play-button" stylesheets="@../styles/mainmenuStyle.css" text="Play">
          <font>
-            <Font name="Georgia Pro Cond Black" size="55.0" />
+            <Font name="Georgia Bold Italic" size="55.0" />
          </font>
          <effect>
             <DropShadow />
@@ -46,9 +46,9 @@
          <effect>
             <DropShadow />
          </effect></Button>
-      <Button fx:id="collectionButton" layoutX="28.0" layoutY="531.0" mnemonicParsing="false" onAction="#collection" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="COLLECTION">
+      <Button fx:id="collectionButton" layoutX="28.0" layoutY="531.0" mnemonicParsing="false" onAction="#collection" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="Collection">
          <font>
-            <Font name="Georgia Pro Cond Black Italic" size="14.0" />
+            <Font name="Georgia Bold Italic" size="16.0" />
          </font>
          <effect>
             <DropShadow />
@@ -65,9 +65,9 @@
             </DropShadow>
          </effect>
       </Label>
-      <Button fx:id="leaderboardButton" layoutX="28.0" layoutY="472.0" mnemonicParsing="false" onAction="#leaderboard" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="LEADERBOARD">
+      <Button fx:id="leaderboardButton" layoutX="28.0" layoutY="472.0" mnemonicParsing="false" onAction="#leaderboard" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="Leaderboard">
          <font>
-            <Font name="Georgia Pro Cond Black Italic" size="14.0" />
+            <Font name="Georgia Bold Italic" size="16.0" />
          </font>
          <effect>
             <DropShadow />
