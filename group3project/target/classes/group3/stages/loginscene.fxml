@@ -59,7 +59,7 @@
                         <DropShadow />
                      </effect>
                   </TextField>
-                  <Label alignment="CENTER" layoutX="57.0" layoutY="35.0" prefHeight="39.0" prefWidth="263.0" text="Begin Adventure" textFill="WHITE">
+                  <Label alignment="CENTER" layoutX="41.0" layoutY="33.0" prefHeight="39.0" prefWidth="298.0" text="Begin the Journey" textFill="WHITE">
                      <font>
                         <Font name="Georgia Bold Italic" size="30.0" />
                      </font>
@@ -79,7 +79,7 @@
                         <DropShadow />
                      </effect>
                   </Label>
-                  <Label alignment="CENTER" layoutX="102.0" layoutY="53.0" prefHeight="39.0" prefWidth="254.0" text="Create Account" textFill="WHITE">
+                  <Label alignment="CENTER" layoutX="87.0" layoutY="51.0" prefHeight="39.0" prefWidth="286.0" text="Account Creation" textFill="WHITE">
                      <font>
                         <Font name="Georgia Bold Italic" size="30.0" />
                      </font>

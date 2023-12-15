@@ -115,6 +115,11 @@ public class LeaderboardWindowHandler implements ControllerInitializer, Leaderbo
         sceneTransitionHandler.transitionToMainMenu(event);
     }
 
+    @FXML
+    private void collection(ActionEvent event){
+        sceneTransitionHandler.transitionToCompendium(event);
+    }
+
 
     @FXML
     private void closeGame(){

@@ -101,9 +101,9 @@
             </Region>
             <AnchorPane prefHeight="169.0" prefWidth="122.0">
                <children>
-                  <Label fx:id="questionCounter" layoutX="53.0" layoutY="64.0" prefHeight="30.0" prefWidth="29.0" text="1" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="76.0" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="64.0">
+                  <Label fx:id="questionCounter" alignment="CENTER" layoutX="46.0" layoutY="70.0" prefHeight="30.0" prefWidth="29.0" text="1" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="70.0">
                      <font>
-                        <Font name="Georgia Pro Black" size="29.0" />
+                        <Font name="Georgia Bold Italic" size="41.0" />
                      </font>
                      <effect>
                         <DropShadow />
@@ -266,7 +266,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <Button fx:id="exitButton" layoutX="38.0" layoutY="627.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="83.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="EXIT">
+      <Button fx:id="exitButton" layoutX="28.0" layoutY="617.0" mnemonicParsing="false" onAction="#closeGame" prefHeight="43.0" prefWidth="83.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="EXIT">
          <font>
             <Font name="Franklin Gothic Heavy Italic" size="22.0" />
          </font>
@@ -274,9 +274,9 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="mainmenuButton" layoutX="38.0" layoutY="541.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="43.0" prefWidth="151.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="MAIN MENU">
+      <Button fx:id="mainmenuButton" layoutX="28.0" layoutY="531.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="Main Menu">
          <font>
-            <Font name="Georgia Pro Cond Black Italic" size="14.0" />
+            <Font name="Georgia Bold Italic" size="16.0" />
          </font>
          <effect>
             <DropShadow />
@@ -301,5 +301,21 @@
             </Glow>
          </effect>
       </Label>
+      <Button fx:id="leaderboardButton" layoutX="28.0" layoutY="413.0" mnemonicParsing="false" onAction="#leaderboard" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="Leaderboard">
+         <font>
+            <Font name="Georgia Bold Italic" size="16.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="collectionButton" layoutX="28.0" layoutY="472.0" mnemonicParsing="false" onAction="#collection" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="Collection">
+         <font>
+            <Font name="Georgia Bold Italic" size="16.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
    </children>
 </AnchorPane>

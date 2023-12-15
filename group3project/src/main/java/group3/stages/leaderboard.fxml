@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -35,9 +36,9 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="514.0" prefWidth="749.0">
                <children>
                   <Region layoutX="3.0" layoutY="2.0" opacity="0.65" prefHeight="509.0" prefWidth="743.0" styleClass="leaderboard-background" stylesheets="@../styles/leaderboardStyle.css" />
-                  <AnchorPane layoutX="171.0" layoutY="131.0" prefHeight="200.0" prefWidth="200.0">
+                  <AnchorPane layoutX="171.0" layoutY="119.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="333.0" prefWidth="407.0" styleClass="shoppingcart-scrollpane" stylesheets="@../styles/leaderboardStyle.css">
+                        <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="333.0" prefWidth="407.0" styleClass="leaderboard-scrollpane" stylesheets="@../styles/leaderboardStyle.css">
                            <content>
                               <Label fx:id="leaderboardField" alignment="TOP_LEFT" contentDisplay="CENTER" lineSpacing="10.0" prefHeight="489.0" prefWidth="392.0" text="Label" textFill="WHITE">
                                  <font>
@@ -54,17 +55,19 @@
                         </ScrollPane>
                      </children>
                   </AnchorPane>
-                  <Label layoutX="264.0" layoutY="37.0" styleClass="leaderboard-title" stylesheets="@../styles/leaderboardStyle.css" text="LEADERBOARD" textAlignment="CENTER">
+                  <Label alignment="CENTER" layoutX="195.0" layoutY="20.0" prefHeight="70.0" prefWidth="358.0" styleClass="leaderboard-title" stylesheets="@../styles/leaderboardStyle.css" text="LEADERBOARD" textAlignment="CENTER" underline="true">
                      <font>
-                        <Font name="Impact" size="40.0" />
+                        <Font name="Impact" size="55.0" />
                      </font>
+                     <effect>
+                        <DropShadow>
+                           <input>
+                              <Reflection fraction="0.5" topOffset="-5.0" topOpacity="0.58" />
+                           </input>
+                        </DropShadow>
+                     </effect>
                   </Label>
-                  <Label fx:id="leaderboardLabel" alignment="CENTER" layoutX="204.0" layoutY="94.0" prefHeight="24.0" prefWidth="339.0" styleClass="leaderboard-title" stylesheets="@../styles/leaderboardStyle.css" text="User Contributions" textAlignment="CENTER">
-                     <font>
-                        <Font name="Impact" size="20.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="characterLeaderboardButton" layoutX="19.0" layoutY="131.0" mnemonicParsing="false" onAction="#switchCategoryCharacter" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="Characters" textAlignment="CENTER">
+                  <Button fx:id="characterLeaderboardButton" layoutX="19.0" layoutY="119.0" mnemonicParsing="false" onAction="#switchCategoryCharacter" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="Characters" textAlignment="CENTER">
                      <font>
                         <Font name="Georgia Bold Italic" size="16.0" />
                      </font>
@@ -72,7 +75,7 @@
                         <DropShadow />
                      </effect>
                   </Button>
-                  <Button fx:id="userLeaderboardButton" layoutX="19.0" layoutY="188.0" mnemonicParsing="false" onAction="#switchCategoryUser" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="Users" textAlignment="CENTER">
+                  <Button fx:id="userLeaderboardButton" layoutX="19.0" layoutY="178.0" mnemonicParsing="false" onAction="#switchCategoryUser" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/collectionStyle.css" text="Users" textAlignment="CENTER">
                      <font>
                         <Font name="Georgia Bold Italic" size="16.0" />
                      </font>
@@ -80,11 +83,19 @@
                         <DropShadow />
                      </effect>
                   </Button>
+                  <Label fx:id="leaderboardLabel" alignment="CENTER" layoutX="205.0" layoutY="461.0" prefHeight="24.0" prefWidth="339.0" styleClass="leaderboard-title" stylesheets="@../styles/leaderboardStyle.css" text="User Contributions" textAlignment="CENTER">
+                     <font>
+                        <Font name="Impact" size="25.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
-      <Button fx:id="mainmenuButton" layoutX="29.0" layoutY="539.0" mnemonicParsing="false" onAction="#switchToMainmenu" prefHeight="57.0" prefWidth="164.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="Main Menu" textAlignment="CENTER">
+      <Button fx:id="mainmenuButton" layoutX="28.0" layoutY="531.0" mnemonicParsing="false" onAction="#switchToMainmenu" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="Main Menu" textAlignment="CENTER">
          <font>
             <Font name="Georgia Bold Italic" size="16.0" />
          </font>
@@ -95,6 +106,14 @@
       <Button fx:id="exitButton" layoutX="28.0" layoutY="617.0" mnemonicParsing="false" onAction="#closeGame" prefHeight="43.0" prefWidth="83.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="EXIT" textAlignment="CENTER">
          <font>
             <Font name="Franklin Gothic Heavy Italic" size="22.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="collectionButton" layoutX="28.0" layoutY="472.0" mnemonicParsing="false" onAction="#collection" prefHeight="43.0" prefWidth="138.0" styleClass="other-button" stylesheets="@../styles/mainmenuStyle.css" text="Collection">
+         <font>
+            <Font name="Georgia Bold Italic" size="16.0" />
          </font>
          <effect>
             <DropShadow />

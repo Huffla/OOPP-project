@@ -38,11 +38,7 @@ public class MainMenuWindowHandler implements ControllerInitializer {
         sceneTransitionHandler.transitionToSmurfinator(event);
     }
 
-    // close the application
-    @FXML
-    private void closeGame(){
-        javafx.application.Platform.exit();
-    }
+    
     @FXML
     private void collection(ActionEvent event){
         sceneTransitionHandler.transitionToCompendium(event);
@@ -51,12 +47,15 @@ public class MainMenuWindowHandler implements ControllerInitializer {
     // Navigate to the leaderboard screen
     @FXML
     private void leaderboard(ActionEvent event){
-    sceneTransitionHandler.transitionToLeaderboard(event);
+        sceneTransitionHandler.transitionToLeaderboard(event);
     }
+
+    // close the application
     @FXML
-    private void loginpopup(){
-        
+    private void closeGame(){
+        javafx.application.Platform.exit();
     }
+
 
 }
 
